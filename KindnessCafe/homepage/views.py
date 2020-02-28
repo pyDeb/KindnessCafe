@@ -1,4 +1,23 @@
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
-def index(request):
-	return HttpResponse("<h1>This is the home page</h1>")
+from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
+from django.views import generic
+from bootstrap_modal_forms.mixins import PassRequestMixin
+from .forms import CustomUserCreationForm
+
+
+
+
+
+class HomePageView(TemplateView):
+    template_name = 'home.html'
+
+
+class SignupPageView(PassRequestMixin, SuccessMessageMixin, generic.CreateView):
+	form_class = CustomUserCreationForm
+	template_name = 'signup.html'
+	success_message = 'Success: Sign up succeeded. You can now Log in.'
+	success_url = reverse_lazy('index')
+
+

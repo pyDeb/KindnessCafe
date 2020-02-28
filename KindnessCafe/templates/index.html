@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% include "_modal.html" %}
+
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col">
+        <p class="text-primary">A jQuery plugin for creating AJAX driven Django forms in Bootstrap modal.</p>
+        <h4>
+          <strong>1. Signup form</strong>
+        </h4>
+        <p>Sign up via Bootstrap modal.</p>
+        <div class="row">
+          <div class="col-12 mb-3">
+            <button class="signup-btn btn btn-primary" type="button" name="button">Sign up</button>
+          </div>
+        </div>
+        <h4>
+          <strong>2. Login form</strong>
+        </h4>
+        
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+{% block extrascripts %}
+  <script type="text/javascript">
+    $(function () {
+      // Log in & Sign up buttons
+      $(".signup-btn").modalForm({formURL: "{% url 'signup' %}"});
+
+
+
+      // Hide message
+      $(".alert").fadeTo(2000, 500).slideUp(500, function(){
+        $(".alert").slideUp(500);
+      });
+
+    });
+  </script>
+{% endblock extrascripts %}
