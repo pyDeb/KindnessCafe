@@ -14,8 +14,28 @@
           	<h4>Sign up</h4>
             <button class="signup-btn btn btn-primary" type="button" name="button">Sign up</button>
           </div>
+          <div class="col-12 mb-3">
+          
+          </div>
         </div>
+        <h4>
+          <strong>2. Login form</strong>
+        </h4>
+        <p>Log in via Bootstrap modal. Sign up first.</p>
+        <div class="row">
+          <div class="col-12 mb-3">
+            {% if not user.is_anonymous %}
+              <span>
+                Your are logged in as
+                <strong>{{ user }}</strong>.
+              </span>
+              <a href="{% url 'logout' %}" class="logout-btn btn btn-danger" role="button">Log out</a>
+            {% else %}
+              <button class="login-btn btn btn-primary" type="button" name="button">Log in</button>
+            {% endif %}
+          </div>
 
+        </div>
         
 
 
