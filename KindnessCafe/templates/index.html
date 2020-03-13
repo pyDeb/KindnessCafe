@@ -1,53 +1,430 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-  {% include "_modal.html" %}
-
-  <div class="container mt-3">
-    <div class="row">
-      <div class="col">
-        <h4>
-          <strong>Signup</strong>
-        </h4>
-        <div class="row">
-          <div class="col-12 mb-3">
-            <button class="signup-btn btn btn-primary" type="button" name="button">Sign up</button>
+  <div class="hero_area">
+    <section class=" slider_section position-relative">
+      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="slider_item-box">
+              <div class="slider_item-container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="slider_item-detail">
+                        <div>
+                          <h1>
+                            Welcome to <br />
+                            Your Cafe
+                          </h1>
+                          <p>
+                            There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered
+                            alteration in some form, by injected humour, or
+                            randomised words which don't look even slightly
+                            believable.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="slider_img-box">
+                        <div>
+                          <img src="../static/images/slide-img.png" alt="" class="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="slider_item-box">
+              <div class="slider_item-container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="slider_item-detail">
+                        <div>
+                          <h1>
+                            Welcome to <br />
+                            Our Fruits Shop
+                          </h1>
+                          <p>
+                            There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered
+                            alteration in some form, by injected humour, or
+                            randomised words which don't look even slightly
+                            believable.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="slider_img-box">
+                        <div>
+                          <img src="../static/images/slide-img.png" alt="" class="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="slider_item-box">
+              <div class="slider_item-container">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="slider_item-detail">
+                        <div>
+                          <h1>
+                            Welcome to <br />
+                            Our Fruits Shop
+                          </h1>
+                          <p>
+                            There are many variations of passages of Lorem
+                            Ipsum available, but the majority have suffered
+                            alteration in some form, by injected humour, or
+                            randomised words which don't look even slightly
+                            believable.
+                          </p>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="slider_img-box">
+                        <div>
+                          <img src="../static/images/slide-img.png" alt="" class="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <h4>
-          <strong>Login</strong>
-        </h4>
-        <div class="row">
-          <div class="col-12 mb-3">
-            {% if not user.is_anonymous %}
-              <span>
-                Your are logged in as
-                <strong>{{ user }}</strong>.
-              </span>
-              <a href="{% url 'logout' %}" class="logout-btn btn btn-danger" role="button">Log out</a>
-            {% else %}
-              <button class="login-btn btn btn-primary" type="button" name="button">Log in</button>
-            {% endif %}
-          </div>
-
+        <div class="c_carousel-control">
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-        
+      </div>
+    </section>
 
-        
-
+    <!-- end slider section -->
+  </div>
+  <div class="container">
+  <section id="numbers">
+      <div class="text-center text-light pb-2">
+        <h4 class="text-dark py-3">Delicious Items Served This Week!</h4>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <h2 class="numberc mx-auto"><span class='numscroller' data-min='0' data-max='432' data-delay='20' data-increment='8'>000</span></h2>
+          <h5 class="numbd">Appetizers</h5>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <h2 class="numberc mx-auto"><span class='numscroller' data-min='0' data-max='1345' data-delay='21' data-increment='10'>000</span></h2>
+          <h5 class="numbd">Entrees</h5>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <h2 class="numberc mx-auto"><span class='numscroller' data-min='0' data-max='4534' data-delay='24' data-increment='12'>000</span></h2>
+          <h5 class="numbd">Deserts</h5>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <h2 class="numberc mx-auto"><span class='numscroller' data-min='0' data-max='1234' data-delay='16' data-increment='14'>000</span></h2>
+          <h5 class="numbd pb-2">Wines</h5>
+        </div>
+      </div>
+    
+  </section>
+</div>
+  <!-- service section -->
+  
+  <section class="service_section general_pad ">
+    <div class="container">
+      <h2 class="c_headingfont-italic text-center">“Empowering our community through <strong>nutrition</strong> and <strong>compassion</strong>”</h2>
+      
+      <div class="general_pad_1">
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text text-center">
+                Kindness Cafe is the first for-profit organization aimed to solve the food waste problem in Windsor, Ontario. Kindness Cafe collects and enhances surplus food from Windsor restaurants and provides it back to the community. Our menu does not have set prices, meaning our customers decide the value of their meal and pay using a PAY-AS-YOU-FEEL concept. We compost and donate our own surplus to local livestock to continue the food cycle. Ultimately, Kindness Cafe is a movementaimed to achieve zero food waste in Windsor, Ontario, and one day across the whole world
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="" class="c_dark-btn">
+          Read More About Our Mission
+        </a>
       </div>
     </div>
-  </div>
+  </section>
 
-{% endblock content %}
+  <!-- end service section -->
 
-{% block extrascripts %}
-  <script type="text/javascript">
-    $(function () {
-      // Log in & Sign up buttons
-      $(".login-btn").modalForm({formURL: "{% url 'login' %}"});
-      $(".signup-btn").modalForm({formURL: "{% url 'signup' %}"});
-    });
+  <!-- fruits section -->
+
+  <!-- tasty section -->
+  <section class="tasty_section">
+    <div class="container_fluid">
+      <h2>
+       tasty with just a hint of <span>kindness</span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- end tasty section -->
+
+  <!-- client section -->
+
+  <section class="client_section general_pad">
+    <div class="container">
+      <h2 class="c_heading">Testimonial</h2>
+      <p class="c_heading-text">
+        There are many variations of passages of Lorem Ipsum available, but
+        the majority have
+      </p>
+      <div>
+        <div id="carouselExampleControls-2" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="client_container general_pad_1">
+                <div class="client_img-box">
+                  <img src="../static/images/client.png" alt="" />
+                </div>
+                <div class="client_detail">
+                  <h3>
+                    Johnhex
+                  </h3>
+                  <p class="c_heading-text">
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in
+                    some form, by injected humour, or randomised words which
+                    don't look even slightly believable. If you are <br />
+                    going to use a passage of Lorem Ipsum, you need to be sure
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="client_container general_pad_1">
+                <div class="client_img-box">
+                  <img src="images/client.png" alt="" />
+                </div>
+                <div class="client_detail">
+                  <h3>
+                    Johnhex
+                  </h3>
+                  <p class="c_heading-text">
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in
+                    some form, by injected humour, or randomised words which
+                    don't look even slightly believable. If you are <br />
+                    going to use a passage of Lorem Ipsum, you need to be sure
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="client_container general_pad_1">
+                <div class="client_img-box">
+                  <img src="../static/images/client.png" alt="" />
+                </div>
+                <div class="client_detail">
+                  <h3>
+                    Johnhex
+                  </h3>
+                  <p class="c_heading-text">
+                    There are many variations of passages of Lorem Ipsum
+                    available, but the majority have suffered alteration in
+                    some form, by injected humour, or randomised words which
+                    don't look even slightly believable. If you are <br />
+                    going to use a passage of Lorem Ipsum, you need to be sure
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c_carousel-control">
+            <a class="carousel-control-prev" href="#carouselExampleControls-2" role="button" data-slide="prev">
+              <span class="" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls-2" role="button" data-slide="next">
+              <span class="" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- contact section -->
+  <section class="contact_section general_pad">
+    <div class="container">
+      <h2 class="font-weight-bold">
+        Contact Us
+      </h2>
+      <div class="row">
+        <div class="col-md-8 mr-auto">
+          <form action="">
+            <div class="contact_form-container">
+              <div>
+                <div>
+                  <input type="text" placeholder="Name">
+                </div>
+                <div>
+                  <input type="text" placeholder="Phone Number">
+                </div>
+                <div>
+                  <input type="email" placeholder="Email">
+                </div>
+
+                <div class="mt-5">
+                  <input type="text" placeholder="Message">
+                </div>
+                <div class="mt-5">
+                  <button type="submit">
+                    send
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+
+  <!-- map section -->
+  <section class="map_section">
+    <div id="map" class="h-100 w-100 ">
+    </div>
+  </section>
+
+  <!-- end map section -->
+
+  <section class="info_section general_pad">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>
+            Fruits
+          </h5>
+          <ul>
+            
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>
+            Services
+          </h5>
+          <ul>
+            
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>
+            List
+          </h5>
+          <ul>
+            
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="social_container">
+            <h5>
+              Follow Us
+            </h5>
+            <div class="social-box">
+              <a href="">
+                <img src="../static/images/fb.png" alt="">
+              </a>
+
+              <a href="">
+                <img src="../static/images/twitter.png" alt="">
+              </a>
+              <a href="">
+                <img src="../static/images/linkedin.png" alt="">
+              </a>
+              <a href="">
+                <img src="../static/images/instagram.png" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="subscribe_container">
+            <h5>
+              Subscribe Now
+            </h5>
+            <div class="form_container">
+              <form action="">
+                <input type="email">
+                <button type="submit">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% endblock content %}
+
+
+
+
+  
+  <script>
+    // This example adds a marker to indicate the position of Bondi Beach in Sydney,
+    // Australia.
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 11,
+        center: {
+          lat: 40.645037,
+          lng: -73.880224
+        },
+      });
+
+      var image = 'images/maps-and-flags.png';
+      var beachMarker = new google.maps.Marker({
+        position: {
+          lat: 40.645037,
+          lng: -73.880224
+        },
+        map: map,
+        icon: image
+      });
+    }
   </script>
-{% endblock extrascripts %}
+  <!-- google map js -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
+  </script>
+  <!-- end google map js -->
+
+
+
