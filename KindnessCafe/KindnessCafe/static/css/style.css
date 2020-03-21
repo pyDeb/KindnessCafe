@@ -4,10 +4,7 @@
   padding-top:10px;
   width:50%;
 }
-.nav-link i{
-  float: left;
-  margin-right: 10px;
-}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: #000000;
@@ -235,7 +232,7 @@ a:focus {
   height: 100%;
 }
 
-.slider_section .custom_carousel-control {
+.slider_section .c_carousel-control {
   position: absolute;
   top: 100%;
   bottom:0%;
@@ -244,8 +241,8 @@ a:focus {
   transform: translateY(-50%);
 }
 
-.slider_section .custom_carousel-control .carousel-control-prev,
-.slider_section .custom_carousel-control .carousel-control-next {
+.slider_section .c_carousel-control .carousel-control-prev,
+.slider_section .c_carousel-control .carousel-control-next {
   
   border-radius: 25px;
   display: inline-block;
@@ -260,19 +257,19 @@ a:focus {
   background-position: center;
 }
 
-.slider_section .custom_carousel-control .carousel-control-prev {
+.slider_section .c_carousel-control .carousel-control-prev {
   background-image: url(../images/prev.png);
   background-color: #2288ee;
 }
-.slider_section .custom_carousel-control .carousel-control-prev:hover {
+.slider_section .c_carousel-control .carousel-control-prev:hover {
   background-image: url(../images/prev.png);
   background-color: #000020;
 }
-.slider_section .custom_carousel-control .carousel-control-next {
+.slider_section .c_carousel-control .carousel-control-next {
   background-image: url(../images/next.png);
   background-color: #000020;
 }
-.slider_section .custom_carousel-control .carousel-control-next:hover {
+.slider_section .c_carousel-control .carousel-control-next:hover {
   background-image: url(../images/next.png);
   background-color: #2288ee;
 }
@@ -385,7 +382,7 @@ a:focus {
 }
 
 
-.client_section .custom_carousel-control {
+.client_section .c_carousel-control {
   position: absolute;
   top: 100%;
   left: 50%;
@@ -393,8 +390,8 @@ a:focus {
   transform: translateX(-50%);
 }
 
-.client_section .custom_carousel-control .carousel-control-prev,
-.client_section .custom_carousel-control .carousel-control-next {
+.client_section .c_carousel-control .carousel-control-prev,
+.client_section .c_carousel-control .carousel-control-next {
   
   width: 45px;
   height: 45px;
@@ -407,16 +404,16 @@ a:focus {
   background-color: #292727;
 }
 
-.client_section .custom_carousel-control .carousel-control-prev:hover,
-.client_section .custom_carousel-control .carousel-control-next:hover {
+.client_section .c_carousel-control .carousel-control-prev:hover,
+.client_section .c_carousel-control .carousel-control-next:hover {
   background-color: #2288ee;
 }
 
-.client_section .custom_carousel-control .carousel-control-prev {
+.client_section .c_carousel-control .carousel-control-prev {
   background-image: url(../images/prev.png);
 }
 
-.client_section .custom_carousel-control .carousel-control-next {
+.client_section .c_carousel-control .carousel-control-next {
   background-image: url(../images/next.png);
 }
 

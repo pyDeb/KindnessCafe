@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<header>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+</header>
+<body>
+    <link rel="stylesheet" href="../static/css/map.css'">
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    
+    <script>
+      // This example adds a marker to indicate the position of Bondi Beach in Sydney,
+      // Australia.
+      function initMap() 
+      {
+        var uluru = {lat: 42.3045008, lng: -83.0640422};
+    // The map, centered at Uluru
+       var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: uluru});
+    // The marker, positioned at Uluru
+       var marker = new google.maps.Marker({position: uluru, map: map});
+  
+      }
+    </script>
+    <!-- google map js -->
+    <script async defer 
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
+    </script>
+</body>

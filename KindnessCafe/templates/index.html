@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+{% include '_modal.html' %}
+
   <div class="hero_area">
     <section class=" slider_section position-relative">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -26,7 +28,7 @@
                     <div class="col-md-6">
                       <div class="slider_img-box">
                         <div>
-                          <img src="../static/images/slide-img.png" alt="" class="" />
+                          <img src="{% static 'images/slide-img.png' %}" alt="" class="" />
                         </div>
                       </div>
                     </div>
@@ -56,7 +58,7 @@
                     <div class="col-md-6">
                       <div class="slider_img-box">
                         <div>
-                          <img src="../static/images/slide-img.png" alt="" class="" />
+                          <img src="{% static 'images/slide-img.png' %}" alt="" class="" />
                         </div>
                       </div>
                     </div>
@@ -91,7 +93,7 @@
                     <div class="col-md-6">
                       <div class="slider_img-box">
                         <div>
-                          <img src="../static/images/slide-img.png" alt="" class="" />
+                          <img src="{% static 'images/slide-img.png' %}" alt="" class="" />
                         </div>
                       </div>
                     </div>
@@ -196,7 +198,7 @@
             <div class="carousel-item active">
               <div class="client_container general_pad_1">
                 <div class="client_img-box">
-                  <img src="../static/images/client.png" alt="" />
+                  <img src="{% static 'images/client.png' %}" alt="" />
                 </div>
                 <div class="client_detail">
                   <h3>
@@ -215,7 +217,7 @@
             <div class="carousel-item">
               <div class="client_container general_pad_1">
                 <div class="client_img-box">
-                  <img src="../static/images/client.png" alt="" />
+                  <img src="{% static 'images/client.png' %}" alt="" />
                 </div>
                 <div class="client_detail">
                   <h3>
@@ -234,7 +236,7 @@
             <div class="carousel-item">
               <div class="client_container general_pad_1">
                 <div class="client_img-box">
-                  <img src="../static/images/client.png" alt="" />
+                  <img src="{% static 'images/client.png' %}" alt="" />
                 </div>
                 <div class="client_detail">
                   <h3>
@@ -352,17 +354,17 @@
             </h5>
             <div class="social-box">
               <a href="">
-                <img src="../static/images/fb.png" alt="">
+                <img src="{% static 'images/fb.png' %}" alt="">
               </a>
 
               <a href="">
-                <img src="../static/images/twitter.png" alt="">
+                <img src="{% static 'images/twitter.png' %}" alt="">
               </a>
               <a href="">
-                <img src="../static/images/linkedin.png" alt="">
+                <img src="{% static 'images/linkedin.png' %}" alt="">
               </a>
               <a href="">
-                <img src="../static/images/instagram.png" alt="">
+                <img src="{% static 'images/instagram.png' %}" alt="">
               </a>
             </div>
           </div>
