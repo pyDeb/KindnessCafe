@@ -18,11 +18,7 @@
                             Your Cafe
                           </h1>
                           <p>
-                            There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered
-                            alteration in some form, by injected humour, or
-                            randomised words which don't look even slightly
-                            believable.
+                            We are here to help you
                           </p>
                         </div>
                       </div>
@@ -49,14 +45,10 @@
                         <div>
                           <h1>
                             Welcome to <br />
-                            Our Fruits Shop
+                            Your Cafe
                           </h1>
                           <p>
-                            There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered
-                            alteration in some form, by injected humour, or
-                            randomised words which don't look even slightly
-                            believable.
+                            We are here to help you
                           </p>
                         </div>
                       </div>
@@ -83,7 +75,7 @@
                         <div>
                           <h1>
                             Welcome to <br />
-                            Our Fruits Shop
+                            Your Cafe
                           </h1>
                           <p>
                             There are many variations of passages of Lorem
@@ -319,10 +311,10 @@
 
 
   <!-- map section -->
-  <section class="map_section">
-    <div id="map" class="h-100 w-100 ">
-    </div>
-  </section>
+  <h3>My Google Maps Demo</h3>
+  <!--The div element for the map -->
+  <div id="map"></div>
+
 
   <!-- end map section -->
 
@@ -401,28 +393,20 @@
   <script>
     // This example adds a marker to indicate the position of Bondi Beach in Sydney,
     // Australia.
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11,
-        center: {
-          lat: 40.645037,
-          lng: -73.880224
-        },
-      });
+    function initMap() 
+    {
+      var uluru = {lat: 42.3045008, lng: -83.0640422};
+  // The map, centered at Uluru
+     var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+  // The marker, positioned at Uluru
+     var marker = new google.maps.Marker({position: uluru, map: map});
 
-      var image = 'images/maps-and-flags.png';
-      var beachMarker = new google.maps.Marker({
-        position: {
-          lat: 40.645037,
-          lng: -73.880224
-        },
-        map: map,
-        icon: image
-      });
     }
   </script>
   <!-- google map js -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
+  <script async defer 
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
   </script>
   <!-- end google map js -->
 

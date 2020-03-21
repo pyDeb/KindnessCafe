@@ -31,13 +31,21 @@
     <!-- responsive style -->
     <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
 
+    <style>
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
 
-    <meta charset="utf-8">
+
+    <!-- <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script> -->
     
 
     {% block stylesheets %}
@@ -86,7 +94,7 @@
       <script type="text/javascript" src="{% static 'js/numscroller.js' %}"></script>
       <script src="https://kit.fontawesome.com/dd1b83fe91.js" crossorigin="anonymous"></script>
       <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-
+      
 
       <!-- You can alternatively load the minified version -->
       <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>

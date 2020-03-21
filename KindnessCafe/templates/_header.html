@@ -19,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="nav navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="service.html"> News </a>
@@ -38,12 +38,20 @@
             <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
                 <div class="col-12 mb-3">
-                    <button class="signup-btn btn btn-primary" type="button" name="button">Sign up</button>
+                  <a class="nav-link"><i class="fas fa-user"></i> Sign up</a>
                   </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.html">
-                <i class="fas fa-sign-in-alt"></i> Login</a>
+              {% if user.is_authenticated %}
+              <span>
+                Your are logged in as
+                <strong>{{ user }}</strong>.
+              </span>
+              <a href="{% url 'logout' %}" class="nav-link" role="button"><i class="fas fa-sign-out-alt"></i> Log out</a>
+            {% else %}
+            <a class="nav-link"><i class="fas fa-sign-in-alt"></i> Log in</a>
+            {% endif %}
+            
             </li>
             
           </ul>
@@ -51,5 +59,6 @@
     
     </nav>
   </div>
+  <script type="text/javascript" src="{% static 'js/indexButtons.js' %}"></script>
 </header>
 <!-- End Header -->
