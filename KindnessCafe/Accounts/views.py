@@ -19,6 +19,9 @@ class ContactUsPageView(TemplateView):
 	template_name = 'contact.html'
 
 
+class NewsPageView(TemplateView):
+	template_name = 'news.html'
+	
 
 class Index(TemplateView):
 	model = User

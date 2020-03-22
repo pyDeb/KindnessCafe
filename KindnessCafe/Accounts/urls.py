@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomePageView, SignupPageView, Index, CustomLoginView, ContactUsPageView
+from .views import HomePageView, SignupPageView, Index, CustomLoginView, ContactUsPageView, NewsPageView
 #from class_based_auth_views.views import LogoutView
 
 urlpatterns = [
@@ -7,5 +7,6 @@ urlpatterns = [
     path('signup/', SignupPageView.as_view(), name='signup'), 
     path('login/', CustomLoginView.as_view(), name='login'), 
     #path('logout/', LogoutView.as_view(), name='logout'), 
+    path('news/', NewsPageView.as_view(), name='news'), 
     path('contact/', ContactUsPageView.as_view(), name='contact'), 
 ]
