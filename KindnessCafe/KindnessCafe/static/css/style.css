@@ -87,6 +87,11 @@ body {
   margin: 0 auto;
 }
 
+.navbar.scrolled {
+  background: rgb(230,230,250);
+  transition: background 500ms;
+}
+
 .c_nav-container.navbar-expand-lg .navbar-nav .nav-link {
   padding: 10px 20px;
   color: #343434;
@@ -101,7 +106,6 @@ a:hover,
 a:focus {
   text-decoration: none;
 }
-
 a:hover,
 a:focus {
   color: initial;
@@ -427,6 +431,7 @@ a:focus {
 /* contact section */
 
 .contact_section {
+  padding-top:6%;
   background-image: url(../images/orange-dish.png);
   background-repeat: no-repeat;
   background-size: 215px;
