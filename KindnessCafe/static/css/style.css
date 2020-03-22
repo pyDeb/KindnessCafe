@@ -427,6 +427,7 @@ a:focus {
 /* contact section */
 
 .contact_section {
+  padding-top:6%;
   background-image: url(../images/orange-dish.png);
   background-repeat: no-repeat;
   background-size: 215px;
