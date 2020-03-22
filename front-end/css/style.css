@@ -284,7 +284,9 @@ a:focus {
   width: 50px;
   margin: 55px auto 5px auto;
 }
-
+.service_section {
+  padding-top:6%;
+}
 .service_section .card {
   text-align: center;
   box-sizing: border-box;
@@ -425,7 +427,6 @@ a:focus {
 /* contact section */
 
 .contact_section {
-  background-image: url(../images/orange-dish.png);
   background-repeat: no-repeat;
   background-size: 215px;
   background-position: right center;
