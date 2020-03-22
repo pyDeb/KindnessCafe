@@ -1,15 +1,14 @@
 from django.views.generic import TemplateView
+from django.views import generic
 
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
-from django.views import generic
 from bootstrap_modal_forms.mixins import PassRequestMixin
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
 from django.contrib.auth.models import User
 
 
 from bootstrap_modal_forms.generic import BSModalLoginView
-from .models import News
 
 
 class HomePageView(TemplateView):
@@ -20,10 +19,7 @@ class ContactUsPageView(TemplateView):
 	template_name = 'contact.html'
 
 
-class NewsPageView(TemplateView):
-	model = News
-	context_object_name = 'news'
-	template_name = 'news.html'
+
 	
 
 class Index(TemplateView):
