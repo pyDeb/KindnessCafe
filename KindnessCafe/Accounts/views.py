@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 
 
 from bootstrap_modal_forms.generic import BSModalLoginView
+from .models import News
 
 
 class HomePageView(TemplateView):
@@ -20,6 +21,8 @@ class ContactUsPageView(TemplateView):
 
 
 class NewsPageView(TemplateView):
+	model = News
+	context_object_name = 'news'
 	template_name = 'news.html'
 	
 
