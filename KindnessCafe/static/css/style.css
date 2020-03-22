@@ -134,7 +134,10 @@ a:focus {
   padding: 0;
   border: none;
 }
-
+.navbar.scrolled {
+	background: rgb(230,230,250);
+	transition: background 500ms;
+}
 .navbar-brand {
   display: flex;
   align-items: center;
