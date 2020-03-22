@@ -282,6 +282,11 @@ a:focus {
   margin: 55px auto 5px auto;
 }
 
+.service_section 
+{
+  padding-top: 6%;
+}
+
 .service_section .card {
   text-align: center;
   box-sizing: border-box;
