@@ -58,17 +58,6 @@
      <!-- You can alternatively load the minified version -->
      <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
      <script>
-      $(function() {
-        $(document).scroll(function() {
-    
-        var $nav = $('#mainNavbar');
-    
-        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-        
-        });
-      });
-     </script>
-     <script>
        function onSignIn(googleUser) {
          // Useful data for your client-side scripts:
          var profile = googleUser.getBasicProfile();

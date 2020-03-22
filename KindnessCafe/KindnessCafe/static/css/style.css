@@ -134,10 +134,7 @@ a:focus {
   padding: 0;
   border: none;
 }
-.navbar.scrolled {
-	background: rgb(230,230,250);
-	transition: background 500ms;
-}
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -430,7 +427,6 @@ a:focus {
 /* contact section */
 
 .contact_section {
-  padding-top:6%;
   background-image: url(../images/orange-dish.png);
   background-repeat: no-repeat;
   background-size: 215px;
