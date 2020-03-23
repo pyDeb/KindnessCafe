@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Accounts',
     'widget_tweaks',
     'News',
+    'Donation'
 ]
 
 MIDDLEWARE = [

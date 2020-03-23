@@ -31,4 +31,5 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Accounts.urls')), # new
+    path('', include('News.urls')), # new
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
