@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'bootstrap_modal_forms',
     'Accounts',
     'widget_tweaks',
-    'crispy_forms',
     'News',
     'Donation',
     'phonenumber_field',
