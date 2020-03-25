@@ -5,21 +5,18 @@
 
   <section class="service_section layout_padding ">
     <div class="container-fluid">
-      <h2 class="c_heading">News</h2>
-      
       <div class=" layout_padding2">
         <div class="container">
           {% if news %}
-                <div class="card mb-3 col-md-12">
+                <div class="mb-3 col-md-12">
                   <div class="row no-gutters">
                     <div class="col-md-4">
                       <img src="{{ item.image.url }}" class="card-img" alt="...">
                     </div>
                     <div class="col-md-8">
-                      <div class="card-body">
-                        <h5 class="card-title text-left">{{ item.title }}</h5>
-                        <p class="card-text text-left"> {{ item.desc }}</p>
-                        <p class="card-text"><small class="text-muted"> {{ item.published_date }}</small></p>
+                        <h5 class="text-left">{{ item.title }}</h5>
+                        <p class="text-left justify"> {{ item.desc }}</p>
+                        <p><small class="text-muted"> {{ item.published_date }}</small></p>
                       </div>
                     </div>
                   </div>
