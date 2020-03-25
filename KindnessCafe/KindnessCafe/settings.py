@@ -44,9 +44,12 @@ INSTALLED_APPS = [
     'bootstrap_modal_forms',
     'Accounts',
     'widget_tweaks',
+    'crispy_forms',
     'News',
-    'Donation'
+    'Donation',
+    'phonenumber_field',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

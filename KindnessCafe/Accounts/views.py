@@ -35,6 +35,15 @@ class SignupPageView(PassRequestMixin, SuccessMessageMixin, generic.CreateView):
 	success_message = 'Success: Sign up succeeded. You can now Log in.'
 	success_url = reverse_lazy('index')
 
+	def form_valid(self, form):
+		user = User.objects.create_user(
+				username=form.cleaned_data['email'],
+				password=form.cleaned_data['password1'],
+				first_name=form.cleaned_data['first_name'],
+				last_name=form.cleaned_data['last_name']
+		)
+		return super(SignupPageView, self).form_valid(form)
+
 
 
 class CustomLoginView(BSModalLoginView):
@@ -45,3 +54,5 @@ class CustomLoginView(BSModalLoginView):
 
 
  
+class OurMissionPageView(TemplateView):
+	template_name = 'ourmission.html'
