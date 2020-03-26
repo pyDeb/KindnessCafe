@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import HomePageView, SignupPageView, Index, CustomLoginView, ContactUsPageView, OurMissionPageView
+from .views import HomePageView, SignupPageView, Index, CustomLoginView, ContactUsPageView, OurMissionPageView 
 from News.views import NewsPageView
 from class_based_auth_views.views import LogoutView
 

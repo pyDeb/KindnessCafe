@@ -7,9 +7,13 @@ from bootstrap_modal_forms.mixins import PassRequestMixin
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
 from django.contrib.auth.models import User
 
-
+from bootstrap_modal_forms.mixins import LoginAjaxMixin
+from django.contrib.auth.views import LoginView
 from bootstrap_modal_forms.generic import BSModalLoginView
 
+
+from django.views.generic.edit import FormView #temp
+from .forms import CustomUserCreationForm #temp
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -20,29 +24,23 @@ class ContactUsPageView(TemplateView):
 
 
 
-	
+class SignupPageView(LoginAjaxMixin, SuccessMessageMixin, LoginView):
+	template_name = 'signup.html'
+	form_class = CustomUserCreationForm
+	success_message = 'Success: You were successfully logged in.'
+	extra_context = dict(success_url=reverse_lazy('index'))
+
+	def form_valid(self, form):
+		form.send_email()
+		return super(SignupPageView, self).form_valid(form)
+
+
+
 
 class Index(TemplateView):
 	model = User
 	ctx_obj_name = 'user'
 	template_name = 'index.html'
-
-
-
-class SignupPageView(PassRequestMixin, SuccessMessageMixin, generic.CreateView):
-	form_class = CustomUserCreationForm
-	template_name = 'signup.html'
-	success_message = 'Success: Sign up succeeded. You can now Log in.'
-	success_url = reverse_lazy('index')
-
-	def form_valid(self, form):
-		user = User.objects.create_user(
-				username=form.cleaned_data['email'],
-				password=form.cleaned_data['password1'],
-				first_name=form.cleaned_data['first_name'],
-				last_name=form.cleaned_data['last_name']
-		)
-		return super(SignupPageView, self).form_valid(form)
 
 
 
