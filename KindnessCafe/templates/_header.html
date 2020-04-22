@@ -4,16 +4,7 @@
 <!-- Header -->
 <!-- header section strats -->
 <header class="h_section">
-  {% if messages %}
-      {% for message in messages %}
-        <div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible fade show mb-0" role="alert" {% endif %}>
-          {{ message }}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      {% endfor %}
-    {% endif %}
+ 
   <div class="container-fluid">
     <nav id="mainNavbar" class="navbar fixed-top navbar-expand-lg c_nav-container pt-1">
       <a class="navbar-brand pl-3 pt-2" href="index.html">
