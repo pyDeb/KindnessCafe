@@ -23,7 +23,7 @@ def signup(request):
         password=hashed_password, email=request.POST['email'])
         user.save()
         request.session['id'] = user.id
-        return redirect('/', messages = 'You were singed up successfully!')
+        return redirect('/', messages.success(request, 'You were singed up successfully!'))
 
     else:
         form = SignUpForm()
