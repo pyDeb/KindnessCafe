@@ -1,40 +1,83 @@
-{% load widget_tweaks %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-<form method="post" action="">
-  {% csrf_token %}
 
-  <div class="modal-header">
-    <h3 class="modal-title">Sign up</h3>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
-  <div class="modal-body">
-
-    <div class="{% if form.non_field_errors %}invalid{% endif %} mb-2">
-      {% for error in form.non_field_errors %}
-        {{ error }}
-      {% endfor %}
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card">
+                    <h4 class="card-header text-center">Register</h4>
+                    <div class="card-block">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input name="first_name" type="text" class="form-control form-control-danger"> 
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "first_name" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input name="last_name" type="text" class="form-control">
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "last_name" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input name="email" type="email" class="form-control">
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "email" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input name="password" type="password" class="form-control">
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "password" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input name="confirm_password" type="password" class="form-control">
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "confirm_password" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
+                                  </div>
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="mx-auto text-center">
+                                <input type="submit" value="Create Account" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
     </div>
+    </script>
+{% endblock content %}
 
-    {% for field in form.visible_fields%}
-      <div class="form-group">
-  
-              <label for="{{ field.id_for_label }}">{{ field.label }}</label>    
-              {% render_field field class="form-control" placeholder=field.label %}
-        <div class="{% if field.errors %} invalid{% endif %}">
-          {% for error in field.errors %}
-            <p class="help-block">{{ error }}</p>
-          {% endfor %}
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-
-  <div class="modal-footer">
-    <button type="button" class="submit-btn btn btn-primary" formnovalidate="formnovalidate">Sign up</button>
-    <input type="hidden" name="next" value="{{ success_url }}">
-  </div>
-
-</form>
+<script>
+    document.getElementById("message").innerHTML = "<span style='color:red'>Please enter Your Email ID</span>";
+</script>
