@@ -1,6 +1,6 @@
 from django.urls import path
 # from .views import HomePageView, SignupPageView, Index, CustomLoginView, ContactUsPageView, OurMissionPageView 
-from .views import index, contact_us, our_mission, login, signup
+from .views import index, contact_us, our_mission, login_view, signup, logout_view
 from News.views import NewsPageView
 
 urlpatterns = [
@@ -15,6 +15,7 @@ urlpatterns = [
     path('signup/', signup, name="signup"),
     path('contact-us/', contact_us, name="contact_us"),
     path('our-mission/', our_mission, name="our_mission"),
-    path('login/', login, name="login"),
-    path('news/', NewsPageView.as_view(), name='news')
+    path('login/', login_view, name="login"),
+    path('news/', NewsPageView.as_view(), name='news'),
+    path('logout/', logout_view, name='logout'),
 ]

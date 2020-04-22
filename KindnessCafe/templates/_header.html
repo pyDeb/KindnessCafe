@@ -37,20 +37,21 @@
             </li>
           </ul>
             <ul class="nav navbar-nav ml-auto">
+            
             <li class="nav-item">
-                <div class="col-12 mb-3">
-                    <a class="nav-link" href="signup"> Sign up</a>
-                  </div>
-            </li>
-            <li class="nav-item">
-              {% if user.is_authenticated %}
+              {% if first_name %}
               <span>
                 Your are logged in as
-                <strong>{{ user }}</strong>.
+                <strong>{{ first_name }}</strong>.
               </span>
               <a href="{% url 'logout' %}" class="logout-btn btn btn-danger" role="button"><i class="fas fa-sign-out-alt"></i> Log out</a>
             {% else %}
-              <button class="login-btn btn btn-dark" type="button" name="button"><i class="fas fa-sign-in-alt"></i> Log in</button>
+            <li class="nav-item">
+              
+                  <a class="nav-link" href="/signup"> Sign up</a>
+               
+          </li>
+              <a class="nav-link" href="/login"> Sign in</a>
             {% endif %}
             </li>
             

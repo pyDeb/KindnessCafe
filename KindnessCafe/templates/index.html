@@ -2,6 +2,8 @@
 {% load static %}
 {% block content %}
 {% include '_modal.html' %}
+
+
 {% if messages %}
 {% for message in messages %}
   <div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible fade show mb-0" role="alert" {% endif %}>

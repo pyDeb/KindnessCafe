@@ -1,38 +1,39 @@
-{% load widget_tweaks %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 
-<form method="post" action="login">
-  {% csrf_token %}
-
-  <div class="modal-header">
-    <h3 class="modal-title">Log in</h3>
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+{% if messages %}
+{% for message in messages %}
+  <div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible fade show mb-0" role="alert" {% endif %}>
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+{% endfor %}
+{% endif %}
 
-  <div class="modal-body">
-
-    <div class="{% if form.non_field_errors %}invalid{% endif %} mb-2">
-      {% for error in form.non_field_errors %}
-        {{ error }}
-      {% endfor %}
-    </div>
-
-    {% for field in form %}
-      <div class="form-group">
-        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-        {% render_field field class="form-control" placeholder=field.label %}
-        <div class="{% if field.errors %} invalid{% endif %}">
-          {% for error in field.errors %}
-            <p class="help-block">{{ error }}</p>
-          {% endfor %}
-        </div>
+<div class="col-4">
+  <div class="card">
+      <h4 class="card-header text-center">Login</h4>
+      <div class="card-block">
+          <form method="post" action="">
+              {% csrf_token %}
+              <div class="form-group">
+                  <label>Email</label>
+                  <input name="login_email" type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                  <label>Password</label>
+                  <input name="login_password" type="password" class="form-control">
+              </div>
+              <div class="mx-auto text-center">
+                  <input type="submit" value="Login" class="btn btn-primary">
+              </div>
+          </form>
       </div>
-    {% endfor %}
   </div>
+</div>
+</div>
 
-  <div class="modal-footer">
-    <button type="button" class="submit-btn btn btn-primary" formnovalidate="formnovalidate">Log in</button>
-  </div>
-
-</form>
+{% endblock content   %}

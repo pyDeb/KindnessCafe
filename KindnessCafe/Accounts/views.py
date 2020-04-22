@@ -3,10 +3,14 @@ from django.contrib import messages
 from .models import User
 from django.contrib.auth.hashers import check_password, make_password
 from .forms import SignUpForm
+from django.contrib.auth import authenticate, login, logout
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    first_name = ""
+    if "id" in request.session:
+        first_name = User.objects.filter(id=request.session['id'])[0].first_name
+    return render(request, 'index.html', {'first_name' : first_name})
 
 
 
@@ -23,7 +27,10 @@ def signup(request):
         password=hashed_password, email=request.POST['email'])
         user.save()
         request.session['id'] = user.id
-        return redirect('/', messages.success(request, 'You were singed up successfully!'))
+        # new_user = authenticate(username=request.POST.get('email'), password=request.POST.get('password'))
+        # print(new_user)
+        # login(request, new_user)
+        return redirect('/', messages.success(request, 'You were sucessfully singed up!'))
 
     else:
         form = SignUpForm()
@@ -31,15 +38,19 @@ def signup(request):
 
 
 
-def login(request):
-    if (User.objects.filter(email=request.POST['login_email']).exists()):
-        user = User.objects.filter(email=request.POST['login_email'])[0]
-        print(user.password)
-        print(request.POST['login_password'].encode())
-        if (check_password(request.POST['login_password'].encode(), user.password)):
-            request.session['id'] = user.id
-            return redirect('/success')
-    return redirect('/')
+def login_view(request):
+    if request.method == "POST":
+        if (User.objects.filter(email=request.POST['login_email']).exists()):
+            user = User.objects.filter(email=request.POST['login_email'])[0]
+            if (check_password(request.POST['login_password'].encode(), user.password)):
+                request.session['id'] = user.id
+                return redirect('/', messages.success(request, 'You were successfully logged in!'))
+
+
+        return redirect('/login', messages.error(request, 'Username and/or password is incorrect'))
+
+    else:
+        return render(request, 'login.html')
 
 
 
@@ -60,3 +71,8 @@ def our_mission(request):
 
 def contact_us(request):
     return render(request, 'contact.html', {})
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('/', messages.success(request, 'You were successfully logged out!'))
