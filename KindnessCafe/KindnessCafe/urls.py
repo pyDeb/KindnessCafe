@@ -33,4 +33,5 @@ urlpatterns = [
     path('', include('Accounts.urls')), # new
     path('', include('News.urls')), # new
     path('', include('Donation.urls')), # new
+    #path('auth/', include('allauth.urls'),)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -25,18 +25,16 @@ SECRET_KEY = '3!1t$u)d!@y4%$g0!t=xg)uvhgsl#cy%y@r$c_)($5x76ryhub'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
 
-
-
-
+SITE_ID = 1
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -46,7 +44,11 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'News',
     'Donation',
-    'phonenumber_field',
+
+    'allauth',  
+    'allauth.account',  
+    'allauth.socialaccount',   
+    'allauth.socialaccount.providers.google', 
 ]
 
 
@@ -60,7 +62,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',) 
+AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+) 
 
 
 ROOT_URLCONF = 'KindnessCafe.urls'
@@ -141,5 +145,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-
 

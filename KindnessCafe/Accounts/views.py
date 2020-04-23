@@ -76,3 +76,7 @@ def contact_us(request):
 def logout_view(request):
     logout(request)
     return redirect('/', messages.success(request, 'You were successfully logged out!'))
+
+
+def recruitment_view(request):
+    return render(request, 'recruitment.html', {})
