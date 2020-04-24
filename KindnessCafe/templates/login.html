@@ -2,7 +2,21 @@
 {% load static %}
 {% block content %}
 
+<style>
+  .login-form
+  {
+      margin-top: 90px;
+      margin-left: auto;   /* Automatic margin from left */
+     margin-right: auto; /* Automatic margin from right */
+  }
+  .container
+  {
+    margin-top: 90px;
+  }
+</style>
+
 {% if messages %}
+<div class="container" style="background-color:rgb(206, 119, 119)">
 {% for message in messages %}
   <div style="border-radius:0;" {% if message.tags %} class="alert alert-icon alert-{{ message.tags }} alert-dismissible fade show mb-0" role="alert" {% endif %}>
     {{ message }}
@@ -11,9 +25,10 @@
     </button>
   </div>
 {% endfor %}
+</div>
 {% endif %}
 
-<div class="col-4">
+<div class="col-4 login-form">
   <div class="card">
       <h4 class="card-header text-center">Login</h4>
       <div class="card-block">

@@ -2,12 +2,20 @@
 {% load static %}
 {% block content %}
 
+<style>
+    .container
+    {
+        margin-top: 90px;
+    }
+</style>
+
+
 
 <div class="container">
         <div class="row justify-content-center">
             <div class="col-4">
                 <div class="card">
-                    <h4 class="card-header text-center">Register</h4>
+                    <h4 class="card-header text-center">Sign up</h4>
                     <div class="card-block">
                         <form method="post">
                             {% csrf_token %}

@@ -7,11 +7,11 @@
     <div class="container-fluid">
       <div class=" layout_padding2">
         <div class="container">
-          {% if news %}
+          {% if item %}
                 <div class="mb-3 col-md-12">
                   <div class="row no-gutters">
                     <div class="col-md-4">
-                      <img src="{{ item.image.url }}" class="card-img" alt="...">
+                      <img src="{{ item.image_1.url }}" style="float:left" class="card-img" alt="...">
                     </div>
                     <div class="col-md-8">
                         <h5 class="text-left">{{ item.title }}</h5>

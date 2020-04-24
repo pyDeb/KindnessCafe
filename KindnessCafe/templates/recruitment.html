@@ -3,7 +3,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScG-vxTiytDKXLAJq09EA8yYKghDCkDh7M-fV441wOBZfdi_A/viewform?embedded=true" width="640" height="1876" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<style>
+    iframe {
+    margin-top: 90px;
+     margin-left: auto;   /* Automatic margin from left */
+     margin-right: auto; /* Automatic margin from right */
+    } 
+  </style> 
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScG-vxTiytDKXLAJq09EA8yYKghDCkDh7M-fV441wOBZfdi_A/viewform?embedded=true" width="640" height="746" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 {% endblock content %}

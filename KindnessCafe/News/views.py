@@ -1,16 +1,20 @@
 from django.shortcuts import render
-from django.views import generic
 from .models import News
-from django.views.generic import TemplateView
-
+from Accounts.models import User
 
 # Create your views here.
-class NewsPageView(generic.ListView):
-	model = News
-	context_object_name = 'news'
-	template_name = 'news.html'
+def news_view(request):
+	first_name = ""
+	if request.session.has_key('id'):
+		first_name = User.objects.filter(id=request.session['id'])[0].first_name
+	return render(request, 'news.html', {'news' : News.objects.all(), 'first_name' : first_name})
 
 
 
-class NewsSinglePageView(TemplateView):
-	template_name = 'newsSinglePage.html'
+
+def single_news_page(request, id):	
+	item = News.objects.filter(id=id)[0]
+	first_name = ""
+	if request.session.has_key('id'):
+		first_name = User.objects.filter(id=request.session['id'])[0].first_name
+	return render(request, 'newsSinglePage.html', {'item' : item, 'first_name' : first_name})

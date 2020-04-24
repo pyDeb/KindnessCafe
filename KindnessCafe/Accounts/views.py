@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 
 def index(request):
     first_name = ""
-    if "id" in request.session:
+    if request.session.has_key('id'):
         first_name = User.objects.filter(id=request.session['id'])[0].first_name
     return render(request, 'index.html', {'first_name' : first_name})
 
@@ -27,9 +27,6 @@ def signup(request):
         password=hashed_password, email=request.POST['email'])
         user.save()
         request.session['id'] = user.id
-        # new_user = authenticate(username=request.POST.get('email'), password=request.POST.get('password'))
-        # print(new_user)
-        # login(request, new_user)
         return redirect('/', messages.success(request, 'You were sucessfully singed up!'))
 
     else:
@@ -65,12 +62,18 @@ def success(request):
 
 
 def our_mission(request):
-    return render(request, 'ourmission.html', {})
+    first_name = ""
+    if request.session.has_key('id'):
+        first_name = User.objects.filter(id=request.session['id'])[0].first_name
+    return render(request, 'ourmission.html', {'first_name' : first_name})
 
 
 
 def contact_us(request):
-    return render(request, 'contact.html', {})
+    first_name = ""
+    if request.session.has_key('id'):
+        first_name = User.objects.filter(id=request.session['id'])[0].first_name
+    return render(request, 'contact.html', {'first_name' : first_name})
 
 
 def logout_view(request):
@@ -79,4 +82,8 @@ def logout_view(request):
 
 
 def recruitment_view(request):
-    return render(request, 'recruitment.html', {})
+    first_name = ""
+    if request.session.has_key('id'):
+        first_name = User.objects.filter(id=request.session['id'])[0].first_name
+    return render(request, 'recruitment.html', {'first_name' : first_name})
+

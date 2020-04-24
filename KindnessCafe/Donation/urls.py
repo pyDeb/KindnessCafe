@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import DonationPageView
+from .views import donation_view
 
 urlpatterns = [
-    path('donation/', DonationPageView.as_view(), name='donation'), 
+    path('donation/', donation_view, name='donation'), 
 ]
