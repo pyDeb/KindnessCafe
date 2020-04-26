@@ -26,6 +26,11 @@ SECRET_KEY = '3!1t$u)d!@y4%$g0!t=xg)uvhgsl#cy%y@r$c_)($5x76ryhub'
 DEBUG = True
 
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'kindnesscafewebsite'
+EMAIL_HOST_PASSWORD = 'g9TXuPKzYuesj3r'
+EMAIL_PORT = 587
 
 SITE_ID = 1
 
