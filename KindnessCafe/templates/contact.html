@@ -11,21 +11,20 @@
       </h2>
       <div class="row">
         <div class="col-md-8 mr-auto">
-          <form method="POST" action="">
+          <form method="POST">
+            {% csrf_token %}
             <div class="contact_form-container">
               <div>
+                {% if not first_name %}
                 <div>
-                  <input type="text" placeholder="Name">
+                  <input name="name" type="text" placeholder="Name">
                 </div>
                 <div>
-                  <input type="text" placeholder="Phone Number">
+                  <input name="email" type="email" placeholder="Email">
                 </div>
-                <div>
-                  <input type="email" placeholder="Email">
-                </div>
-
+                {% endif %}
                 <div class="mt-5">
-                  <input type="text" placeholder="Message">
+                  <input name="message" type="text" placeholder="Message">
                 </div>
                 <div class="mt-5">
                   <button type="submit">

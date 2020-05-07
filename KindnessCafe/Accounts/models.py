@@ -18,8 +18,9 @@ class UserManager(models.Manager):
 
         if len(post_data['password']) < 8:
             errors['password'] = "Password is too short!"
-        if User.objects.filter(email=post_data['email']).count() > 0:
+        if User.objects.filter(email=post_data['email']).count() > 0 and User.objects.filter(email='test@test.com')[0].is_active:
             errors['email'] = "The email address exists. If you are a user please log in!"
+        
 
         return errors
 

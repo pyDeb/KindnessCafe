@@ -32,6 +32,8 @@ EMAIL_HOST_USER = 'kindnesscafewebsite'
 EMAIL_HOST_PASSWORD = 'g9TXuPKzYuesj3r'
 EMAIL_PORT = 587
 
+ALLOWED_HOSTS = ['kindnesscafe-2020.uk.r.appspot.com', 'localhost']
+
 SITE_ID = 1
 
 # Application definition
@@ -69,7 +71,7 @@ MIDDLEWARE = [
 
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
-) 
+)
 
 
 ROOT_URLCONF = 'KindnessCafe.urls'
@@ -98,10 +100,45 @@ WSGI_APPLICATION = 'KindnessCafe.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'kindnesscafe',
+        'USER': 'masoud',
+        'PASSWORD': '120587**',
+        'HOST': '/cloudsql/kindnesscafe-2020:us-east4:kindnesscafe-2020-db',
+        'PORT': '5432',
     }
 }
+
+if os.getenv('GAE_APPLICATION', None):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'kindnesscafe',
+        'USER': 'masoud',
+        'PASSWORD': '120587**',
+        'HOST': '/cloudsql/kindnesscafe-2020:us-east4:kindnesscafe-2020-db',
+        'PORT': '5432',
+    }
+}
+    
+else:
+    # Running locally so connect to either a local MySQL instance or connect 
+    # to Cloud SQL via the proxy.  To start the proxy via command line: 
+    #    $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306 
+    # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'HOST': '127.0.0.1',
+            'PORT': '5433',
+            'NAME': 'kindnesscafe',
+            'USER': 'masoud',
+            'PASSWORD': '120587**',
+        }
+    }
+# [END db_setup]
 
 
 # Password validation
@@ -145,7 +182,7 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-STATIC_URL = '/static/'
+STATIC_URL = 'https://storage.googleapis.com/kindnesscafe-2020-static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),

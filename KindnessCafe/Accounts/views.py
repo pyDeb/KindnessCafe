@@ -4,8 +4,8 @@ from .models import User
 from django.contrib.auth.hashers import check_password, make_password
 from .forms import SignUpForm
 from django.contrib.auth import authenticate, login, logout
-
-
+from KindnessCafe.settings import EMAIL_HOST_USER
+from django.template import RequestContext
 
 #imported for email activation
 from django.contrib.sites.shortcuts import get_current_site
@@ -21,7 +21,7 @@ from django.core.mail import EmailMessage
 def index(request):
     first_name = ""
     if request.session.has_key('id'):
-        if User.object.filter(id=request.session['id'])[0].is_active:
+        if User.objects.filter(id=request.session['id'])[0].is_active:
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
     return render(request, 'index.html', {'first_name' : first_name})
 
@@ -39,9 +39,8 @@ def signup(request):
         hashed_password = make_password(request.POST.get('password').encode())
         user = User.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'],
         password=hashed_password, email=request.POST['email'])
-        user.save()
         # request.session['id'] = user.id
-
+        user.is_active = False
         current_site = get_current_site(request)
         mail_subject = 'Activate your KindnessCafe account.'
         message = render_to_string('activation_request.html', {
@@ -97,7 +96,7 @@ def login_view(request):
 
     else:
         if request.session.has_key('id'):
-            if User.object.filter(id=request.session['id'])[0].is_active:
+            if User.objects.filter(id=request.session['id'])[0].is_active:
                 return redirect('/')
             else:
                 return render(request, 'login.html')
@@ -119,19 +118,37 @@ def success(request):
 def our_mission(request):
     first_name = ""
     if request.session.has_key('id'):
-        if User.object.filter(id=request.session['id'])[0].is_active:
+        if User.objects.filter(id=request.session['id'])[0].is_active:
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
     return render(request, 'ourmission.html', {'first_name' : first_name})
 
 
 
 def contact_us(request):
-    first_name = ""
-    if request.session.has_key('id'):
-        if User.object.filter(id=request.session['id'])[0].is_active:
-            first_name = User.objects.filter(id=request.session['id'])[0].first_name
-    return render(request, 'contact.html', {'first_name' : first_name})
+    if request.method == "GET":
+        first_name = ""
+        if request.session.has_key('id'):
+            if User.objects.filter(id=request.session['id'])[0].is_active:
+                first_name = User.objects.filter(id=request.session['id'])[0].first_name
+        return render(request, 'contact.html', {'first_name' : first_name})
 
+    else:
+        user_email = ""
+        if request.session.has_key('id'):
+            if User.objects.filter(id=request.session['id'])[0].is_active:
+                user_email = User.objects.filter(id=request.session['id'])[0].email
+            
+        if not user_email:
+            user_email = request.POST['email']
+
+        mail_subject = 'Message from ' + user_email
+        message =  mail_subject  + '\n' + request.POST['message']
+        to_email = EMAIL_HOST_USER + '@gmail.com'
+        email = EmailMessage(
+                    mail_subject, message, to=[to_email]
+            )
+        email.send()
+        return redirect('/', messages.success(request, 'Your message was sent seccessfully!'))
 
 def logout_view(request):
     logout(request)
@@ -141,7 +158,7 @@ def logout_view(request):
 def recruitment_view(request):
     first_name = ""
     if request.session.has_key('id'):
-        if User.object.filter(id=request.session['id'])[0].is_active:
+        if User.objects.filter(id=request.session['id'])[0].is_active:
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
     return render(request, 'recruitment.html', {'first_name' : first_name})
 
