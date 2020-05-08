@@ -9,13 +9,26 @@
       <div class=" layout_padding2">
         <div class="container">
           {% if item %}
+          
                 <div class="mb-3 col-md-12">
                   <div class="row no-gutters">
                     <div class="col-md-4">
                       <img src="{{ item.image_1.url }}" style="float:left;" class="card-img" alt="...">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 pt-5">
                         <h5 class="text-left">{{ item.title }}</h5>
+                        <div class="row mb-5 pt-3 thumbs">
+                          <div class="col-md-4">
+                          <a href="{% static 'images/slide-img.png' %}" data-lightbox="home-images">
+                            <img src="{% static 'images/slide-img.png' %}" alt="" class="img-fluid">
+                          </a>
+                          </div>
+                          <div class="col-md-4">
+                            <a href="{% static 'images/slide-img.png' %}" data-lightbox="home-images">
+                              <img src="{% static 'images/slide-img.png' %}" alt="" class="img-fluid">
+                            </a>
+                          </div>
+                        </div>
                         <p class="text-left justify"> {{ item.desc }}</p>
                         <p><small class="text-muted"> {{ item.published_date }}</small></p>
                       </div>
