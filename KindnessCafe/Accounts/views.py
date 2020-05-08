@@ -54,7 +54,7 @@ def signup(request):
                     mail_subject, message, to=[to_email]
             )
         email.send()
-        return HttpResponse('Please confirm your email address to complete the registration')
+        return redirect("/", messages.success(request, 'Please confirm your email to finish signing up'))
         # return redirect('/', messages.success(request, 'You were sucessfully singed up!'))
 
     else:
@@ -75,11 +75,11 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        login(request, user)
+        request.session['id'] = uid
         # return redirect('home')
-        return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+        return redirect("/", messages.success(request, 'Thank you for your email confirmation. Now you are logged in'))
     else:
-        return HttpResponse('Activation link is invalid!')
+        return redirect("/", messages.error(request, 'The link is invalid!'))
 
 
 
