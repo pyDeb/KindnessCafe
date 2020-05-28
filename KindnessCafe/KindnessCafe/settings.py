@@ -132,7 +132,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'HOST': '127.0.0.1',
-            'PORT': '3306',
+            'PORT': '3309',
             'NAME': 'kindnesscafe',
             'USER': 'masoud',
             'PASSWORD': '120587**',
