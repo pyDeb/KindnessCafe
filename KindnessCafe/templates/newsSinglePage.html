@@ -1,4 +1,4 @@
-  <!-- news section -->
+  <!-- item section -->
   {% extends 'base.html' %}
   {% load static %}
   {% block content %}
@@ -7,34 +7,66 @@
   <section class="service_section layout_padding ">
     <div class="container-fluid">
       <div class=" layout_padding2">
-        <div class="container">
+        <div class="row">
           {% if item %}
           
-                <div class="mb-3 col-md-12">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <img src="{{ item.image_1.url }}" style="float:left;" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8 pt-5">
-                        <h5 class="text-left">{{ item.title }}</h5>
-                        <div class="row mb-5 pt-3 thumbs">
-                          <div class="col-md-4">
-                          <a href="{% static 'images/slide-img.png' %}" data-lightbox="home-images">
-                            <img src="{% static 'images/slide-img.png' %}" alt="" class="img-fluid">
-                          </a>
-                          </div>
-                          <div class="col-md-4">
-                            <a href="{% static 'images/slide-img.png' %}" data-lightbox="home-images">
-                              <img src="{% static 'images/slide-img.png' %}" alt="" class="img-fluid">
-                            </a>
-                          </div>
-                        </div>
-                        <p class="text-left justify"> {{ item.desc }}</p>
-                        <p><small class="text-muted"> {{ item.published_date }}</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          <div class="col-md-12">
+            <!--  Main Image -->
+            <img src="{{ item.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
+            <!-- Thumbnails -->
+            <div class="row mb-8 thumbs">
+            {% if item.photo_1 %}
+              <div class="col-md-2">
+                <a href="{{ item.photo_1.url }}" data-lightbox="home-images">
+                  <img src="{{ item.photo_1.url }}" alt="" class="img-fluid">
+                </a>
+              </div>
+            {% endif %}
+            {% if item.photo_2 %}
+              <div class="col-md-2">
+                <a href="{{ item.photo_2.url }}" data-lightbox="home-images">
+                  <img src="{{ item.photo_2.url }}" alt="" class="img-fluid">
+                </a>
+              </div>
+              {% endif %}
+              {% if item.photo_3 %}
+              <div class="col-md-2">
+                <a href="{{ item.photo_3.url }}" data-lightbox="home-images">
+                  <img src="{{ item.photo_3.url }}" alt="" class="img-fluid">
+                </a>
+              </div>
+              {% endif %}
+              {% if item.photo_4 %}  
+              <div class="col-md-2">
+                <a href="{{ item.photo_4.url }}" data-lightbox="home-images">
+                  <img src="{{ item.photo_4.url }}" alt="" class="img-fluid">
+                </a>
+              </div>
+              {% endif %}
+            {% if item.photo_5 %}
+              <div class="col-md-2">
+                <a href="{{ item.photo_5.url }}" data-lightbox="home-images">
+                  <img src="{{ item.photo_5.url }}" alt="" class="img-fluid">
+                </a>
+              </div>
+            
+              {% endif %}
+            {% if item.photo_6 %}
+              <div class="col-md-2">
+                <a href="{{ item.photo_6.url }}" data-lightbox="home-images">
+                  <img src="{{ item.photo_6.url }}" alt="" class="img-fluid">
+                </a>
+              </div>
+              {% endif %}
+            </div>
+            <!-- Fields -->
+            <!-- Description -->
+            <div class="row mb-5">
+              <div class="col-md-12">
+                {{item.description}}
+              </div>
+            </div>
+          </div>
           {% else %}
                 <h4><br> We're sorry. There is nothing to show right now </h4>
         {% endif %}
@@ -47,4 +79,4 @@
   </section>
   {% endblock content %}
 
-  <!-- end news section -->
+  <!-- end item section -->
