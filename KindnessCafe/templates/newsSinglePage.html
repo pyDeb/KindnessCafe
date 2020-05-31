@@ -5,56 +5,56 @@
 
 
   <section class="service_section layout_padding ">
-    <div class="container-fluid">
+    <div class="px-5 py-3 container-fluid">
       <div class=" layout_padding2">
         <div class="row">
           {% if item %}
           
-          <div class="col-md-12">
+          <div class="col-md-9">
             <!--  Main Image -->
-            <img src="{{ item.image_1.url }}" alt="" class="img-main img-fluid mb-3">
+            <img src="{{ item.image_1.url }}" alt=""  class="border border-info rounded img-main img-fluid mb-3">
             <!-- Thumbnails -->
-            <div class="row mb-8 thumbs">
+            <div class="row no-gutters mb-8 thumbs">
             {% if item.image_1 %}
-              <div class="col-md-2">
+              <div class=" border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_1.url }}" data-lightbox="home-images">
-                  <img src="{{ item.image_1.url }}" alt="" class="img-fluid">
+                  <img src="{{ item.image_1.url }}" alt="" class="px-1 py-1 rounded img-fluid">
                 </a>
               </div>
             {% endif %}
             {% if item.image_2 %}
-              <div class="col-md-2">
+              <div class="ml-3 border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_2.url }}" data-lightbox="home-images">
-                  <img src="{{ item.image_2.url }}" alt="" class="img-fluid">
+                  <img src="{{ item.image_2.url }}" alt="" class="px-1 py-1 rounded img-fluid">
                 </a>
               </div>
               {% endif %}
               {% if item.image_3 %}
-              <div class="col-md-2">
+              <div class="ml-3 border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_3.url }}" data-lightbox="home-images">
-                  <img src="{{ item.image_3.url }}" alt="" class="img-fluid">
+                  <img src="{{ item.image_3.url }}" alt="" class="px-1 py-1 rounded img-fluid">
                 </a>
               </div>
               {% endif %}
               {% if item.image_4 %}  
-              <div class="col-md-2">
+              <div class="ml-3 border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_4.url }}" data-lightbox="home-images">
-                  <img src="{{ item.image_4.url }}" alt="" class="img-fluid">
+                  <img src="{{ item.image_4.url }}" alt="" class="px-1 py-1 rounded img-fluid">
                 </a>
               </div>
               {% endif %}
             {% if item.image_5 %}
-              <div class="col-md-2">
+              <div class="ml-3 border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_5.url }}" data-lightbox="home-images">
-                  <img src="{{ item.image_5.url }}" alt="" class="img-fluid">
+                  <img src="{{ item.image_5.url }}" alt="" class="px-1 py-1 rounded img-fluid">
                 </a>
               </div>
             
               {% endif %}
             {% if item.image_6 %}
-              <div class="col-md-2">
+              <div class="ml-3 border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_6.url }}" data-lightbox="home-images">
-                  <img src="{{ item.image_6.url }}" alt="" class="img-fluid">
+                  <img src="{{ item.image_6.url }}" alt="" class="px-1 py-1 rounded img-fluid">
                 </a>
               </div>
               {% endif %}
@@ -63,7 +63,8 @@
             <!-- Description -->
             <div class="row mb-5">
               <div class="col-md-12">
-                {{item.description}}
+                <h2 class="text-info my-3">{{item.title}}</h1>
+                <p class="border border-light pl-3 pt-2 text-justify" >{{item.desc}}</p>
               </div>
             </div>
           </div>
