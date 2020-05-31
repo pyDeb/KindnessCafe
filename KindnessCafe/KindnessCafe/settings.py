@@ -105,7 +105,7 @@ DATABASES = {
         'USER': 'masoud',
         'PASSWORD': '120587**',
         'HOST': '/cloudsql/kindnesscafe-2020:us-east4:kindnesscafe-2020-db',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
 
@@ -119,7 +119,7 @@ if os.getenv('GAE_APPLICATION', None):
         'USER': 'masoud',
         'PASSWORD': '120587**',
         'HOST': '/cloudsql/kindnesscafe-2020:us-east4:kindnesscafe-2020-db',
-        'PORT': '3306',
+        'PORT': '5432',
     }
 }
     
@@ -132,7 +132,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'HOST': '127.0.0.1',
-            'PORT': '3309',
+            'PORT': '5433',
             'NAME': 'kindnesscafe',
             'USER': 'masoud',
             'PASSWORD': '120587**',

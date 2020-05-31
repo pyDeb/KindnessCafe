@@ -1,4 +1,4 @@
-#!/home/zeus/Projects/KindnessCafe/env/bin/python3
+#!/home/zeus/Projects/KindnessCafe/KindnessCafe/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
