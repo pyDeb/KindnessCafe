@@ -5,14 +5,14 @@
 
 
   <section class="service_section layout_padding py-5">
-    <div class="px-5 py-3 container-fluid border mx-5 my-5">
+    <div class="px-5 py-3 container border rounded-lg border-light my-5">
       <div class=" layout_padding2">
         <div class="row">
           {% if item %}
           
           <div class="col-md-9">
             <!--  Main Image -->
-            <img src="{{ item.image_1.url }}" alt=""  class="border border-info rounded img-main img-fluid mb-3">
+            <img src="{{ item.image_1.url }}" alt=""  class="img-main img-fluid mb-3">
             <!-- Thumbnails -->
             <div class="row no-gutters mb-8 thumbs">
             {% if item.image_1 %}
@@ -59,11 +59,13 @@
               </div>
               {% endif %}
             </div>
+          </div>
+          <div class="col-md-12">
             <!-- Fields -->
             <!-- Description -->
             <div class="row mb-5">
               <div class="col-md-12">
-                <h2 class="text-info my-3">{{item.title}}</h1>
+                <h2 class="text-info my-3">{{item.title}}</h2>
                 <p class=" pl-3 pt-2 text-justify" >{{item.desc}}</p>
               </div>
             </div>
