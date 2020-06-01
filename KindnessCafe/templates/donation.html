@@ -43,6 +43,31 @@
                                 <div class="form-group has-danger">
                                     <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
                                   </div>
+                                
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Phone:</label>
+                                <input name="tel" type="tel" class="form-control" placeholder="Phone Number">
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "email" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
+                                  </div>
+                                
+                                {%endif%} {%endfor%} {% endif %}
+                            </div>
+                            <div class="form-group">
+                                <label>Pick up Address:</label>
+                                <textarea name="address" type="address" class="form-control" placeholder="Address"></textarea>
+                                {% if messages %} 
+                                {%for message in messages %} 
+                                {%if "email" in message.tags %}
+                                <div class="form-group has-danger">
+                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
+                                  </div>
+                                
                                 {%endif%} {%endfor%} {% endif %}
                             </div>
                             <div class="form-group">
