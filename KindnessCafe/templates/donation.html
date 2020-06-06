@@ -36,10 +36,10 @@
                             </script>
                             <div class="form-group">
                                 <label>Pick up Time:</label>
-                                <input name="email" type="email" class="form-control" placeholder="Time">
+                                <input name="text" type="text" class="form-control" placeholder="Time">
                                 {% if messages %} 
                                 {%for message in messages %} 
-                                {%if "email" in message.tags %}
+                                {%if "pickuptime" in message.tags %}
                                 <div class="form-group has-danger">
                                     <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
                                   </div>
@@ -51,7 +51,7 @@
                                 <input name="tel" type="tel" class="form-control" placeholder="Phone Number">
                                 {% if messages %} 
                                 {%for message in messages %} 
-                                {%if "email" in message.tags %}
+                                {%if "phone" in message.tags %}
                                 <div class="form-group has-danger">
                                     <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
                                   </div>
@@ -63,7 +63,7 @@
                                 <textarea name="address" type="address" class="form-control" placeholder="Address"></textarea>
                                 {% if messages %} 
                                 {%for message in messages %} 
-                                {%if "email" in message.tags %}
+                                {%if "address" in message.tags %}
                                 <div class="form-group has-danger">
                                     <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
                                   </div>
@@ -75,7 +75,7 @@
                                 <textarea name="donation" class="form-control" rows="5" id="comment" placeholder="List of items"></textarea>
                                 {% if messages %} 
                                 {%for message in messages %} 
-                                {%if "password" in message.tags %}
+                                {%if "itemlist" in message.tags %}
                                 <div class="form-group has-danger">
                                     <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
                                   </div>
