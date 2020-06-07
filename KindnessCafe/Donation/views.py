@@ -3,18 +3,59 @@ from django.contrib import messages
 from django.shortcuts import render
 from Accounts.models import User
 from KindnessCafe import settings
-import urllib
+import urllib.request
 from json import loads
+from datetime import datetime
+from django.core.mail import EmailMessage
+
 # Create your views here.
 
 
 def donation_view(request):
     if request.method == 'POST':
         errors = {}
+
         ### validating user's input
-        if len(request.POST['email']) == 0:
-            errors['email'] = "You must enter an email"
+        if len(request.POST['phone']) < 10:
+            errors['phone'] = "You must enter a valid phone number"
         
+        if len(request.POST['address']) < 10:
+            errors['address'] = "You must enter a address"
+
+
+        if(len(str(request.POST['pickuptime'])) == 0):
+            errors['pickuptime'] = "You must enter the time to pickup"
+
+        else:
+            time_now = str(datetime.now()).split(' ')[1].split('.')[0]
+            hour_now = time_now.split(':')[0]
+            if hour_now < request.POST['pickuptime']:
+                errors['pickuptime'] = "It seems that pickup time is invalid"
+
+        if(len(str(request.POST['date'])) == 0):
+            errors['date'] = "You must enter the date of pickup"
+
+        else:
+            date_now = str(datetime.now()).split(' ')[0]
+            year_now = date_now.split('-')[0]
+            month_now = date_now.split('-')[1]
+            day_now = date_now.split('-')[2]
+
+
+            if ((request.POST['date'].split('/')[2] < year_now) or (request.POST['date'].split('/')[2] == year_now and request.POST['date'].split('/')[0] < month_now) \
+            or (request.POST['date'].split('/')[2] == year_now and request.POST['date'].split('/')[0] == month_now and request.POST['date'].split('/')[1]) < day_now): 
+                errors['date'] = "The date is invalid"
+
+        if (len(str(request.POST['itemlist'])) == 0):
+            errors['itemlist'] = "Please fill out the items you would like to donate"
+        
+
+
+        
+        if len(errors):
+            for tag, error in errors.items():
+                messages.error(request, error, extra_tags=tag)
+            return redirect('/donation')
 
         """ Begin reCAPTCHA validation """
         recaptcha_response = request.POST.get('g-recaptcha-response')
@@ -30,9 +71,20 @@ def donation_view(request):
         """ End reCAPTCHA validation """
 
         if result['success']:
+            mail_subject = 'DONATION'
+            message =  mail_subject  + '\n' + "Pickup Date: " + request.POST['date'] + '\n' + \
+                'pickup time' + request.POST['pickuptime'] + '\n' + 'Phone Number: ' + request.POST['phone'] + '\n' + 'Address: ' + request.POST['address'] + \
+                    '\n' + 'List of Items: '  + request.POST['itemlist']
+            to_email = settings.EMAIL_HOST_USER + '@gmail.com'
+            email = EmailMessage(
+                        mail_subject, message, to=[to_email]
+                )
+            email.send()
+        
+
             return redirect("/", messages.success(request, 'Your message was sent. We will contact you soon!'))
         else:
-            return redirect('/donation', messages.error(request, 'Please try again'))
+            return redirect('/donation', messages.error(request, 'Please solve the reCAPTCHA again.'))
 
     else:
         first_name = ""
