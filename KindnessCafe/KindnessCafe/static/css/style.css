@@ -583,3 +583,8 @@ a:focus {
 #numbd{
   padding-top:5px;
 }
+.readmore {
+   position: fixed;
+     bottom: 10px; 
+     right: 10px; 
+}
