@@ -6,6 +6,7 @@ from .forms import SignUpForm
 from django.contrib.auth import authenticate, login, logout
 from KindnessCafe.settings import EMAIL_HOST_USER
 from django.template import RequestContext
+from News.models import News
 
 #imported for email activation
 from django.contrib.sites.shortcuts import get_current_site
@@ -19,11 +20,32 @@ from django.core.mail import EmailMessage
 
 
 def index(request):
+    num_of_news = len(News.objects.all())
+    n1_title = ""
+    n2_title = ""
+    n3_title = ""
+    n1_img = ""
+    n2_img = ""
+    n3_img = ""
+    
+    if num_of_news > 0:
+        n1_title = News.objects.all()[num_of_news - 1].title
+        n1_img = News.objects.all()[num_of_news - 1].image_1
+
+    if num_of_news > 1:
+        n2_title = News.objects.all()[num_of_news - 2].title
+        n2_img = News.objects.all()[num_of_news - 2].image_1
+
+    if num_of_news > 2:
+        n3_title = News.objects.all()[num_of_news - 3].title
+        n3_img = News.objects.all()[num_of_news - 3].image_1
+        
     first_name = ""
     if request.session.has_key('id'):
         if User.objects.filter(id=request.session['id'])[0].is_active:
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
-    return render(request, 'index.html', {'first_name' : first_name})
+    return render(request, 'index.html', {'first_name' : first_name, 'num': num_of_news, 'n1_title' : n1_title, 
+    'n2_title' : n2_title, 'n3_title' : n3_title, 'n1_img' : n1_img, 'n2_img' : n2_img, 'n3_img' : n3_img})
 
 
 

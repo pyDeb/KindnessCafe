@@ -15,14 +15,12 @@
             {% csrf_token %}
             <div class="contact_form-container">
               <div>
-                {% if not first_name %}
                 <div>
                   <input name="name" type="text" placeholder="Name">
                 </div>
                 <div>
                   <input name="email" type="email" placeholder="Email">
                 </div>
-                {% endif %}
                 <div class="mt-5">
                   <input name="message" type="text" placeholder="Message">
                 </div>
@@ -34,7 +32,11 @@
               </div>
 
             </div>
-
+            <div class="mx-auto text-center">
+              <script src='https://www.google.com/recaptcha/api.js'></script>
+              <div class="g-recaptcha" data-sitekey="6LeBzQAVAAAAALqVJLUJFQiJEFcnC2Z1pD1gCeRG"></div>
+              <input type="submit" value="Submit" class="btn btn-primary">
+          </div>
           </form>
         </div>
       </div>
