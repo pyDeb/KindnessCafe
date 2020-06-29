@@ -285,10 +285,6 @@ a:focus {
   margin: 55px auto 5px auto;
 }
 
-.service_section 
-{
-  padding-top: 6%;
-}
 
 .service_section .card {
   text-align: center;
@@ -550,7 +546,7 @@ a:focus {
   background-color: #efeded;
   
   font-family: "Roboto", sans-serif;
-  height:25px;
+  height:4%;
 }
 
 .footer_section p {
@@ -566,7 +562,7 @@ a:focus {
 /* end footer section*/
 /* number counter*/
 #numbers {
-  margin: 60px 0;
+  margin: 60px 0 0 0;
 }
 .numberc {
   background-color: #8EC5FC;

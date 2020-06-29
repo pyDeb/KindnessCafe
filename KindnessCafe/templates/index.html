@@ -17,8 +17,8 @@
 {% endif %}
 
 {% if num %}
-<div class="hero_area">
-  <section class=" slider_section position-relative">
+<div class="hero_area pt-1">
+  <section class="slider_section position-relative">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -38,7 +38,7 @@
                   <div class="col-md-6">
                     <div class="slider_img-box">
                       <div>
-                        <img src="{{ n1_img.url }}" alt="" class="" />
+                        <img class="rounded" src="{{ n1_img.url }}" alt=""/>
                       </div>
                     </div>
                   </div>
@@ -65,7 +65,7 @@
                   <div class="col-md-6">
                     <div class="slider_img-box">
                       <div>
-                        <img src="{{ n2_img.url }}" alt="" class="" />
+                        <img class="rounded" src="{{ n2_img.url }}" alt="" class="" />
                       </div>
                     </div>
                   </div>
@@ -94,7 +94,7 @@
                   <div class="col-md-6">
                     <div class="slider_img-box">
                       <div>
-                        <img src="{{ n3_img.url }}" alt="" class="" />
+                        <img class="rounded" src="{{ n3_img.url }}" alt=""/>
                       </div>
                     </div>
                   </div>
@@ -105,7 +105,7 @@
         </div>
         {% endif %}
       </div>
-      <div class="c_carousel-control">
+      <div class="c_carousel-control mt-2">
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span class="sr-only">Previous</span>
         </a>
@@ -175,7 +175,7 @@
   <!-- fruits section -->
 
   <!-- tasty section -->
-  <section class="tasty_section">
+  <section class="tasty_section mb-5">
     <div class="container_fluid">
       <h2>
        tasty with just a hint of <span>kindness</span>
@@ -194,34 +194,36 @@
 
 
   <!-- end map section -->
-  <div class="px-3 my-3 card-deck">
+  <div class="container-fluid my-3 card-deck">
     <div class="card">
       <div class="card-body text-center">
-        <img class="card-img-top" src="{% static 'images/EpiCentre.png' %}" alt="">
+        <img class="card-img-top" src="{% static 'images/EpiCentre.png' %}" alt="EpiCenter Logo">
       </div>
     </div>
     <div class="card">
       <div class="card-body text-center">
-        <img class="card-img-top" src="{% static 'images/RBC.png' %}" alt="">
+        <img class="card-img-top" src="{% static 'images/RBC.png' %}" alt="RBC Logo">
       </div>
     </div>
     <div class="card">
       <div class="card-body text-center">
-        <img class="card-img-top" src="{% static 'images/Libro.png' %}" alt="">
+        <img class="card-img-top" src="{% static 'images/Libro.png' %}" alt="Libro Logo">
       </div>
     </div>
     <div class="card">
       <div class="card-body text-center">
-        <img class="card-img-top" src="{% static 'images/STClair.png' %}" alt="">
+        <img class="card-img-top" src="{% static 'images/STClair.png' %}" alt="Saint Clair College Logo">
       </div>
     </div>
     <div class="card ">
       <div class="card-body text-center">
-        <img class="card-img-top" src="{% static 'images/RBC.png' %}" alt="">
+        <img class="card-img-top" src="{% static 'images/ta.png' %}" alt="Compassion logo">
       </div>
     </div>
   </div>
- 
+ <div class="pt-2 container">
+   <p class="text-center text-primary">Created By Masoud Sadeghi & Vahid Nasri</p>
+ </div>
 
   {% endblock content %}
 
