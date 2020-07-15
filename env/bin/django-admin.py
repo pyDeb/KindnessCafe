@@ -1,4 +1,4 @@
-#!/home/zeus/Projects/KindnessCafe/KindnessCafe/env/bin/python
+#!/home/chronic/Prjs/KindnessCafe/env/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
