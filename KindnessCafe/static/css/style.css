@@ -584,3 +584,11 @@ a:focus {
      bottom: 10px; 
      right: 10px; 
 }
+
+.carousel-image-samesize{
+  display: block;
+  max-width:250px;
+  max-height:250px;
+  width: auto;
+  height: auto;
+}

@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 # from .views import HomePageView, SignupPageView, Index, CustomLoginView, ContactUsPageView, OurMissionPageView 
 from .views import index, contact_us, our_mission, login_view, signup, logout_view, recruitment_view, activate
-from News.views import news_view
+from News.views import news_view, single_news_page
 
 urlpatterns = [
     # path('', Index.as_view(), name='index'),
@@ -19,5 +19,6 @@ urlpatterns = [
     path('news/', news_view, name='news'),
     #path('logout/', logout_view, name='logout'),
     path('recruitment/', recruitment_view, name='recruitment'),
+    path('news/<int:id>', single_news_page, name='single_news_page'),
     re_path(r'^activate/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', activate, name='activate'),
 ]

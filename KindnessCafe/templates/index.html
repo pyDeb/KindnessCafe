@@ -20,17 +20,17 @@
 <div class="hero_area pt-1">
   <section class="slider_section position-relative">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
+      <div class="carousel-inner carousel-samesize">
         <div class="carousel-item active">
           <div class="slider_item-box">
             <div class="slider_item-container">
               <div class="container">
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="slider_item-detail">
+                    <div class="slider_item-detail" height: 400px;>
                       <div>
                         <h2>
-                          {{ n1_title }}
+                          <a href="{% url 'single_news_page' news1.id %}">{{ news1.title }}</a>
                         </h2>
                       </div>
                     </div>
@@ -38,7 +38,7 @@
                   <div class="col-md-6">
                     <div class="slider_img-box">
                       <div>
-                        <img class="rounded" src="{{ n1_img.url }}" alt=""/>
+                        <img class="rounded carousel-image-samesize" src="{{ news1.image_1.url }}"  alt=""/>
                       </div>
                     </div>
                   </div>
@@ -57,7 +57,7 @@
                     <div class="slider_item-detail">
                       <div>
                         <h2>
-                          {{ n2_title }}
+                          <a href="{% url 'single_news_page' news2.id %}">{{ news2.title }}</a>
                         </h2>
                       </div>
                     </div>
@@ -65,7 +65,7 @@
                   <div class="col-md-6">
                     <div class="slider_img-box">
                       <div>
-                        <img class="rounded" src="{{ n2_img.url }}" alt="" class="" />
+                        <img class="rounded carousel-image-samesize" src="{{ news2.image_1.url }}"  alt=""/>
                       </div>
                     </div>
                   </div>
@@ -85,7 +85,7 @@
                     <div class="slider_item-detail">
                       <div>
                         <h2>
-                          {{ n3_title }}
+                          <a href="{% url 'single_news_page' news3.id %}">{{ news3.title }}</a>
                         </h2>
                         
                       </div>
@@ -94,7 +94,7 @@
                   <div class="col-md-6">
                     <div class="slider_img-box">
                       <div>
-                        <img class="rounded" src="{{ n3_img.url }}" alt=""/>
+                        <img class="rounded carousel-image-samesize" src="{{ new3.image_1.url }}" alt=""/>
                       </div>
                     </div>
                   </div>
@@ -121,25 +121,25 @@
   <div class="container">
   <section id="numbers">
       <div class="text-center text-light pb-2">
-        <h4 class="text-dark py-3">Delicious Items Served This Week!</h4>
+        <h4 class="text-dark py-3">Some Numbers About Our Cafe</h4>
       </div>
       <div class="row text-center">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <h2 class="numberc mx-auto"><span class="numscroller" data-min='0' data-max='432' data-delay='20' data-increment='8'>000</span></h2>
-          <h5 class="numbd">Appetizers</h5>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <h2 class="numberc mx-auto"><span class="numscroller" data-min='0' data-max='4' data-delay='0' data-increment='8'>000</span></h2>
+          <h5 class="numbd">Number of Events</h5>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <h2 class="numberc mx-auto"><span class="numscroller" data-min='0' data-max='1345' data-delay='21' data-increment='10'>000</span></h2>
-          <h5 class="numbd">Entrees</h5>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <h2 class="numberc mx-auto"><span class="numscroller" data-min='0' data-max='400' data-delay='21' data-increment='10'>000</span></h2>
+          <h5 class="numbd">Number of Food Rescued</h5>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <h2 class="numberc mx-auto"><span class="numscroller" data-min='0' data-max='4534' data-delay='24' data-increment='12'>000</span></h2>
-          <h5 class="numbd">Deserts</h5>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <h2 class="numberc mx-auto"><span class="numscroller" data-min='0' data-max='500' data-delay='24' data-increment='12'>000</span></h2>
+          <h5 class="numbd">Number of Pople Served</h5>
         </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
+        <!-- <div class="col-md-3 col-sm-6 col-xs-12">
           <h2 class="numberc mx-auto"><span class="numscroller" data-min='0' data-max='1234' data-delay='16' data-increment='14'>000</span></h2>
           <h5 class="numbd pb-2">Wines</h5>
-        </div>
+        </div> -->
       </div>
     
   </section>
@@ -220,9 +220,19 @@
         <img class="card-img-top" src="{% static 'images/ta.png' %}" alt="Compassion logo">
       </div>
     </div>
+    <div class="card ">
+      <div class="card-body text-center">
+        <img class="card-img-top" src="{% static 'images/Screen Shot 2020-03-27 at 12.38.58 AM.png' %}" alt="">
+      </div>
+    </div>
+    <div class="card ">
+      <div class="card-body text-center">
+        <img class="card-img-top" src="{% static 'images/Screen Shot 2020-03-27 at 12.42.33 AM.png' %}" alt="Compassion Care Community">
+      </div>
+    </div>
   </div>
  <div class="pt-2 container">
-   <p class="text-center text-primary">Created By Masoud Sadeghi & Vahid Nasri</p>
+   <p class="text-center text-primary">Created By <a href="mailto:sadeghi2@uwindsor.ca">Masoud Sadeghi</a> & <a href="mailto:nasrina@uwindsor.ca">Vahid Nasri</a></p>
  </div>
 
   {% endblock content %}
