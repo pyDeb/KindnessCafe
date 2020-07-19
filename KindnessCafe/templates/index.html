@@ -30,7 +30,7 @@
                     <div class="slider_item-detail" height: 400px;>
                       <div>
                         <h2>
-                          <a href="{% url 'single_news_page' news1.id %}">{{ news1.title }}</a>
+                          <a href="{% url 'single_news_page' news1.id %}" style="text-decoration: none;">{{ news1.title }}</a>
                         </h2>
                       </div>
                     </div>
@@ -57,7 +57,7 @@
                     <div class="slider_item-detail">
                       <div>
                         <h2>
-                          <a href="{% url 'single_news_page' news2.id %}">{{ news2.title }}</a>
+                          <a href="{% url 'single_news_page' news2.id %}" style="text-decoration: none;">{{ news2.title }}</a>
                         </h2>
                       </div>
                     </div>
@@ -85,7 +85,7 @@
                     <div class="slider_item-detail">
                       <div>
                         <h2>
-                          <a href="{% url 'single_news_page' news3.id %}">{{ news3.title }}</a>
+                          <a href="{% url 'single_news_page' news3.id %}" style="text-decoration: none;">{{ news3.title }}</a>
                         </h2>
                         
                       </div>
@@ -94,7 +94,7 @@
                   <div class="col-md-6">
                     <div class="slider_img-box">
                       <div>
-                        <img class="rounded carousel-image-samesize" src="{{ new3.image_1.url }}" alt=""/>
+                        <img class="rounded carousel-image-samesize" src="{{ news3.image_1.url }}" alt=""/>
                       </div>
                     </div>
                   </div>
@@ -196,35 +196,26 @@
   <!-- end map section -->
   <div class="container-fluid my-3 card-deck">
     <div class="card">
-      <div class="card-body text-center">
+      <div class="d-flex align-items-center text-center">
         <img class="card-img-top" src="{% static 'images/EpiCentre.png' %}" alt="EpiCenter Logo">
       </div>
     </div>
     <div class="card">
-      <div class="card-body text-center">
+      <div class="d-flex align-items-center text-center">
         <img class="card-img-top" src="{% static 'images/RBC.png' %}" alt="RBC Logo">
       </div>
     </div>
     <div class="card">
-      <div class="card-body text-center">
+      <div class="d-flex align-items-center  text-center">
         <img class="card-img-top" src="{% static 'images/Libro.png' %}" alt="Libro Logo">
       </div>
     </div>
     <div class="card">
-      <div class="card-body text-center">
+      <div class="d-flex align-items-center text-center">
         <img class="card-img-top" src="{% static 'images/STClair.png' %}" alt="Saint Clair College Logo">
       </div>
     </div>
-    <div class="card ">
-      <div class="card-body text-center">
-        <img class="card-img-top" src="{% static 'images/ta.png' %}" alt="Compassion logo">
-      </div>
-    </div>
-    <div class="card ">
-      <div class="card-body text-center">
-        <img class="card-img-top" src="{% static 'images/Screen Shot 2020-03-27 at 12.38.58 AM.png' %}" alt="">
-      </div>
-    </div>
+    
     <div class="card ">
       <div class="card-body text-center">
         <img class="card-img-top" src="{% static 'images/Screen Shot 2020-03-27 at 12.42.33 AM.png' %}" alt="Compassion Care Community">

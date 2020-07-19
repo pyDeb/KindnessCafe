@@ -184,6 +184,7 @@ a:focus {
 
 .slider_item-box {
   width: 100%;
+  
   height: 100%;
 }
 
@@ -303,6 +304,8 @@ a:focus {
   width: 100%;
   height: 7px;
   background-color: transparent;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .service_section .card:hover {
@@ -589,6 +592,7 @@ a:focus {
   display: block;
   max-width:250px;
   max-height:250px;
+
+  height: 100%;
   width: auto;
-  height: auto;
 }

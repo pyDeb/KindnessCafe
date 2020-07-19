@@ -9,7 +9,6 @@
     <nav id="mainNavbar" class="navbar sticky-top navbar-expand-lg c_nav-container pt-1">
       <a class="navbar-brand pl-3 pt-2 text-center" href="{% url 'index' %}">
         <img src="{% static 'images/logo2.png' %}" style="max-width: 250px;" alt="">
-        <br>
         <span style="font-family: 'Chewy', cursive; font-size: 35px;">
           Kindness Cafe
         </span>
@@ -21,28 +20,28 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <li class="nav-item mx-2 active">
+              <a class="nav-link font-weight-bold" href="{% url 'index' %}">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'news' %}"> News </a>
+            <li class="nav-item mx-2">
+              <a class="nav-link font-weight-bold" href="{% url 'news' %}"> News </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'our_mission' %}"> Our Mission </a>
+            <li class="nav-item mx-2">
+              <a class="nav-link font-weight-bold" href="{% url 'our_mission' %}"> Our Mission </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Donation </a>
+            <li class="nav-item mx-2 dropdown">
+              <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Donation </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a href="{% url 'donation' %}" class="dropdown-item">Item Donations</a>
-                <a href="#" class="dropdown-item">Paypal Donations</a>
+                <a href="#" class="dropdown-item ">Paypal Donations</a>
             </div>
             </li>
             
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact_us' %}">Contact us</a>
+            <li class="nav-item mx-2">
+              <a class="nav-link font-weight-bold" href="{% url 'contact_us' %}">Contact us</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'recruitment' %}">Recruitment</a>
+            <li class="nav-item mx-2">
+              <a class="nav-link font-weight-bold" href="{% url 'recruitment' %}">Recruitment</a>
             </li>
           </ul>
             <!-- <ul class="nav navbar-nav ml-auto">
