@@ -1,0 +1,182 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+.kc_navbar-custom .navbar-brand { 
+    color: rgba(146,204,124,1); 
+} 
+.kc_navbar-custom .nav-link,
+.kc_navbar-custom .nav-item { 
+    color: rgb(22, 22, 22); 
+} 
+.kc_navbar-custom .navbar-toggler-icon {
+    background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(146,204,124,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+}
+.kc_navbar-custom .navbar-toggler{
+    color: rgba(146,204,124,1);
+    border-color :rgba(146,204,124,1);
+}
+#kc_background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+    top: 0;
+    background: rgb(146,204,124);
+    background: -moz-linear-gradient(0deg, rgba(146,204,124,1) 0%, rgba(250,139,172,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(146,204,124,1) 0%, rgba(250,139,172,1) 100%);
+    background: linear-gradient(0deg, rgba(146,204,124,1) 0%, rgba(250,139,172,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#92cc7c",endColorstr="#fa8bac",GradientType=1); 
+}
+img.navbar-brand{
+    height: 70px;
+    padding: 0;
+}
+#kc_news{
+    position: relative;
+    width: 80%;
+    margin: 10px 10%;
+    text-align: center;
+}
+#kc_news > body{
+    position: relative;
+}
+#kc_news-scrollspy{
+    position: sticky;
+}
+.kc_news-content{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+}
+.kc_news-content > p{
+    text-overflow: clip;
+}
+.kc_news-content-background{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    background: transparent;
+}
+.kc_center {
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    margin-left: -150px;
+    margin-top: -150px;
+ }
+ .carousel-item > h3{
+     position: absolute;
+     top: 10%;
+ }
+ .carousel-item > p{
+    position: absolute;
+    top: 30%;
+ }
+ #main-carousel{
+    border: 2px solid #4f4f4f;
+    border-radius: 3px;
+ }
+ /* Card shadow effect*/
+ $background: #fffffb;
+ $accent: #ff6b6c;
+ $otherAccent: #ffc145;
+ $darkBackground: #5b5f97;
+ .kc_card-style {
+    border-radius: 5px;
+    background: transparent;
+    position: relative;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    .profile-img {
+      height: 100px;
+      width: 100px;
+      background: url('https://images.unsplash.com/photo-1504933350103-e840ede978d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: -25px;
+      left: -25px;
+      border-radius: 50%;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+    h1 {
+      font-family: 'Sriracha', arial, sans-serif;
+      text-align: center;
+      margin-bottom: 20px;
+      color: $otherAccent;
+    }
+    .description{
+      margin-bottom: 20px;
+    }
+    .social {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      a {
+        text-align: center;
+        border: solid 2px $accent;
+        width: 75px;
+        padding: 5px 0;
+        border-radius: 5px;
+        &:hover {
+          background: $accent;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+    button {
+      width: 80%;
+      height: 80px;
+      font-size: 2rem;
+      margin: 30px 10% 0 10%;
+      color: $background;
+      border: none;
+      box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+      border-radius: 5px;
+      background: linear-gradient(45deg, $accent, $otherAccent, $otherAccent, $accent);
+      background-size: 300% 300%;
+      outline: none;
+      transition: all 200ms ease-in-out;
+      &:hover{
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+        transform: translateY(2px);
+        -webkit-animation: gradientBG 1.5s ease-in-out forwards;
+        animation: gradientBG 1.5s ease-in-out forwards;
+        cursor: pointer;
+      }
+      &:active {
+        box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+        transform: translateY(4px);
+      }
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: $darkBackground;
+      color: white;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      height: 30px;
+      padding: 0 20px;
+      margin-left: -20px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      div {
+        display: flex;
+        .fa-heart {
+          color: $accent;
+        }
+        p:first-child{
+          margin-right: 10px;
+          border-right: 4px solid white;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
