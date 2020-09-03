@@ -15,117 +15,63 @@
     <meta name="author" content="" />
 
     <title>Kindness Cafe</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lato|Chewy&display=swap" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- slider stylesheet -->
-    <link rel="stylesheet" type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
-    
-    <!-- bootstrap core css -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- fonts style -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- responsive style -->
-    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
-    <!-- google maps style -->
-    <link rel="stylesheet" href="{% static 'css/map.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css">
+    <!-- Custom meta tags-->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
+    
+    
+    {% block scripts %}
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 
-    <!-- <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script> -->
-     <!-- JavaScript -->
-    
-    
-    
-     {% block scripts %}
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!--Custom scripts-->
+  <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/numscroller.js' %}"></script>
 
-     <!-- <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>   -->
-     <script type="text/javascript" src="{% static 'js/numscroller.js' %}"></script>
-     <script src="https://kit.fontawesome.com/dd1b83fe91.js" crossorigin="anonymous"></script>
-     <!-- <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> -->
-     
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script> 
-     <!-- You can alternatively load the minified version -->
-     <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
-     <script>
-      $(function() {
-        $(document).scroll(function() {
-    
-        var $nav = $('#mainNavbar');
-    
-        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-        
-        });
-      });
-       function onSignIn(googleUser) {
-         // Useful data for your client-side scripts:
-         var profile = googleUser.getBasicProfile();
-         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-         console.log('Full Name: ' + profile.getName());
-         console.log('Given Name: ' + profile.getGivenName());
-         console.log('Family Name: ' + profile.getFamilyName());
-         console.log("Image URL: " + profile.getImageUrl());
-         console.log("Email: " + profile.getEmail());
- 
-         // The ID token you need to pass to your backend:
-         var id_token = googleUser.getAuthResponse().id_token;
-         console.log("ID Token: " + id_token);
-       }
-     </script>
    {% endblock scripts %}
 
 
 
    
     {% block stylesheets %}
+      <link rel="icon" href="{% static 'images/KCLogo_thumb.ico' %}" type="image/x-icon">
+      <link rel="stylesheet" href="{% static 'css/main.css' %}">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,900&display=swap"
+        rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bangers&family=Knewave&display=swap"
+        rel="stylesheet">
+
       <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
-      <!-- Font awesome CSS -->
-      <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-      <!-- Custom CSS -->
-      <style media="screen">
-        .invalid {
-          color: #dc3545;
-          font-size: 80%;
-        }
-        body {
-          display: flex;
-          flex-direction: column;
-          min-height: 100vh;
-        }
-        .footer {
-          margin: auto 0 0;
-          height: 56px;
-        }
-      </style>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     {% endblock stylesheets %}
 
   </head>
 
   <body>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-    
-    <!-- Includes -->
+    <div id="kc_background"></div>
     {% include "_header.html" %}
-    <div class="pb-5">
+    
     {% block content %}{% endblock content %}
 
-    </div>
-
-    <!-- Includes -->
+    
     {% include "_footer.html" %}
     
    
