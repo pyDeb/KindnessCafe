@@ -4,8 +4,39 @@
 <!-- Header -->
 <!-- header section strats -->
 <header class="h_section">
+
+
+  <nav class="navbar navbar-expand-lg kc_navbar-custom">
+      <img class="navbar-brand" src="{% static 'images/KCLogo_thumb.png' %}" alt="Kindness Cafe Logo">
+      <a class="navbar-brand" href="#">Kindness Cafe</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#kc_navigation"
+        aria-controls="kc_navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="kc_navigation">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#kc_mission">Our Mission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Donation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recuitment</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
  
-  <div class="container-fluid">
+  <!-- PREVIOUS HEADER STARTS-->
+  <!-- <div class="container-fluid">
     <nav id="mainNavbar" class="navbar sticky-top navbar-expand-lg c_nav-container pt-1">
       <a class="navbar-brand pl-3 pt-2 text-center" href="{% url 'index' %}">
         <img src="{% static 'images/logo2.png' %}" style="max-width: 250px;" alt="">
@@ -43,7 +74,10 @@
             <li class="nav-item mx-2">
               <a class="nav-link font-weight-bold" href="{% url 'recruitment' %}">Recruitment</a>
             </li>
-          </ul>
+          </ul> -->
+          <!-- PREVIOUS HEADER ENDS-->
+
+
             <!-- <ul class="nav navbar-nav ml-auto">
             
             <li class="nav-item">
@@ -64,11 +98,11 @@
             </li>
             
           </ul> -->
-      </div>
+      <!-- </div> -->
     
-    </nav>
+    <!-- </nav> -->
   
-  </div>
+  <!-- </div> -->
   <!-- <script type="text/javascript" src="{% static 'js/indexButtons.js' %}"></script> -->
   
 </header>
