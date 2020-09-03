@@ -228,4 +228,43 @@ header img.navbar-brand {
   font-size: 1.5rem;
 }
 
+/* Defining new button style base on bootstrap btn-primary class*/
+.btn-pink {
+  color: #fff;
+  background-color: #fa8bac;
+  border-color: #fa8bac;
+}
+
+.btn-pink:hover {
+  color: #fff;
+  background-color: #ff82a7;
+  border-color: #fd6794;
+}
+
+.btn-pink.focus,
+.btn-pink:focus {
+  box-shadow: 0 0 0 0.2rem rgba(250, 139, 172, 0.5);
+}
+
+.btn-pink.disabled,
+.btn-pink:disabled {
+  color: #fff;
+  background-color: #fa8bac;
+  border-color: #fa7fa4;
+}
+
+.btn-pink:not(:disabled):not(.disabled).active,
+.btn-pink:not(:disabled):not(.disabled):active,
+.show > .btn-pink.dropdown-toggle {
+  color: #fff;
+  background-color: #fd6794;
+  border-color: #ff5d8e;
+}
+
+.btn-pink:not(:disabled):not(.disabled).active:focus,
+.btn-pink:not(:disabled):not(.disabled):active:focus,
+.show > .btn-pink.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(250, 139, 172, 0.5);
+}
+
 /*# sourceMappingURL=main.css.map */

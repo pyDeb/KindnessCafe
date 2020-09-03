@@ -217,3 +217,42 @@ $darkBackground: #5b5f97;
     font-size: 1.5rem;
   }
 }
+
+/* Defining new button style base on bootstrap btn-primary class*/
+.btn-pink {
+  color: #fff;
+  background-color: rgba(250, 139, 172);
+  border-color: rgba(250, 139, 172)
+}
+
+.btn-pink:hover {
+  color: #fff;
+  background-color: rgb(255, 130, 167);
+  border-color: rgb(253, 103, 148)
+}
+
+.btn-pink.focus,
+.btn-pink:focus {
+  box-shadow: 0 0 0 .2rem rgba(250, 139, 172, .5)
+}
+
+.btn-pink.disabled,
+.btn-pink:disabled {
+  color: #fff;
+  background-color: rgba(250, 139, 172);
+  border-color: rgb(250, 127, 164)
+}
+
+.btn-pink:not(:disabled):not(.disabled).active,
+.btn-pink:not(:disabled):not(.disabled):active,
+.show>.btn-pink.dropdown-toggle {
+  color: #fff;
+  background-color: rgb(253, 103, 148);
+  border-color: rgb(255, 93, 142)
+}
+
+.btn-pink:not(:disabled):not(.disabled).active:focus,
+.btn-pink:not(:disabled):not(.disabled):active:focus,
+.show>.btn-pink.dropdown-toggle:focus {
+  box-shadow: 0 0 0 .2rem rgba(250, 139, 172, .5)
+}

@@ -1,2 +1,5 @@
 KindnessCafe/KindnessCafe/settings.py
 app.yaml
+env/
+venv/
+/__pycache__/
