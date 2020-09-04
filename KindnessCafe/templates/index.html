@@ -14,46 +14,34 @@
 
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block img-fluid" src="https://s19.postimg.cc/qzj5uncgj/slide1.jpg" alt="">
+        <img class="d-block img-fluid" src="{{ news1.image_1.url }}" alt="">
         <div class="carousel-caption d-none d-md-block">
-          <h3>News number 1</h3>
-          <p class="kc_truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae
-            exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-            esse vitae exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Adipisci esse vitae exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Adipisci esse vitae exercitationem fugit, numquam minus!</p>
+          <h3>{{ news1.title }}</h3>
+          <p class="kc_truncate">{{ news1.desc }}</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block img-fluid" src="https://s19.postimg.cc/lmubh3h0j/slide2.jpg" alt="">
+        <img class="d-block img-fluid" src="{{ news2.image_1.url }}" alt="">
         <div class="carousel-caption d-none d-md-block">
-          <h3>News number 2</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae exercitationem fugit,
-            numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae
-            exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-            esse vitae exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Adipisci esse vitae exercitationem fugit, numquam minus!</p>
+          <h3>{{ news2.title }}</h3>
+          <p>{{ news2.desc }}</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img class="d-block img-fluid" src="https://s19.postimg.cc/99hh9lr5v/slide3.jpg" alt="">
+        <img class="d-block img-fluid" src="{{ news3.image_1.url }}" alt="">
         <div class="carousel-caption d-none d-md-block">
-          <h3>News number 3</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae exercitationem fugit,
-            numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae
-            exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-            esse vitae exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Adipisci esse vitae exercitationem fugit, numquam minus!</p>
+          <h3>{{ news3.title }}</h3>
+          <p>L{{ news3.desc }}</p>
         </div>
       </div>
-      <div class="carousel-item">
+      <!-- <div class="carousel-item">
         <img src="https://s19.postimg.cc/nenabzsnn/slide4.jpg" alt="" class="d-block img-fluid">
         <div class="carousel-caption d-none d-md-block">
           <h3>Mountain</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae exercitationem fugit,
             numquam minus!</p>
         </div>
-      </div>
+      </div> -->
     </div><!-- /.carousel-inner -->
 
     <a href="#main-carousel" class="carousel-control-prev" data-slide="prev">
