@@ -3,7 +3,9 @@
 }
 
 .kc_navbar-custom .navbar-brand {
-  color: #92cc7c;
+  color: #000 !important;
+  font-family: "Bangers", cursive;
+  font-weight: 900;
 }
 
 .kc_navbar-custom .nav-link,
@@ -16,8 +18,8 @@
 }
 
 .kc_navbar-custom .navbar-toggler {
-  color: #92cc7c;
-  border-color: #92cc7c;
+  color: #fa8bac;
+  border-color: #fa8bac;
 }
 
 #kc_background {
@@ -26,12 +28,12 @@
   width: 100%;
   z-index: -100;
   top: 0;
-  background: rgba(250, 139, 172, 0.2);
+  background: white;
 }
 
 header nav {
-  background-color: #fa8bac !important;
-  border-bottom: 1px solid #4f4f4f;
+  background-color: #fff !important;
+  border-bottom: 3px solid #fa8bac !important;
   border-radius: 0px 0px 15px 15px;
 }
 header img.navbar-brand {
@@ -79,12 +81,17 @@ header img.navbar-brand {
   margin-top: -150px;
 }
 
-.carousel-item > h3 {
+.carousel-item h3 {
   position: absolute;
   top: 10%;
 }
-
-.carousel-item > p {
+.carousel-item img {
+  max-width: 100%;
+  width: 1200px !important;
+  height: 600px !important;
+  object-fit: cover;
+}
+.carousel-item p {
   position: absolute;
   top: 30%;
 }
@@ -209,7 +216,8 @@ header img.navbar-brand {
 #kc_stat .card {
   text-align: center;
 }
-#kc_stat .card h5.value, #kc_stat .card h5.value > span {
+#kc_stat .card h5.value,
+#kc_stat .card h5.value > span {
   font-family: "Bangers", cursive;
   font-size: 4rem;
 }
@@ -265,6 +273,11 @@ header img.navbar-brand {
 .btn-pink:not(:disabled):not(.disabled):active:focus,
 .show > .btn-pink.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(250, 139, 172, 0.5);
+}
+
+#kc_logos img {
+  max-width: 150px;
+  max-height: 150px;
 }
 
 /*# sourceMappingURL=main.css.map */
