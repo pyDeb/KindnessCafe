@@ -3,7 +3,8 @@
 {% block content %}
 {% include '_modal.html' %}
 
-<div id="kc_news" class="container my-4">
+<div id="kc_news" class="container my-5">
+  <h2><span class="brush-stroke my-3">Recent News</span></h2>
   <div class="carousel slide kc_card-style1" id="main-carousel" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
@@ -15,21 +16,21 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block img-fluid" src="{{ news1.image_1.url }}" alt="">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption text-center d-none d-md-block">
           <h3>{{ news1.title }}</h3>
           <p class="kc_truncate">{{ news1.desc }}</p>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block img-fluid" src="{{ news2.image_1.url }}" alt="">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption text-center d-none d-md-block">
           <h3>{{ news2.title }}</h3>
           <p>{{ news2.desc }}</p>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block img-fluid" src="{{ news3.image_1.url }}" alt="">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption text-center d-none d-md-block">
           <h3>{{ news3.title }}</h3>
           <p>L{{ news3.desc }}</p>
         </div>
@@ -46,7 +47,7 @@
     </a>
   </div><!-- /.carousel -->
 </div>
-<div id="kc_stat" class="container">
+<div id="kc_stat" class="my-4 container">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
     <div class="col mb-4">
       <div class="card kc_card-style1">
@@ -88,8 +89,9 @@
 </div>
 
 <!-- Mission -->
-<div id="kc_mission" class="container text-center">
+<div id="kc_mission" class="my-4 container text-center">
   <span class="material-icons">format_quote</span>
+  <h2><span class="brush-stroke">Our Mission</span></h2>
   <blockquote class="blockquote statement mt-3">
     <p class="mb-0">"Empowering our community through nutrition and compassion"</p>
   </blockquote>
@@ -104,6 +106,7 @@
 </div>
 
 <!--Partners' Logo-->
+<h2 class="mb-2 mt-5 text-center"><span class="brush-stroke">Our Partners</span></h2>
 <div id="kc_logos" class="container text-center my-5">
   <div><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/EpiCentre.png" alt="partner1_name"></div>
   <div><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/RBC.png" alt="partner2_name"></div>

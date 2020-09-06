@@ -2,12 +2,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-.kc_navbar-custom .navbar-brand {
-  color: #000 !important;
-  font-family: "Bangers", cursive;
-  font-weight: 900;
-}
-
 .kc_navbar-custom .nav-link,
 .kc_navbar-custom .nav-item {
   color: #161616;
@@ -46,10 +40,6 @@ header img.navbar-brand {
   text-align: center;
 }
 
-#kc_news > body {
-  position: relative;
-}
-
 #kc_news-scrollspy {
   position: sticky;
 }
@@ -59,8 +49,7 @@ header img.navbar-brand {
   width: 80%;
   height: 80%;
 }
-
-.kc_news-content > p {
+.kc_news-content p {
   text-overflow: clip;
 }
 
@@ -83,7 +72,8 @@ header img.navbar-brand {
 
 .carousel-item h3 {
   position: absolute;
-  top: 10%;
+  top: 0%;
+  left: inherit !important;
 }
 .carousel-item img {
   max-width: 100%;
@@ -93,7 +83,11 @@ header img.navbar-brand {
 }
 .carousel-item p {
   position: absolute;
-  top: 30%;
+  bottom: 0%;
+}
+.carousel-item .carousel-caption {
+  bottom: 10% !important;
+  top: 60% !important;
 }
 
 #main-carousel {
@@ -227,7 +221,7 @@ header img.navbar-brand {
 }
 
 #kc_mission span {
-  font-size: 5rem;
+  font-size: 4rem;
 }
 #kc_mission .statement {
   font-size: 2.25rem;
@@ -276,8 +270,39 @@ header img.navbar-brand {
 }
 
 #kc_logos img {
-  max-width: 150px;
-  max-height: 150px;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.brush-stroke {
+  background: url(../images/svgs/brushstroke1.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 95%;
+  padding: 8px 0;
+  font-size: 5rem;
+}
+
+#copyright {
+  background-color: inherit;
+  padding: 10px 10px;
+  text-align: center;
+}
+#copyright button, #copyright span, #copyright a, #copyright p {
+  font-family: "Julius Sans One", sans-serif !important;
+}
+#copyright button {
+  font-size: inherit;
+  font-weight: lighter;
+  border-radius: 0px !important;
+}
+#copyright a {
+  color: #212121;
+  text-decoration: none;
+  font-weight: lighter;
+}
+#copyright .row {
+  margin: auto 0px !important;
 }
 
 /*# sourceMappingURL=main.css.map */

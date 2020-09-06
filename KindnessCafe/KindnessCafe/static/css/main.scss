@@ -2,13 +2,6 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.kc_navbar-custom .navbar-brand {
-  color: #000 !important;
-  font-family: 'Bangers', cursive;
-  font-weight: 900;
-
-}
-
 .kc_navbar-custom .nav-link,
 .kc_navbar-custom .nav-item {
   color: rgb(22, 22, 22);
@@ -50,10 +43,6 @@ header {
   text-align: center;
 }
 
-#kc_news>body {
-  position: relative;
-}
-
 #kc_news-scrollspy {
   position: sticky;
 }
@@ -62,10 +51,10 @@ header {
   position: absolute;
   width: 80%;
   height: 80%;
-}
 
-.kc_news-content>p {
-  text-overflow: clip;
+  p {
+    text-overflow: clip;
+  }
 }
 
 .kc_news-content-background {
@@ -88,7 +77,8 @@ header {
 .carousel-item {
   h3 {
     position: absolute;
-    top: 10%;
+    top: 0%;
+    left: inherit !important;
   }
 
   img {
@@ -99,9 +89,14 @@ header {
   }
 
   p {
-  position: absolute;
-  top: 30%;
-}
+    position: absolute;
+    bottom: 0%;
+  }
+
+  .carousel-caption{
+  bottom: 10% !important;
+  top: 60% !important;
+  }
 }
 
 #main-carousel {
@@ -260,7 +255,7 @@ $darkBackground: #5b5f97;
 
 #kc_mission {
   span {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   .statement {
@@ -310,12 +305,39 @@ $darkBackground: #5b5f97;
 .show>.btn-pink.dropdown-toggle:focus {
   box-shadow: 0 0 0 .2rem rgba(250, 139, 172, .5)
 }
-
-#kc_logos{
-  img{
-    max-width: 150px;
-    max-height: 150px;
+#kc_logos {
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
   }
-  div.slick-slide{
+}
+
+.brush-stroke{
+  background: url(../images/svgs/brushstroke1.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 95%;
+  padding: 8px 0;
+  font-size: 5rem;
+}
+#copyright {
+  background-color: inherit;
+  padding: 10px 10px;
+  text-align: center;
+  button, span, a, p {
+      font-family: 'Julius Sans One', sans-serif !important;
+  }
+  button {
+      font-size: inherit;
+      font-weight: lighter;
+      border-radius: 0px !important;
+  }
+  a {
+      color: #212121;
+      text-decoration: none;
+      font-weight: lighter;
+  }
+  .row {
+      margin: auto 0px !important;
   }
 }
