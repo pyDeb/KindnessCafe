@@ -2,103 +2,74 @@
 {% load static %}
 {% block content %}
 
-<style>
-    .container
-    {
-        margin-top: 90px;
-    }
-</style>
 
-
-<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <div class="card">
-                    <h4 class="card-header text-center">Donation</h4>
-                    <div class="card-block m-3">
-                        <form method="post">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <label class="control-label" for="date">Pick Up Date:</label>    
-                                <input class="form-control" id="datepicker" name="date" placeholder="MM/DD/YYY" /> 
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "date" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                </div>
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <script>
-                                $('#datepicker').datepicker({
-                                    uiLibrary: 'bootstrap4'
-                                });
-                            </script>
-                            <div class="form-group">
-                                <label for="appt">Select Pick up Time:</label>
-                                <input id="pickuptime" type="time" name="pickuptime" value="13:30">
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "pickuptime" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                  </div>
-                                
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <div class="form-group">
-                                <label>Phone:</label>
-                                <input name="phone" type="tel" class="form-control" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="XXXXXXXXXX">
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "phone" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                  </div>
-                                
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <div class="form-group">
-                                <label>Pick up Address:</label>
-                                <textarea name="address" type="address" class="form-control" placeholder="Address"></textarea>
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "address" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                  </div>
-                                
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <div class="form-group">
-                                <label>List of items you are donating</label>
-                                <textarea name="itemlist" class="form-control" rows="5" id="comment" placeholder="List of items"></textarea>
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "itemlist" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                  </div>
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <div class="mx-auto text-center">
-                                <script src='https://www.google.com/recaptcha/api.js'></script>
-                                <div class="g-recaptcha" data-sitekey="6LeBzQAVAAAAALqVJLUJFQiJEFcnC2Z1pD1gCeRG"></div>
-                                <input type="submit" value="Submit" class="btn btn-primary">
-                            </div>
-                        </form>
+<div id="kc_donation" class="container mt-3 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="text-center"><span class="material-icons">support</span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
+                        data-increment='1'>0</span>$</h5>
+                <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
+                        data-increment='1'>0</span>$</h5>
+                <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
+                        data-increment='1'>0</span>$</h5>
+                <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="text-center"><span class="material-icons">favorite</span></div>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="required" for="inputName">Name</label>
+                    <input type="name" class="form-control" id="inputName" placeholder="Your contact name" required>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="inputMessage">Donation Amount</label>
+                    <div class="input-group">
+                        <input id="inputAmount" type="amount" class="form-control" aria-label="Amount"
+                            placeholder="Desired amount to donate" required>
+                        <div class="input-group-append">
+                            <span class="input-group-text">C$</span>
+                            <span class="input-group-text">0.00</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+                <div class="form-group mx-auto text-center">
+                    <script src='https://www.google.com/recaptcha/api.js'></script>
+                    <div class="g-recaptcha" data-sitekey="6LeBzQAVAAAAALqVJLUJFQiJEFcnC2Z1pD1gCeRG"></div>
+                    <input type="submit" value="Submit" class="my-3 btn btn-leafy">
+                </div>
+            </form>
+        </div>
     </div>
-</div> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"/>
+</div>
+</div>
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
 {% endblock content %}
 
 <script>
     document.getElementById("message").innerHTML = "<span style='color:red'>Please enter Your Email ID</span>";
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });   
+    $('#datepicker').datepicker({
+        uiLibrary: 'bootstrap4'
+    });
 </script>
