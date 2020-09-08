@@ -5,8 +5,7 @@
 
   <section class="service_section layout_padding ">
     <div class="container-fluid">
-      <h2 class="c_heading my-4">News</h2>
-      
+      <h2 class="c_heading mt-3 mb-5 text-center"><span class="brush-stroke-4">News</span></h2>
       <div class=" layout_padding2">
         <div class="container">
           {% if news %}
@@ -20,7 +19,7 @@
                       <div class="card-body view overlay zoom">
                         <h5 class="card-title text-left">{{ item.title }}</h5>
                         <p class="card-text"><small class="text-muted"> {{ item.published_date }}</small></p>
-                        <a href="{% url 'single_news_page' item.id %}" class="btn btn-primary mt-5 position-absolute" style="right:5px; bottom:15px;">Read More</a>
+                        <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink mt-5 position-absolute" style="right:5px; bottom:15px;">Read More</a>
                       </div>
                     </div>
                   </div>

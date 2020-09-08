@@ -22,7 +22,7 @@
   width: 100%;
   z-index: -100;
   top: 0;
-  background: rgba(255, 255, 255);
+  background: rgb(255, 255, 255);
 }
 
 header {
@@ -93,9 +93,9 @@ header {
     bottom: 0%;
   }
 
-  .carousel-caption{
-  bottom: 10% !important;
-  top: 60% !important;
+  .carousel-caption {
+    bottom: 10% !important;
+    top: 60% !important;
   }
 }
 
@@ -254,8 +254,8 @@ $darkBackground: #5b5f97;
 }
 
 #kc_mission {
-  span {
-    font-size: 4rem;
+  span.material-icons {
+    font-size: 8rem;
   }
 
   .statement {
@@ -267,11 +267,11 @@ $darkBackground: #5b5f97;
   }
 }
 
-/* Defining new button style base on bootstrap btn-primary class*/
+/* Defining new button style (pink) base on bootstrap btn-primary class*/
 .btn-pink {
   color: #fff;
-  background-color: rgba(250, 139, 172);
-  border-color: rgba(250, 139, 172)
+  background-color: rgb(250, 139, 172);
+  border-color: rgb(250, 139, 172)
 }
 
 .btn-pink:hover {
@@ -288,7 +288,7 @@ $darkBackground: #5b5f97;
 .btn-pink.disabled,
 .btn-pink:disabled {
   color: #fff;
-  background-color: rgba(250, 139, 172);
+  background-color: rgb(250, 139, 172);
   border-color: rgb(250, 127, 164)
 }
 
@@ -305,6 +305,46 @@ $darkBackground: #5b5f97;
 .show>.btn-pink.dropdown-toggle:focus {
   box-shadow: 0 0 0 .2rem rgba(250, 139, 172, .5)
 }
+
+/* Defining new button style (leafy) base on bootstrap btn-primary class*/
+.btn-leafy {
+  color: #fff;
+  background-color: rgb(146, 204, 124);
+  border-color: rgb(146, 204, 124)
+}
+
+.btn-leafy:hover {
+  color: #fff;
+  background-color: rgb(131, 204, 105);
+  border-color: rgb(114, 207, 80)
+}
+
+.btn-leafy.focus,
+.btn-leafy:focus {
+  box-shadow: 0 0 0 .2rem rgba(146, 204, 124, .5)
+}
+
+.btn-leafy.disabled,
+.btn-leafy:disabled {
+  color: #fff;
+  background-color: rgb(146, 204, 124);
+  border-color: rgb(121, 189, 96)
+}
+
+.btn-leafy:not(:disabled):not(.disabled).active,
+.btn-leafy:not(:disabled):not(.disabled):active,
+.show>.btn-leafy.dropdown-toggle {
+  color: #fff;
+  background-color: rgb(114, 207, 80);
+  border-color: rgb(75, 172, 40)
+}
+
+.btn-leafy:not(:disabled):not(.disabled).active:focus,
+.btn-leafy:not(:disabled):not(.disabled):active:focus,
+.show>.btn-leafy.dropdown-toggle:focus {
+  box-shadow: 0 0 0 .2rem rgba(146, 204, 124, .5)
+}
+
 #kc_logos {
   img {
     width: 150px;
@@ -313,31 +353,81 @@ $darkBackground: #5b5f97;
   }
 }
 
-.brush-stroke{
-  background: url(../images/svgs/brushstroke1.svg);
-  background-repeat: no-repeat;
-  background-size: 100% 95%;
-  padding: 8px 0;
-  font-size: 5rem;
+
+[class*="brush-stroke"] {
+
+  background-repeat: no-repeat !important;
+  background-size: 100% !important;
+  font-size: 3rem !important;
+  background-position: center !important;
+  padding: 2rem !important;
+
+  &[class$="1"] {
+    background: url(../images/svgs/brushstroke1.svg);
+  }
+
+  &[class$="2"] {
+    background: url(../images/svgs/brushstroke2.svg);
+  }
+
+  &[class$="3"] {
+    background: url(../images/svgs/brushstroke3.svg);
+  }
+
+  &[class$="4"] {
+    background: url(../images/svgs/brushstroke4.svg);
+  }
 }
+
 #copyright {
   background-color: inherit;
   padding: 10px 10px;
   text-align: center;
-  button, span, a, p {
-      font-family: 'Julius Sans One', sans-serif !important;
+
+  button,
+  span,
+  a,
+  p {
+    font-family: 'Ubuntu Mono', monospace !important;
   }
+
   button {
-      font-size: inherit;
-      font-weight: lighter;
-      border-radius: 0px !important;
+    font-size: inherit;
+    font-weight: lighter;
+    border-radius: 0px !important;
   }
+
   a {
-      color: #212121;
-      text-decoration: none;
-      font-weight: lighter;
+    color: #212121;
+    text-decoration: none;
+    font-weight: lighter;
   }
+
   .row {
-      margin: auto 0px !important;
+    margin: auto 0px !important;
   }
+}
+
+li.active {
+  border-bottom: 4px solid #fa8bac;
+}
+
+#kc_news_thumbs {
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+#kc_donation {
+  span.material-icons {
+    font-size: 6rem;
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+    color: rgb(146, 204, 124);
+  }
+}
+label.required:after{
+  content: "*";
+  color: red;
 }
