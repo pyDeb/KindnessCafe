@@ -1,5 +1,9 @@
 from django.apps import AppConfig
 
 
-class DonationConfig(AppConfig):
+class DonationAppConfig(AppConfig):
     name = 'Donation'
+
+    def ready(self):
+        # import signal handlers
+        from . import signal

@@ -7,6 +7,9 @@ import urllib.request
 from json import loads
 from datetime import datetime
 from django.core.mail import EmailMessage
+from decimal import Decimal
+from paypal.standard.forms import PayPalPaymentsForm
+
 
 # Create your views here.
 
@@ -91,3 +94,44 @@ def donation_view(request):
         if request.session.has_key('id'):
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
         return render(request, 'donation.html', {'first_name' : first_name})
+
+
+
+    
+
+def process_payment(request):
+    if request.method == 'POST':
+        paypal_dict = {
+            'business': settings.PAYPAL_RECEIVER_EMAIL,
+            'amount': '%.2f' % request.POST[''](
+                Decimal('.01')),
+            'item_name': 'DONATION TO KINDNESS CAFE WINDSOR',
+            'currency_code': 'CAD',
+            'notify_url': 'http://{}{}'.format(host,
+                                            reverse('paypal-ipn')),
+            'return_url': 'http://{}{}'.format(host,
+                                            reverse('payment_done')),
+            'cancel_return': 'http://{}{}'.format(host,
+                                                reverse('payment_cancelled')),
+        }
+
+        form = PayPalPaymentsForm(initial=paypal_dict)
+        return render(request, 'process_payment.html')
+
+    #else:
+
+
+
+
+
+def payment_done(request):
+    return render(request, 'payment_done.html')
+
+
+def payment_cancelled(request):
+    return render(request, 'payment_cancelled.html')
+
+
+
+
+
