@@ -1,5 +1,5 @@
 * {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Raleway', sans-serif; }
 
 .kc_navbar-custom .nav-link,
 .kc_navbar-custom .nav-item {
@@ -95,7 +95,6 @@ header img.navbar-brand {
     border-radius: 50%;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); }
   .kc_card-style1 h1 {
-    font-family: 'Sriracha', arial, sans-serif;
     text-align: center;
     margin-bottom: 20px;
     color: #ffc145; }
@@ -259,9 +258,11 @@ header img.navbar-brand {
 #kc_logos img {
   width: 150px;
   height: 150px;
-  object-fit: contain; }
+  object-fit: contain;
+  margin: auto 2rem; }
 
 [class*="brush-stroke"] {
+  font-family: 'Bangers', cursive;
   background-repeat: no-repeat !important;
   background-size: 100% !important;
   font-size: 3rem !important;
@@ -278,7 +279,7 @@ header img.navbar-brand {
 
 #copyright {
   background-color: inherit;
-  padding: 10px 10px;
+  padding: 4rem 1rem 2rem 1rem;
   text-align: center; }
   #copyright button,
   #copyright span,
