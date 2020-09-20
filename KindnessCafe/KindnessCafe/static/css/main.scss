@@ -1,5 +1,8 @@
+$kc_pink-color: #fa8bac;
+$kc_green-color: rgb(146, 204, 124);
+
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .kc_navbar-custom .nav-link,
@@ -12,8 +15,8 @@
 }
 
 .kc_navbar-custom .navbar-toggler {
-  color: #fa8bac;
-  border-color: #fa8bac;
+  color: $kc_pink-color;
+  border-color: $kc_pink-color;
 }
 
 #kc_background {
@@ -28,7 +31,7 @@
 header {
   nav {
     background-color: #fff !important;
-    border-bottom: 3px solid #fa8bac !important;
+    border-bottom: 3px solid $kc_pink-color !important;
     border-radius: 0px 0px 15px 15px;
   }
 
@@ -130,7 +133,6 @@ $darkBackground: #5b5f97;
   }
 
   h1 {
-    font-family: 'Sriracha', arial, sans-serif;
     text-align: center;
     margin-bottom: 20px;
     color: $otherAccent;
@@ -309,8 +311,8 @@ $darkBackground: #5b5f97;
 /* Defining new button style (leafy) base on bootstrap btn-primary class*/
 .btn-leafy {
   color: #fff;
-  background-color: rgb(146, 204, 124);
-  border-color: rgb(146, 204, 124)
+  background-color: $kc_green-color;
+  border-color: $kc_green-color
 }
 
 .btn-leafy:hover {
@@ -327,7 +329,7 @@ $darkBackground: #5b5f97;
 .btn-leafy.disabled,
 .btn-leafy:disabled {
   color: #fff;
-  background-color: rgb(146, 204, 124);
+  background-color: $kc_green-color;
   border-color: rgb(121, 189, 96)
 }
 
@@ -350,17 +352,23 @@ $darkBackground: #5b5f97;
     width: 150px;
     height: 150px;
     object-fit: contain;
+    margin: auto 2rem;
   }
 }
 
 
 [class*="brush-stroke"] {
-
+  font-family: 'Bangers', cursive;
   background-repeat: no-repeat !important;
   background-size: 100% !important;
-  font-size: 3rem !important;
+  font-size: 2rem !important;
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    font-size: 3rem !important;
+  }
   background-position: center !important;
   padding: 2rem !important;
+  color: #212121;
 
   &[class$="1"] {
     background: url(../images/svgs/brushstroke1.svg);
@@ -381,7 +389,7 @@ $darkBackground: #5b5f97;
 
 #copyright {
   background-color: inherit;
-  padding: 10px 10px;
+  padding: 4rem 1rem 2rem 1rem;
   text-align: center;
 
   button,
@@ -409,7 +417,7 @@ $darkBackground: #5b5f97;
 }
 
 li.active {
-  border-bottom: 4px solid #fa8bac;
+  border-bottom: 4px solid $kc_pink-color;
 }
 
 #kc_news_thumbs {
@@ -419,15 +427,106 @@ li.active {
   }
 }
 
-#kc_donation {
+#kc_donation,
+#kc_recruitment {
   span.material-icons {
     font-size: 6rem;
     margin-top: 3rem !important;
     margin-bottom: 3rem !important;
-    color: rgb(146, 204, 124);
+    color: $kc_green-color;
   }
 }
-label.required:after{
+
+label.required:after {
   content: "*";
   color: red;
+}
+
+// External CSS from MDBootstrap.com
+.card.card-cascade.wider {
+  background-color: transparent !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.card {
+  font-weight: 400 !important;
+  border: 0 !important;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.card.card-cascade.wider .view.view-cascade {
+  z-index: 2 !important;
+}
+
+.card.card-cascade .view.view-cascade {
+  border-radius: .25rem !important;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.view {
+  position: relative !important;
+  overflow: hidden !important;
+  cursor: default !important;
+}
+
+#cascading-cards .card.card-cascade.wider .card-body.card-body-cascade {
+  border-bottom-right-radius: .25rem !important;
+  border-bottom-left-radius: .25rem !important;
+}
+
+.card.card-cascade.wider .card-body.card-body-cascade {
+  z-index: 1;
+  margin-right: 4%;
+  margin-left: 4%;
+  background: #fff;
+  border-radius: 0 0 .25rem .25rem;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.overlay .mask {
+  opacity: 0 !important;
+  -webkit-transition: all .4s ease-in-out !important;
+  transition: all .4s ease-in-out !important;
+}
+
+.view .mask {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  background-attachment: fixed !important;
+}
+
+.waves-effect {
+  position: relative !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.rgba-white-slight,
+.rgba-white-slight::after {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.card-footer {
+  background-color: transparent !important;
+}
+//External CSS is neded here.
+
+.copy_text{
+  color: #4f4f4f !important;
+  text-decoration: none !important;
 }

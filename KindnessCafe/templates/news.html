@@ -5,34 +5,153 @@
 
   <section class="service_section layout_padding ">
     <div class="container-fluid">
-      <h2 class="c_heading mt-3 mb-5 text-center"><span class="brush-stroke-4">News</span></h2>
-      <div class=" layout_padding2">
-        <div class="container">
-          {% if news %}
-            {% for item in news %}
-                <div class="card mb-3 col-md-12">
-                  <div class="row no-gutters">
-                    <div class="col-md-4">
-                      <img src="{{ item.image_1.url }}" class="card-img" alt="{{ item.alt_1 }}" >
+      <ul class="nav justify-content-center nav-tabs my-4" id="updateTabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-controls="news"
+            aria-selected="true">
+            <span class="brush-stroke-4">News</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="events-tab" data-toggle="tab" href="#events" role="tab" aria-controls="events"
+            aria-selected="false">
+            <span class="brush-stroke-4">Events</span>
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content" id="updateTabsContent">
+        <div class="tab-pane fade" id="news" role="tabpanel" aria-labelledby="news-tab">
+          <div id="cascading-cards" class="container">
+            {% if news %}
+            <div class="row mb-5">
+              {% for item in news %}
+              <!-- <div class="card">
+                <img class="card-img-top" src="{{ item.image_1.url }}" alt="News image:{{ item.image_1.url }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.title }}</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                  <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink mt-5 position-absolute"
+                    style="right:5px; bottom:15px;">Read More</a>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">{{ item.published_date }}</small>
+                </div>
+              </div> -->
+              <div class="col-lg-4 col-md-6">
+                <!-- Card Wider -->
+                <div class="card card-cascade wider my-2">
+
+                  <!-- Card image -->
+                  <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="{{ item.image_1.url }}" alt="News image:{{ item.image_1.url }}">
+                    <a href="#">
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+
+                  <!-- Card content -->
+                  <div class="card-body card-body-cascade text-center pb-0">
+
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>Alison Belmont</strong></h4>
+                    <!-- Subtitle -->
+                    <h5 class="blue-text pb-2"><strong>Graffiti Artist</strong></h5>
+                    <!-- Text -->
+                    <p class="card-text">Sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque
+                      laudantium, totam rem aperiam. </p>
+                    <p class="card-text">
+                      <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink">Read More</a>
+                    </p>
+
+                    <!-- Share Button-->
+                    <a class="copy_text"  data-toggle="tooltip" title="Copy to Clipboard" href="{% url 'single_news_page' item.id %}">
+                      <span class="material-icons">content_copy</span>
+                    </a>
+                    <!-- Card footer -->
+                    <div class="card-footer text-muted text-center mt-4">
+                      2 days ago
                     </div>
-                    <div class="col-md-8 position-relative">
-                      <div class="card-body view overlay zoom">
-                        <h5 class="card-title text-left">{{ item.title }}</h5>
-                        <p class="card-text"><small class="text-muted"> {{ item.published_date }}</small></p>
-                        <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink mt-5 position-absolute" style="right:5px; bottom:15px;">Read More</a>
+
+                  </div>
+
+                </div>
+              </div>
+              <!-- Card Wider -->
+
+
+              <!-- <div class="card col-lg-4 col-md-6">
+                <img class="card-img-top" src="{{ item.image_1.url }}" alt="News image:{{ item.image_1.url }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.title }}</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                  <p class="card-text">
+                    <small class="text-muted">{{ item.published_date }}</small>
+                  </p>
+                  <p class="card-text">
+                    <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink">Read More</a>
+                  </p>
+                </div>
+              </div> -->
+
+
+              <!-- <div class="card mb-3 col-md-12">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="{{ item.image_1.url }}" class="card-img" alt="{{ item.alt_1 }}" >
+                      </div>
+                      <div class="col-md-8 position-relative">
+                        <div class="card-body view overlay zoom">
+                          <h5 class="card-title text-left">{{ item.title }}</h5>
+                          <p class="card-text"><small class="text-muted"> {{ item.published_date }}</small></p>
+                          <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink mt-5 position-absolute" style="right:5px; bottom:15px;">Read More</a>
+                        </div>
                       </div>
                     </div>
+                  </div> -->
+              {% endfor %}
+            </div>
+            {% else %}
+            <h4><br> We're sorry. There is nothing to show right now </h4>
+            {% endif %}
+          </div>
+        </div>
+        <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+          <div class="container">
+            {% if news %}
+            {% for item in news %}
+            <div class="card mb-3 col-md-12">
+              <div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="{{ item.image_1.url }}" class="card-img" alt="{{ item.alt_1 }}">
+                </div>
+                <div class="col-md-8 position-relative">
+                  <div class="card-body view overlay zoom">
+                    <h5 class="card-title text-left">{{ item.title }}</h5>
+                    <p class="card-text"><small class="text-muted"> {{ item.published_date }}</small></p>
+                    <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink mt-5 position-absolute"
+                      style="right:5px; bottom:15px;">Read More</a>
                   </div>
                 </div>
+              </div>
+            </div>
             {% endfor %}
-          {% else %}
-                <h4><br> We're sorry. There is nothing to show right now </h4>
-        {% endif %}
-        </div>
-          
-          
+            {% else %}
+            <h4><br> We're sorry. There is nothing to show right now </h4>
+            {% endif %}
+          </div>
         </div>
       </div>
+      <!--
+      <h2 class="c_heading mt-3 mb-5 text-center"><span class="brush-stroke-4">News</span></h2>
+      <div class=" layout_padding2">
+        
+          
+          
+        </div>
+      -->
+    </div>
     </div>
   </section>
   {% endblock content %}

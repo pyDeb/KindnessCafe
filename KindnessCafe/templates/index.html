@@ -16,21 +16,21 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img class="d-block img-fluid" src="{{ news1.image_1.url }}" alt="">
-        <div class="carousel-caption text-center d-none d-md-block">
+        <div class="carousel-caption text-center d-none d-sm-block">
           <h3>{{ news1.title }}</h3>
           <p class="kc_truncate">{{ news1.desc }}</p>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block img-fluid" src="{{ news2.image_1.url }}" alt="">
-        <div class="carousel-caption text-center d-none d-md-block">
+        <div class="carousel-caption text-center d-none d-sm-block">
           <h3>{{ news2.title }}</h3>
           <p>{{ news2.desc }}</p>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block img-fluid" src="{{ news3.image_1.url }}" alt="">
-        <div class="carousel-caption text-center d-none d-md-block">
+        <div class="carousel-caption text-center d-none d-sm-block">
           <h3>{{ news3.title }}</h3>
           <p>L{{ news3.desc }}</p>
         </div>
@@ -108,13 +108,13 @@
 <!--Partners' Logo-->
 <h3 class="mb-2 mt-5 text-center"><span class="brush-stroke-3">Believed by</span></h3>
 <div id="kc_logos" class="container text-center my-5">
-  <div><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/EpiCentre.png" alt="partner1_name"></div>
-  <div><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/RBC.png" alt="partner2_name"></div>
-  <div><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/STClair.png" alt="partner3_name"></div>
-  <div><img src="{% static 'images/DSC-UoW.jpg' %}" alt="partner4_name"></div>
-  <div><img src="https://storage.googleapis.com/kindnesscafe-2020-static/static/images/ta.png" alt="partner5_name"></div>
-  <div><img src="{% static 'images/Libro.png' %}" alt="partner6_name"></div>
-  <div><img src="{% static 'images/compassion.png' %}" alt="partner7_name"></div>
+  <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/EpiCentre.png" alt="partner1_name"></a></div>
+  <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/RBC.png" alt="partner2_name"></a></div>
+  <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/STClair.png" alt="partner3_name"></a></div>
+  <div><a href=""><img src="{% static 'images/DSC-UoW.jpg' %}" alt="partner4_name"></a></div>
+  <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/static/images/ta.png" alt="partner5_name"></a></div>
+  <div><a href=""><img src="{% static 'images/Libro.png' %}" alt="partner6_name"></a></div>
+  <div><a href=""><img src="{% static 'images/compassion.png' %}" alt="partner7_name"></a></div>
 </div>
 
 {% endblock content %}

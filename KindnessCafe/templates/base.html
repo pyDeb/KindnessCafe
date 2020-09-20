@@ -11,17 +11,22 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Kindness Cafe</title>
+  <title>Kindness Cafe Windsor</title>
+  <meta property="og:title" content="Kindness Cafe Windsor" />
+  <meta property="og:type" content="NGO" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="{% static 'images/KCLogo_thumb.png' %}" />
+  <meta name="keywords" content="Kindness, Cafe, Windsor, Food Waste, NGO, Non for Profit" />
+  <meta name="description"
+    content="Kindness Cafe is the first for-profit organization aimed to solve the food waste problem in Windsor, Ontario. Kindness Cafe collects and enhances surplus food from Windsor restaurants and provides it back to the community. Our menu does not have set prices, meaning our customers decide the value of their meal and pay using a PAY-AS-YOU-FEEL concept. We compost and donate our own surplus to local livestock to continue the food cycle. Ultimately, Kindness Cafe is a movementaimed to achieve zero food waste in Windsor, Ontario, and one day across the whole world" />
+  <meta name="author" content="Ola Hassan" />
 
   {% block scripts %}
   <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
   </script>
@@ -43,6 +48,7 @@
   <link rel="icon" href="{% static 'images/KCLogo_thumb.ico' %}" type="image/x-icon">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-social.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-tagsinput/bootstrap-tagsinput.css' %}" />
 
   <!-- Google Font & Google Material Icon-->
   <link
@@ -76,15 +82,12 @@
 
   {% block endScript %}
   <!-- Later Scripts-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
   <script type="text/javascript" src="{% static 'js/slick/slick.min.js' %}"></script>
 
   <!--Custom scripts-->
   <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-  <!--
-  <script type="text/javascript" src="https://imananoosheh.github.io/js/cprght.js"></script>
-  -->
+  <script type="text/javascript" src="{% static 'js/bootstrap-tagsinput/bootstrap-tagsinput.js' %}"></script>
   {% endblock endScript %}
 </body>
 
