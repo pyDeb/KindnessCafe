@@ -7,22 +7,28 @@
   <section class="service_section layout_padding">
     <div class="px-5 py-3 container border rounded-lg border-light my-5">
       <div class=" layout_padding2">
-        <div class="row">
+        <div class="row text-center">
           {% if item %}
-          
-          <div class="col-md-9">
+          <div class="col-lg-6 text-center">
+            <div class="my-auto brush-stroke-3">
+              <h2 class="text-dark">{{item.title}}</h2>
+            </div>
+          </div>
+          <div class="col-lg-6 d-none d-md-block">
             <!--  Main Image -->
-            <img src="{{ item.image_1.url }}" alt=""  class="img-main img-fluid mb-3">
+            <img src="{{ item.image_1.url }}" alt="" class="img-main img-fluid mb-3">
+          </div>
+          <div class="col-12">
             <!-- Thumbnails -->
-            <div class="row no-gutters mb-8 thumbs">
-            {% if item.image_1 %}
+            <div id="kc_news_thumbs" class="row no-gutters mb-8 thumbs">
+              {% if item.image_1 %}
               <div class=" border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_1.url }}" data-lightbox="home-images">
                   <img src="{{ item.image_1.url }}" alt="" class="px-1 py-1 rounded img-fluid">
                 </a>
               </div>
-            {% endif %}
-            {% if item.image_2 %}
+              {% endif %}
+              {% if item.image_2 %}
               <div class="ml-3 border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_2.url }}" data-lightbox="home-images">
                   <img src="{{ item.image_2.url }}" alt="" class="px-1 py-1 rounded img-fluid">
@@ -36,22 +42,22 @@
                 </a>
               </div>
               {% endif %}
-              {% if item.image_4 %}  
+              {% if item.image_4 %}
               <div class="ml-3 border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_4.url }}" data-lightbox="home-images">
                   <img src="{{ item.image_4.url }}" alt="" class="px-1 py-1 rounded img-fluid">
                 </a>
               </div>
               {% endif %}
-            {% if item.image_5 %}
+              {% if item.image_5 %}
               <div class="ml-3 border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_5.url }}" data-lightbox="home-images">
                   <img src="{{ item.image_5.url }}" alt="" class="px-1 py-1 rounded img-fluid">
                 </a>
               </div>
-            
+
               {% endif %}
-            {% if item.image_6 %}
+              {% if item.image_6 %}
               <div class="ml-3 border border-info no-gutters rounded col-md-2">
                 <a href="{{ item.image_6.url }}" data-lightbox="home-images">
                   <img src="{{ item.image_6.url }}" alt="" class="px-1 py-1 rounded img-fluid">
@@ -60,24 +66,23 @@
               {% endif %}
             </div>
           </div>
-          <div class="col-md-12">
+          <div class="col-12">
             <!-- Fields -->
             <!-- Description -->
             <div class="row mb-5">
-              <div class="col-md-12">
-                <h2 class="text-info my-3">{{item.title}}</h2>
+              <div class="col-md-12 mt-5">
                 <blockquote class="blockquote">
-                  <p class=" pl-3 pt-2 text-justify" >{{item.desc}}</p>
+                  <p class=" pl-3 pt-2 text-justify">{{item.desc}}</p>
                 </blockquote>
               </div>
             </div>
           </div>
           {% else %}
-                <h4><br> We're sorry. There is nothing to show right now </h4>
-        {% endif %}
+          <h4><br> We're sorry. There is nothing to show right now </h4>
+          {% endif %}
         </div>
-          
-          
+
+
       </div>
     </div>
   </section>

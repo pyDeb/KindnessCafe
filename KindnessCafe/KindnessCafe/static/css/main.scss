@@ -1,0 +1,532 @@
+$kc_pink-color: #fa8bac;
+$kc_green-color: rgb(146, 204, 124);
+
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
+.kc_navbar-custom .nav-link,
+.kc_navbar-custom .nav-item {
+  color: rgb(22, 22, 22);
+}
+
+.kc_navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(146,204,124,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")
+}
+
+.kc_navbar-custom .navbar-toggler {
+  color: $kc_pink-color;
+  border-color: $kc_pink-color;
+}
+
+#kc_background {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: -100;
+  top: 0;
+  background: rgb(255, 255, 255);
+}
+
+header {
+  nav {
+    background-color: #fff !important;
+    border-bottom: 3px solid $kc_pink-color !important;
+    border-radius: 0px 0px 15px 15px;
+  }
+
+  img.navbar-brand {
+    height: 70px;
+    padding: 0;
+  }
+}
+
+#kc_news {
+  position: relative;
+  text-align: center;
+}
+
+#kc_news-scrollspy {
+  position: sticky;
+}
+
+.kc_news-content {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+
+  p {
+    text-overflow: clip;
+  }
+}
+
+.kc_news-content-background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  background: transparent;
+}
+
+.kc_center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+}
+
+.carousel-item {
+  h3 {
+    position: absolute;
+    top: 0%;
+    left: inherit !important;
+  }
+
+  img {
+    max-width: 100%;
+    width: 1200px !important;
+    height: 600px !important;
+    object-fit: cover;
+  }
+
+  p {
+    position: absolute;
+    bottom: 0%;
+  }
+
+  .carousel-caption {
+    bottom: 10% !important;
+    top: 60% !important;
+  }
+}
+
+#main-carousel {
+  border: 2px solid #4f4f4f;
+  border-radius: 3px;
+}
+
+/* Card shadow effect*/
+$background: #fffffb;
+$accent: #ff6b6c;
+$otherAccent: #ffc145;
+$darkBackground: #5b5f97;
+
+.kc_card-style1 {
+  border-radius: 5px;
+  background: transparent;
+  position: relative;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+  .profile-img {
+    height: 100px;
+    width: 100px;
+    background: url('https://images.unsplash.com/photo-1504933350103-e840ede978d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $otherAccent;
+  }
+
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+
+    a {
+      text-align: center;
+      border: solid 2px $accent;
+      width: 75px;
+      padding: 5px 0;
+      border-radius: 5px;
+
+      &:hover {
+        background: $accent;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  button {
+    width: 80%;
+    height: 80px;
+    font-size: 2rem;
+    margin: 30px 10% 0 10%;
+    color: $background;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background: linear-gradient(45deg, $accent, $otherAccent, $otherAccent, $accent);
+    background-size: 300% 300%;
+    outline: none;
+    transition: all 200ms ease-in-out;
+
+    &:hover {
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+      transform: translateY(2px);
+      -webkit-animation: gradientBG 1.5s ease-in-out forwards;
+      animation: gradientBG 1.5s ease-in-out forwards;
+      cursor: pointer;
+    }
+
+    &:active {
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+      transform: translateY(4px);
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $darkBackground;
+    color: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    padding: 0 20px;
+    margin-left: -20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    div {
+      display: flex;
+
+      .fa-heart {
+        color: $accent;
+      }
+
+      p:first-child {
+        margin-right: 10px;
+        border-right: 4px solid white;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+#main-carousel {
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
+}
+
+#kc_stat {
+  margin-top: 80px;
+  margin-bottom: 50px;
+
+  .card {
+    text-align: center;
+
+    h5.value,
+    h5.value>span {
+      font-family: 'Bangers', cursive;
+      font-size: 4rem;
+
+    }
+  }
+
+  span {
+    font-size: 4rem;
+    padding: 1.25rem;
+  }
+}
+
+#kc_mission {
+  span.material-icons {
+    font-size: 8rem;
+  }
+
+  .statement {
+    font-size: 2.25rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+}
+
+/* Defining new button style (pink) base on bootstrap btn-primary class*/
+.btn-pink {
+  color: #fff;
+  background-color: rgb(250, 139, 172);
+  border-color: rgb(250, 139, 172)
+}
+
+.btn-pink:hover {
+  color: #fff;
+  background-color: rgb(255, 130, 167);
+  border-color: rgb(253, 103, 148)
+}
+
+.btn-pink.focus,
+.btn-pink:focus {
+  box-shadow: 0 0 0 .2rem rgba(250, 139, 172, .5)
+}
+
+.btn-pink.disabled,
+.btn-pink:disabled {
+  color: #fff;
+  background-color: rgb(250, 139, 172);
+  border-color: rgb(250, 127, 164)
+}
+
+.btn-pink:not(:disabled):not(.disabled).active,
+.btn-pink:not(:disabled):not(.disabled):active,
+.show>.btn-pink.dropdown-toggle {
+  color: #fff;
+  background-color: rgb(253, 103, 148);
+  border-color: rgb(255, 93, 142)
+}
+
+.btn-pink:not(:disabled):not(.disabled).active:focus,
+.btn-pink:not(:disabled):not(.disabled):active:focus,
+.show>.btn-pink.dropdown-toggle:focus {
+  box-shadow: 0 0 0 .2rem rgba(250, 139, 172, .5)
+}
+
+/* Defining new button style (leafy) base on bootstrap btn-primary class*/
+.btn-leafy {
+  color: #fff;
+  background-color: $kc_green-color;
+  border-color: $kc_green-color
+}
+
+.btn-leafy:hover {
+  color: #fff;
+  background-color: rgb(131, 204, 105);
+  border-color: rgb(114, 207, 80)
+}
+
+.btn-leafy.focus,
+.btn-leafy:focus {
+  box-shadow: 0 0 0 .2rem rgba(146, 204, 124, .5)
+}
+
+.btn-leafy.disabled,
+.btn-leafy:disabled {
+  color: #fff;
+  background-color: $kc_green-color;
+  border-color: rgb(121, 189, 96)
+}
+
+.btn-leafy:not(:disabled):not(.disabled).active,
+.btn-leafy:not(:disabled):not(.disabled):active,
+.show>.btn-leafy.dropdown-toggle {
+  color: #fff;
+  background-color: rgb(114, 207, 80);
+  border-color: rgb(75, 172, 40)
+}
+
+.btn-leafy:not(:disabled):not(.disabled).active:focus,
+.btn-leafy:not(:disabled):not(.disabled):active:focus,
+.show>.btn-leafy.dropdown-toggle:focus {
+  box-shadow: 0 0 0 .2rem rgba(146, 204, 124, .5)
+}
+
+#kc_logos {
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: auto 2rem;
+  }
+}
+
+
+[class*="brush-stroke"] {
+  font-family: 'Bangers', cursive;
+  background-repeat: no-repeat !important;
+  background-size: 100% !important;
+  font-size: 2rem !important;
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    font-size: 3rem !important;
+  }
+  background-position: center !important;
+  padding: 2rem !important;
+  color: #212121;
+
+  &[class$="1"] {
+    background: url(../images/svgs/brushstroke1.svg);
+  }
+
+  &[class$="2"] {
+    background: url(../images/svgs/brushstroke2.svg);
+  }
+
+  &[class$="3"] {
+    background: url(../images/svgs/brushstroke3.svg);
+  }
+
+  &[class$="4"] {
+    background: url(../images/svgs/brushstroke4.svg);
+  }
+}
+
+#copyright {
+  background-color: inherit;
+  padding: 4rem 1rem 2rem 1rem;
+  text-align: center;
+
+  button,
+  span,
+  a,
+  p {
+    font-family: 'Ubuntu Mono', monospace !important;
+  }
+
+  button {
+    font-size: inherit;
+    font-weight: lighter;
+    border-radius: 0px !important;
+  }
+
+  a {
+    color: #212121;
+    text-decoration: none;
+    font-weight: lighter;
+  }
+
+  .row {
+    margin: auto 0px !important;
+  }
+}
+
+li.active {
+  border-bottom: 4px solid $kc_pink-color;
+}
+
+#kc_news_thumbs {
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+#kc_donation,
+#kc_recruitment {
+  span.material-icons {
+    font-size: 6rem;
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+    color: $kc_green-color;
+  }
+}
+
+label.required:after {
+  content: "*";
+  color: red;
+}
+
+// External CSS from MDBootstrap.com
+.card.card-cascade.wider {
+  background-color: transparent !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.card {
+  font-weight: 400 !important;
+  border: 0 !important;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.card.card-cascade.wider .view.view-cascade {
+  z-index: 2 !important;
+}
+
+.card.card-cascade .view.view-cascade {
+  border-radius: .25rem !important;
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+.view {
+  position: relative !important;
+  overflow: hidden !important;
+  cursor: default !important;
+}
+
+#cascading-cards .card.card-cascade.wider .card-body.card-body-cascade {
+  border-bottom-right-radius: .25rem !important;
+  border-bottom-left-radius: .25rem !important;
+}
+
+.card.card-cascade.wider .card-body.card-body-cascade {
+  z-index: 1;
+  margin-right: 4%;
+  margin-left: 4%;
+  background: #fff;
+  border-radius: 0 0 .25rem .25rem;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.overlay .mask {
+  opacity: 0 !important;
+  -webkit-transition: all .4s ease-in-out !important;
+  transition: all .4s ease-in-out !important;
+}
+
+.view .mask {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  background-attachment: fixed !important;
+}
+
+.waves-effect {
+  position: relative !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.rgba-white-slight,
+.rgba-white-slight::after {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.card-footer {
+  background-color: transparent !important;
+}
+//External CSS is neded here.
+
+.copy_text{
+  color: #4f4f4f !important;
+  text-decoration: none !important;
+}

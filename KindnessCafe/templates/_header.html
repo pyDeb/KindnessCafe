@@ -1,76 +1,46 @@
-
 {% load static %}
 
 <!-- Header -->
 <!-- header section strats -->
-<header class="h_section">
- 
-  <div class="container-fluid">
-    <nav id="mainNavbar" class="navbar sticky-top navbar-expand-lg c_nav-container pt-1">
-      <a class="navbar-brand pl-3 pt-2 text-center" href="{% url 'index' %}">
-        <img src="{% static 'images/logo2.png' %}" style="max-width: 250px;" alt="">
-        <span style="font-family: 'Chewy', cursive; font-size: 35px;">
-          Kindness Cafe
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<header class="h_section sticky-top">
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item mx-2 active">
-              <a class="nav-link font-weight-bold" href="{% url 'index' %}">Home</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link font-weight-bold" href="{% url 'news' %}"> News </a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link font-weight-bold" href="{% url 'our_mission' %}"> Our Mission </a>
-            </li>
-            <li class="nav-item mx-2 dropdown">
-              <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Donation </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a href="{% url 'donation' %}" class="dropdown-item">Item Donations</a>
-                <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=F9LX4VA3JRQDL&source=url" class="dropdown-item ">Paypal Donations</a>
-            </div>
-            </li>
-            
-            <li class="nav-item mx-2">
-              <a class="nav-link font-weight-bold" href="{% url 'contact_us' %}">Contact us</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link font-weight-bold" href="{% url 'recruitment' %}">Recruitment</a>
-            </li>
-          </ul>
-            <!-- <ul class="nav navbar-nav ml-auto">
-            
-            <li class="nav-item">
-              {% if first_name %}
-              <span>
-                Your are logged in as
-                <strong>{{ first_name }}</strong>.
-              </span>
-              <a href="{% url 'logout' %}" class="logout-btn btn btn-danger" role="button"><i class="fas fa-sign-out-alt"></i> Log out</a>
-            {% else %}
-            <li class="nav-item">
-              
-                  <a class="nav-link" href="/signup"> Sign up</a>
-               
-          </li>
-              <a class="nav-link" href="/login"> Sign in</a>
-            {% endif %}
-            </li>
-            
-          </ul> -->
-      </div>
-    
-    </nav>
-  
-  </div>
-  <!-- <script type="text/javascript" src="{% static 'js/indexButtons.js' %}"></script> -->
-  
+
+  <nav class="navbar navbar-expand-lg kc_navbar-custom">
+    <img class="navbar-brand" src="{% static 'images/KCLogo_thumb.png' %}" alt="Kindness Cafe Logo">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#kc_navigation"
+      aria-controls="kc_navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="kc_navigation">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'index' %}#kc_mission">Our Mission</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Update
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'news' %}#news">News</a>
+            <a class="dropdown-item" href="{% url 'news' %}#events">Events</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'donation' %}">Donation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact_us' %}">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'recruitment' %}">Recuitment</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
 <!-- End Header -->
-

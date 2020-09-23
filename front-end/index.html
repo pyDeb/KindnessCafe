@@ -1,519 +1,199 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Custom meta tags-->
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Kindness Cafe</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lato&display=swap" rel="stylesheet">
+  <!-- Custom links -->
+  <link rel="icon" href="KCLogo_thumb.ico" type="image/x-icon">
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bangers&family=Knewave&display=swap"
+    rel="stylesheet">
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
-  
-  <!-- bootstrap core css --><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title>Kindness Cafe Windsor</title>
 </head>
 
 <body>
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="h_section">
-      <div class="container-fluid">
-        <nav class="navbar fixed-top navbar-expand-lg c_nav-container pt-1">
-          <a class="navbar-brand pl-3 pt-2" href="index.html">
-            <img src="images/logo2.png" style="max-width: 210px;" alt=""><span>
-              Kindness Cafe
-            </span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+  <div id="kc_background"></div>
+  <header>
+    <nav class="navbar navbar-expand-lg kc_navbar-custom">
+      <img class="navbar-brand" src="KCLogo_thumb.png" alt="Kindness Cafe Logo">
+      <a class="navbar-brand" href="#">Kindness Cafe</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#kc_navigation"
+        aria-controls="kc_navigation" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="nav navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html"> News </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html"> Our Mission </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html"> Donation </a>
-                </li>
-                
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
-                </li>
-              </ul>
-                <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="register.html">
-                    <i class="fas fa-user"></i> Register</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="login.html">
-                    <i class="fas fa-sign-in-alt"></i> Login</a>
-                </li>
-                
-              </ul>
-          </div>
-        
-        </nav>
+      <div class="collapse navbar-collapse" id="kc_navigation">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#kc_mission">Our Mission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">News</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Donation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recuitment</a>
+          </li>
+        </ul>
       </div>
-    </header>
-    <!-- end header section -->
-    <section class=" slider_section position-relative">
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="slider_item-box">
-              <div class="slider_item-container">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="slider_item-detail">
-                        <div>
-                          <h1>
-                            Welcome to <br />
-                            Your Cafe
-                          </h1>
-                          <p>
-                            There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered
-                            alteration in some form, by injected humour, or
-                            randomised words which don't look even slightly
-                            believable.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="slider_img-box">
-                        <div>
-                          <img src="images/slide-img.png" alt="" class="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="slider_item-box">
-              <div class="slider_item-container">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="slider_item-detail">
-                        <div>
-                          <h1>
-                            Welcome to <br />
-                            Our Fruits Shop
-                          </h1>
-                          <p>
-                            There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered
-                            alteration in some form, by injected humour, or
-                            randomised words which don't look even slightly
-                            believable.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="slider_img-box">
-                        <div>
-                          <img src="images/slide-img.png" alt="" class="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="slider_item-box">
-              <div class="slider_item-container">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="slider_item-detail">
-                        <div>
-                          <h1>
-                            Welcome to <br />
-                            Our Fruits Shop
-                          </h1>
-                          <p>
-                            There are many variations of passages of Lorem
-                            Ipsum available, but the majority have suffered
-                            alteration in some form, by injected humour, or
-                            randomised words which don't look even slightly
-                            believable.
-                          </p>
-                          
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="slider_img-box">
-                        <div>
-                          <img src="images/slide-img.png" alt="" class="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    </nav>
+  </header>
+  <div id="kc_news" class="container my-4">
+    <div class="carousel slide kc_card-style1" id="main-carousel" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#main-carousel" data-slide-to="1"></li>
+        <li data-target="#main-carousel" data-slide-to="2"></li>
+        <li data-target="#main-carousel" data-slide-to="3"></li>
+      </ol><!-- /.carousel-indicators -->
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block img-fluid" src="https://s19.postimg.cc/qzj5uncgj/slide1.jpg" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>News number 1</h3>
+            <p class="kc_truncate">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae
+              exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+              esse vitae exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Adipisci esse vitae exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Adipisci esse vitae exercitationem fugit, numquam minus!</p>
           </div>
         </div>
-        <div class="c_carousel-control">
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="sr-only">Next</span>
-          </a>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="https://s19.postimg.cc/lmubh3h0j/slide2.jpg" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>News number 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae exercitationem fugit,
+              numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae
+              exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+              esse vitae exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Adipisci esse vitae exercitationem fugit, numquam minus!</p>
+          </div>
         </div>
-      </div>
-    </section>
+        <div class="carousel-item">
+          <img class="d-block img-fluid" src="https://s19.postimg.cc/99hh9lr5v/slide3.jpg" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>News number 3</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae exercitationem fugit,
+              numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae
+              exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+              esse vitae exercitationem fugit, numquam minus!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Adipisci esse vitae exercitationem fugit, numquam minus!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://s19.postimg.cc/nenabzsnn/slide4.jpg" alt="" class="d-block img-fluid">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Mountain</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci esse vitae exercitationem fugit,
+              numquam minus!</p>
+          </div>
+        </div>
+      </div><!-- /.carousel-inner -->
 
-    <!-- end slider section -->
+      <a href="#main-carousel" class="carousel-control-prev" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="sr-only" aria-hidden="true">Prev</span>
+      </a>
+      <a href="#main-carousel" class="carousel-control-next" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="sr-only" aria-hidden="true">Next</span>
+      </a>
+    </div><!-- /.carousel -->
   </div>
-  <div class="container">
-  <section id="numbers">
-      <div class="text-center text-light pb-2">
-        <h4 class="text-dark py-3">Delicious Items Served This Week!</h4>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <h2 class="numberc mx-auto"><span class='numscroller' data-min='0' data-max='432' data-delay='20' data-increment='8'>000</span></h2>
-          <h5 class="numbd">Appetizers</h5>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <h2 class="numberc mx-auto"><span class='numscroller' data-min='0' data-max='1345' data-delay='21' data-increment='10'>000</span></h2>
-          <h5 class="numbd">Entrees</h5>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <h2 class="numberc mx-auto"><span class='numscroller' data-min='0' data-max='4534' data-delay='24' data-increment='12'>000</span></h2>
-          <h5 class="numbd">Deserts</h5>
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <h2 class="numberc mx-auto"><span class='numscroller' data-min='0' data-max='1234' data-delay='16' data-increment='14'>000</span></h2>
-          <h5 class="numbd pb-2">Wines</h5>
-        </div>
-      </div>
-    
-  </section>
-</div>
-  <!-- service section -->
-  
-  <section class="service_section general_pad ">
-    <div class="container">
-      <h2 class="c_headingfont-italic text-center">“Empowering our community through <strong>nutrition</strong> and <strong>compassion</strong>”</h2>
-      
-      <div class="general_pad_1">
-        <div class="card-deck">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text text-center">
-                Kindness Cafe is the first for-profit organization aimed to solve the food waste problem in Windsor, Ontario. Kindness Cafe collects and enhances surplus food from Windsor restaurants and provides it back to the community. Our menu does not have set prices, meaning our customers decide the value of their meal and pay using a PAY-AS-YOU-FEEL concept. We compost and donate our own surplus to local livestock to continue the food cycle. Ultimately, Kindness Cafe is a movementaimed to achieve zero food waste in Windsor, Ontario, and one day across the whole world
-              </p>
-            </div>
+  <div id="kc_stat" class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+      <div class="col mb-4">
+        <div class="card kc_card-style1">
+          <span class="material-icons">event</span>
+          <div class="card-body">
+            <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='4' data-delay='2' data-increment='1'>0</span></h5>
+            <h5 class="card-title">Events held</h5>
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-center">
-        <a href="" class="c_dark-btn">
-          Read More About Our Mission
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- end service section -->
-
-  <!-- fruits section -->
-
-  <!-- tasty section -->
-  <section class="tasty_section">
-    <div class="container_fluid">
-      <h2>
-       tasty with just a hint of <span>kindness</span>
-      </h2>
-    </div>
-  </section>
-
-  <!-- end tasty section -->
-
-  <!-- client section -->
-
-  <section class="client_section general_pad">
-    <div class="container">
-      <h2 class="c_heading">Testimonial</h2>
-      <p class="c_heading-text">
-        There are many variations of passages of Lorem Ipsum available, but
-        the majority have
-      </p>
-      <div>
-        <div id="carouselExampleControls-2" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="client_container general_pad_1">
-                <div class="client_img-box">
-                  <img src="images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="c_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="client_container general_pad_1">
-                <div class="client_img-box">
-                  <img src="images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="c_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="client_container general_pad_1">
-                <div class="client_img-box">
-                  <img src="images/client.png" alt="" />
-                </div>
-                <div class="client_detail">
-                  <h3>
-                    Johnhex
-                  </h3>
-                  <p class="c_heading-text">
-                    There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in
-                    some form, by injected humour, or randomised words which
-                    don't look even slightly believable. If you are <br />
-                    going to use a passage of Lorem Ipsum, you need to be sure
-                  </p>
-                </div>
-              </div>
-            </div>
+      <div class="col mb-4">
+        <div class="card kc_card-style1">
+          <span class="material-icons">food_bank</span>
+          <div class="card-body">
+            <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='80' data-delay='2' data-increment='2'>0</span></h5>
+            <h5 class="card-title">Food Rescued</h5>
           </div>
-          <div class="c_carousel-control">
-            <a class="carousel-control-prev" href="#carouselExampleControls-2" role="button" data-slide="prev">
-              <span class="" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls-2" role="button" data-slide="next">
-              <span class="" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- end client section -->
-
-  <!-- contact section -->
-  <section class="contact_section general_pad">
-    <div class="container">
-      <h2 class="font-weight-bold">
-        Contact Us
-      </h2>
-      <div class="row">
-        <div class="col-md-8 mr-auto">
-          <form action="">
-            <div class="contact_form-container">
-              <div>
-                <div>
-                  <input type="text" placeholder="Name">
-                </div>
-                <div>
-                  <input type="text" placeholder="Phone Number">
-                </div>
-                <div>
-                  <input type="email" placeholder="Email">
-                </div>
-
-                <div class="mt-5">
-                  <input type="text" placeholder="Message">
-                </div>
-                <div class="mt-5">
-                  <button type="submit">
-                    send
-                  </button>
-                </div>
-              </div>
-
-            </div>
-
-          </form>
+      <div class="col mb-4">
+        <div class="card kc_card-style1">
+          <span class="material-icons">face</span>
+          <div class="card-body">
+            <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='52' data-delay='2' data-increment='4'>0</span></h5>
+            <h5 class="card-title">People Served</h5>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- end contact section -->
-
-
-  <!-- map section -->
-  <section class="map_section">
-    <div id="map" class="h-100 w-100 ">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11803.131437253409!2d-83.0640182!3d42.3044985!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x37881e52dc0c6297!2sEPICentre!5e0!3m2!1sen!2sca!4v1584836032324!5m2!1sen!2sca" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
-  </section>
-
-  <!-- end map section -->
-
-  <section class="info_section general_pad">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <h5>
-            Fruits
-          </h5>
-          <ul>
-            
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>
-            Services
-          </h5>
-          <ul>
-            
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <h5>
-            List
-          </h5>
-          <ul>
-            
-          </ul>
-        </div>
-        <div class="col-md-3">
-          <div class="social_container">
-            <h5>
-              Follow Us
-            </h5>
-            <div class="social-box">
-              <a href="">
-                <img src="images/fb.png" alt="">
-              </a>
-
-              <a href="">
-                <img src="images/twitter.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/linkedin.png" alt="">
-              </a>
-              <a href="">
-                <img src="images/instagram.png" alt="">
-              </a>
-            </div>
-          </div>
-          <div class="subscribe_container">
-            <h5>
-              Subscribe Now
-            </h5>
-            <div class="form_container">
-              <form action="">
-                <input type="email">
-                <button type="submit">
-                  Subscribe
-                </button>
-              </form>
-            </div>
+      <div class="col mb-4">
+        <div class="card kc_card-style1">
+          <span class="material-icons">card_giftcard</span>
+          <div class="card-body">
+            <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='183' data-delay='2' data-increment='8'>0</span>C$</h5>
+            <h5 class="card-title">Donation Received</h5>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
+  <!-- Mission -->
+  <div id="kc_mission" class="container text-center">
+    <span class="material-icons">format_quote</span>
+    <blockquote class="blockquote statement mt-3">
+      <p class="mb-0">"Empowering our community through nutrition and compassion"</p>
+    </blockquote>
+    <blockquote class="blockquote description mt-3">
+      <p class="mb-0">Kindness Cafe is the first for-profit organization aimed to solve the food waste problem in
+        Windsor, Ontario. Kindness Cafe collects and enhances surplus food from Windsor restaurants and provides it back
+        to the community. Our menu does not have set prices, meaning our customers decide the value of their meal and
+        pay using a PAY-AS-YOU-FEEL concept. We compost and donate our own surplus to local livestock to continue the
+        food cycle. Ultimately, Kindness Cafe is a movementaimed to achieve zero food waste in Windsor, Ontario, and one
+        day across the whole world</p>
+    </blockquote>
+  </div>
 
-
-  <!-- footer section -->
-  <section class="container-fluid footer_section">
-    <p>
-      Copyright &copy; 2019 All Rights Reserved By HTML DESIGN
-    </p>
-  </section>
-  <!-- footer section -->
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>  
-  <script type="text/javascript" src="js/numscroller.js"></script>
-  <script src="https://kit.fontawesome.com/dd1b83fe91.js" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-
-  <script>
-    // This example adds a marker to indicate the position of Bondi Beach in Sydney,
-    // Australia.
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11,
-        center: {
-          lat: 40.645037,
-          lng: -73.880224
-        },
-      });
-
-      var image = 'images/maps-and-flags.png';
-      var beachMarker = new google.maps.Marker({
-        position: {
-          lat: 40.645037,
-          lng: -73.880224
-        },
-        map: map,
-        icon: image
-      });
-    }
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
-  <!-- google map js -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
   </script>
-  <!-- end google map js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+  <!--Custom scripts-->
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="numscroller.js"></script>
 </body>
 
 </html>

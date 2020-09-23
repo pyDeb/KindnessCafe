@@ -2,103 +2,125 @@
 {% load static %}
 {% block content %}
 
-<style>
-    .container
-    {
-        margin-top: 90px;
-    }
-</style>
 
-
-<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <div class="card">
-                    <h4 class="card-header text-center">Donation</h4>
-                    <div class="card-block m-3">
-                        <form method="post">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <label class="control-label" for="date">Pick Up Date:</label>    
-                                <input class="form-control" id="datepicker" name="date" placeholder="MM/DD/YYY" /> 
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "date" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                </div>
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <script>
-                                $('#datepicker').datepicker({
-                                    uiLibrary: 'bootstrap4'
-                                });
-                            </script>
-                            <div class="form-group">
-                                <label for="appt">Select Pick up Time:</label>
-                                <input id="pickuptime" type="time" name="pickuptime" value="13:30">
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "pickuptime" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                  </div>
-                                
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <div class="form-group">
-                                <label>Phone:</label>
-                                <input name="phone" type="tel" class="form-control" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" placeholder="XXXXXXXXXX">
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "phone" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                  </div>
-                                
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <div class="form-group">
-                                <label>Pick up Address:</label>
-                                <textarea name="address" type="address" class="form-control" placeholder="Address"></textarea>
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "address" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                  </div>
-                                
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <div class="form-group">
-                                <label>List of items you are donating</label>
-                                <textarea name="itemlist" class="form-control" rows="5" id="comment" placeholder="List of items"></textarea>
-                                {% if messages %} 
-                                {%for message in messages %} 
-                                {%if "itemlist" in message.tags %}
-                                <div class="form-group has-danger">
-                                    <div class="form-control-feedback" style="background-color:rgb(206, 119, 119)">{{message}}</div>
-                                  </div>
-                                {%endif%} {%endfor%} {% endif %}
-                            </div>
-                            <div class="mx-auto text-center">
-                                <script src='https://www.google.com/recaptcha/api.js'></script>
-                                <div class="g-recaptcha" data-sitekey="6LeBzQAVAAAAALqVJLUJFQiJEFcnC2Z1pD1gCeRG"></div>
-                                <input type="submit" value="Submit" class="btn btn-primary">
-                            </div>
-                        </form>
+<div id="kc_donation" class="container mt-3 mb-5">
+    <div class="row justify-content-center">
+        <div id="kc_donation-message" class="col-md-12 mb-4 container text-center">
+            <span class="material-icons">brightness_high</span>
+            <h3><span class="brush-stroke-2">Every Contribution Matters.</span></h3>
+            <blockquote class="blockquote description mt-5">
+                <p class="mb-0">Kindness Cafe is the first for-profit organization aimed to solve the food waste problem
+                    in
+                    Windsor, Ontario. Kindness Cafe collects and enhances surplus food from Windsor restaurants and
+                    provides it back
+                    to the community. Our menu does not have set prices, meaning our customers decide the value of their
+                    meal and
+                    pay using a PAY-AS-YOU-FEEL concept. We compost and donate our own surplus to local livestock to
+                    continue the
+                    food cycle. Ultimately, Kindness Cafe is a movementaimed to achieve zero food waste in Windsor,
+                    Ontario, and one
+                    day across the whole world</p>
+            </blockquote>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center"><span class="material-icons">support</span>
+                <h4 class="text-center"><span class="brush-stroke-1">Recent Contribution</span></h4>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
+                        data-increment='1'>0</span>$</h5>
+                <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
+                        data-increment='1'>0</span>$</h5>
+                <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
+                        data-increment='1'>0</span>$</h5>
+                <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center"><span class="material-icons">favorite</span></div>
+            <h4 class="text-center"><span class="brush-stroke-3">PayPal Contribution</span></h4>
+            <form method="POST" id="paypalDonationForm">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName"
+                        placeholder="If left empty, your contribution will be anonymous!">
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label class="required" for="inputAmount">Donation Amount</label>
+                    <div class="input-group">
+                        <input id="inputAmount" type="number" class="form-control" aria-label="Amount"
+                            placeholder="Desired amount to donate" required>
+                        <div class="input-group-append">
+                            <span class="input-group-text">C$</span>
+                            <span class="input-group-text">0.00</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+                <div class="form-group mx-auto text-center">
+                    <script src='https://www.google.com/recaptcha/api.js'></script>
+                    <div class="g-recaptcha" data-sitekey="6LeBzQAVAAAAALqVJLUJFQiJEFcnC2Z1pD1gCeRG"></div>
+                    <input type="submit" value="Continue to PayPal" class="my-3 btn btn-leafy"
+                        form="paypalDonationForm">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center"><span class="material-icons">food_bank</span></div>
+            <h4 class="text-center"><span class="brush-stroke-3">Food Donation</span></h4>
+            <form method="POST" id="foodDonationForm">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="required" for="inputPhone">Phone Number</label>
+                    <input type="number" class="form-control" id="inputPhone"
+                        placeholder="987-654-3210" aria-describedby="numberHelp" required>
+                    <small id="numberHelp" class="form-text text-muted">We call you, as soon as possible, thanks for your patience.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                        placeholder="username@example.com">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input id="inputAddress" type="text" class="form-control" aria-label="Address"
+                        aria-describedby="notRequired" placeholder="Pick up address">
+                    <small id="notRequired" class="form-text text-muted">Address is optional.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputFoodItems">Kindly list food items</label>
+                    <select multiple data-role="tagsinput" id="inputFoodItems">
+                        <option value="Remove this item and add food items"></option>
+                    </select>
+                </div>
+                <div class="form-group mx-auto text-center">
+                    <script src='https://www.google.com/recaptcha/api.js'></script>
+                    <div class="g-recaptcha" data-sitekey="6LeBzQAVAAAAALqVJLUJFQiJEFcnC2Z1pD1gCeRG"></div>
+                    <input type="submit" value="Donating for good (^_^)" class="my-3 btn btn-leafy"
+                        form="foodDonationForm">
+                </div>
+            </form>
+        </div>
     </div>
-</div> 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"/>
-{% endblock content %}
+</div>
+</div>
 
-<script>
-    document.getElementById("message").innerHTML = "<span style='color:red'>Please enter Your Email ID</span>";
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });   
-</script>
+{% endblock content %}

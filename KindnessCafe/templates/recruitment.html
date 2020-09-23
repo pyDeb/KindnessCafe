@@ -1,16 +1,40 @@
-
-
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
 <style>
-    iframe {
-    margin-top: 90px;
-     margin-left: auto;   /* Automatic margin from left */
-     margin-right: auto; /* Automatic margin from right */
-     display:block;
-    } 
-  </style> 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScG-vxTiytDKXLAJq09EA8yYKghDCkDh7M-fV441wOBZfdi_A/viewform?embedded=true" width="640" height="746" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  .resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    height: 115vh;
+  }
+
+  .resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
+<div id="kc_recruitment" class="mb-4 container text-center">
+  <span class="material-icons">whatshot</span>
+  <h3><span class="brush-stroke-2">Why You should Join us?</span></h3>
+  <blockquote class="blockquote description mt-5">
+    <p class="mb-0">Sed commodo gravida sapien a ultrices. Aenean dolor nunc, mattis quis molestie mattis, fringilla
+      vitae sapien. Nulla laoreet, elit sed convallis congue, nulla mi accumsan lacus, sodales porta tellus lectus et
+      magna. Cras consequat neque a risus ultricies semper. Sed efficitur a mauris at vehicula. Morbi sit amet rhoncus
+      eros, at cursus enim. Nunc efficitur ante mi, non consequat velit vulputate sit amet. Nunc egestas volutpat magna,
+      sit amet ultrices diam ornare nec. Sed ex ligula, malesuada a est eu, interdum facilisis quam. Donec porta luctus
+      molestie. Nullam vel massa metus. Vestibulum vehicula ligula turpis, vitae efficitur nisl dapibus eget. Nam id
+      lacus nisi. Interdum et malesuada fames ac ante ipsum primis in faucibus. </p>
+  </blockquote>
+</div>
+<div class="container resp-container mt-3">
+  <iframe class="resp-iframe"
+    src="https://docs.google.com/forms/d/e/1FAIpQLScG-vxTiytDKXLAJq09EA8yYKghDCkDh7M-fV441wOBZfdi_A/viewform?embedded=true">Loading…</iframe>
+
+</div>
 
 {% endblock content %}
