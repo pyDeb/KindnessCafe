@@ -16,6 +16,7 @@ from paypal.standard.forms import PayPalPaymentsForm
 
 def donation_view(request):
     if request.method == 'POST':
+        if request.POST['']
         errors = {}
 
         ### validating user's input
