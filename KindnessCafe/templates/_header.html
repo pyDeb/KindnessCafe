@@ -2,14 +2,14 @@
 
 <!-- Header -->
 <!-- header section strats -->
-<header class="h_section sticky-top">
-
-
-  <nav class="navbar navbar-expand-lg kc_navbar-custom">
+<header class="fixed-top">
+  <nav class="navbar navbar-expand-lg">
+    <a href="{% url 'index' %}">
     <img class="navbar-brand" src="{% static 'images/KCLogo_thumb.png' %}" alt="Kindness Cafe Logo">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#kc_navigation"
       aria-controls="kc_navigation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span id="menu-icon" class="material-icons navbar-toggler-icon">menu</span>
     </button>
 
     <div class="collapse navbar-collapse" id="kc_navigation">

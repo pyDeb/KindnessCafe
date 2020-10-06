@@ -1,17 +1,29 @@
+var menuIcon = document.getElementById('menu-icon');
+menuIcon.addEventListener("click", function () {
+  if (menuIcon.innerHTML == "menu") {
+    menuIcon.innerHTML = "close";
+    menuIcon.style.color = "#fa8bac";
+    console.log("manu icon -> close icon");
+  } else if (menuIcon.innerHTML == "close") {
+    menuIcon.innerHTML = "menu";
+    menuIcon.style.color = "rgb(146, 204, 124)";
+    console.log("close icon -> manu icon");
+  }
+});
+
 //Run slick carousel
 //By https://kenwheeler.github.io/slick/
 $(document).ready(function () {
   $('#kc_logos').slick({
     mobileFirst: true,
     autoplay: true,
-    autoplaySpeed: 2000,
-    // centerMode: true,
-    // centerPadding: '200px',
+    autoplaySpeed: 1000,
     variableWidth: true,
     dots: true,
     responsive: [{
         breakpoint: 992,
         settings: {
+          arrows: true,
           slidesToShow: 5,
           slidesToScroll: 1
         }
@@ -19,6 +31,7 @@ $(document).ready(function () {
       {
         breakpoint: 768,
         settings: {
+          arrows: false,
           slidesToShow: 3,
           slidesToScroll: 1
         }
@@ -26,7 +39,7 @@ $(document).ready(function () {
       {
         breakpoint: 576,
         settings: {
-
+          arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1
         }
@@ -97,14 +110,14 @@ $('.copy_text').click(function (e) {
   e.preventDefault();
   var copyText = $(this).attr('href');
 
-  document.addEventListener('copy', function(e) {
-     e.clipboardData.setData('text/plain', copyText);
-     e.preventDefault();
+  document.addEventListener('copy', function (e) {
+    e.clipboardData.setData('text/plain', copyText);
+    e.preventDefault();
   }, true);
 
-  document.execCommand('copy');  
+  document.execCommand('copy');
   console.log('copied text : ', copyText);
-  alert('copied text: ' + copyText); 
+  alert('copied text: ' + copyText);
 });
 
 setTimeout(

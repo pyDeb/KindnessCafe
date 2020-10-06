@@ -1,16 +1,12 @@
 * {
   font-family: 'Raleway', sans-serif; }
 
-.kc_navbar-custom .nav-link,
-.kc_navbar-custom .nav-item {
-  color: #161616; }
+html {
+  scroll-behavior: smooth; }
 
-.kc_navbar-custom .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(146,204,124,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
-
-.kc_navbar-custom .navbar-toggler {
-  color: #fa8bac;
-  border-color: #fa8bac; }
+body {
+  background-color: #f3f3f3;
+  padding-top: 6.5rem; }
 
 #kc_background {
   position: fixed;
@@ -20,17 +16,23 @@
   top: 0;
   background: white; }
 
+header .nav-link,
+header .nav-item {
+  color: #161616; }
+header .navbar-toggler-icon {
+  color: #92cc7c; }
 header nav {
   background-color: #fff !important;
-  border-bottom: 3px solid #fa8bac !important;
   border-radius: 0px 0px 15px 15px; }
 header img.navbar-brand {
-  height: 70px;
+  height: 90px;
   padding: 0; }
 
 #kc_news {
-  position: relative;
-  text-align: center; }
+  position: relative; }
+  #kc_news span.material-icons {
+    font-size: 5rem;
+    color: #92cc7c; }
 
 #kc_news-scrollspy {
   position: sticky; }
@@ -57,25 +59,22 @@ header img.navbar-brand {
   margin-left: -150px;
   margin-top: -150px; }
 
-.carousel-item h3 {
-  position: absolute;
-  top: 0%;
-  left: inherit !important; }
-.carousel-item img {
-  max-width: 100%;
-  width: 1200px !important;
-  height: 600px !important;
-  object-fit: cover; }
-.carousel-item p {
-  position: absolute;
-  bottom: 0%; }
-.carousel-item .carousel-caption {
-  bottom: 10% !important;
-  top: 60% !important; }
+.carousel-inner {
+  padding: 1rem;
+  background-color: #fafafa;
+  border-radius: 50px; }
+  .carousel-inner .carousel-item .carousel-caption {
+    color: black;
+    text-align: center;
+    max-width: 500px;
+    left: auto;
+    top: auto;
+    color: #212121 !important; }
 
-#main-carousel {
-  border: 2px solid #4f4f4f;
-  border-radius: 3px; }
+#main-carousel img {
+  border-radius: 50px;
+  height: 400px;
+  object-fit: cover; }
 
 /* Card shadow effect*/
 .kc_card-style1 {
@@ -170,24 +169,21 @@ header img.navbar-brand {
   -webkit-box-orient: vertical; }
 
 #kc_stat {
+  position: relative;
+  color: #fa8bac;
   margin-top: 80px;
   margin-bottom: 50px; }
+  #kc_stat .card-title:first-child {
+    color: #ae506c !important; }
   #kc_stat .card {
     text-align: center; }
     #kc_stat .card h5.value,
     #kc_stat .card h5.value > span {
-      font-family: 'Bangers', cursive;
-      font-size: 4rem; }
+      font-family: 'Black Ops One', cursive;
+      font-size: 3rem; }
   #kc_stat span {
     font-size: 4rem;
     padding: 1.25rem; }
-
-#kc_mission span.material-icons {
-  font-size: 8rem; }
-#kc_mission .statement {
-  font-size: 2.25rem; }
-#kc_mission .description {
-  font-size: 1.5rem; }
 
 /* Defining new button style (pink) base on bootstrap btn-primary class*/
 .btn-pink {
@@ -255,16 +251,18 @@ header img.navbar-brand {
 .show > .btn-leafy.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(146, 204, 124, 0.5); }
 
-#kc_logos img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  margin: auto 2rem; }
+#kc_logos {
+  overflow-x: clip; }
+  #kc_logos img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: auto 2rem; }
 
 [class*="brush-stroke"] {
-  font-family: 'Bangers', cursive;
+  font-family: 'Lato', sans-serif;
   background-repeat: no-repeat !important;
-  background-size: 100% !important;
+  background-size: 70% !important;
   font-size: 2rem !important;
   background-position: center !important;
   padding: 2rem !important;
@@ -326,9 +324,7 @@ label.required:after {
 
 .card {
   font-weight: 400 !important;
-  border: 0 !important;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important; }
+  border: 0 !important; }
 
 .card.card-cascade.wider .view.view-cascade {
   z-index: 2 !important; }
@@ -392,5 +388,19 @@ label.required:after {
 .copy_text {
   color: #4f4f4f !important;
   text-decoration: none !important; }
+
+.index-header-media img,
+.index-header-media video {
+  border-radius: 50px 0px 0px 50px;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
+.divider {
+  position: absolute;
+  top: 50%;
+  left: -25%;
+  width: 150%;
+  border-bottom: 2px solid #fa8bac; }
 
 /*# sourceMappingURL=main.css.map */
