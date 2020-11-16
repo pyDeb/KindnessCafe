@@ -1,22 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% if paypal_is_canceled %}
 <div id="kc_paypalresult" class="mb-4 container text-center">
+    {% if paypal_is_canceled %}
+
     <span class="material-icons">cancel</span>
     <h3><span class="brush-stroke-2">The transaction has been canceled.</span></h3>
     <blockquote class="blockquote description mt-5">
         <p class="mb-0">If any amount has been deducted from you PayPal account, it will be returned back by PayPal to
             your account.</p>
     </blockquote>
-</div>
-{% else %}
-<div id="kc_paypalresult" class="mb-4 container text-center">
+
+    {% else %}
+
     <span class="material-icons">done</span>
     <h3><span class="brush-stroke-2">Your contribution is highly appreciated!</span></h3>
     <blockquote class="blockquote description mt-5">
         <p class="mb-0">The transaction has been successful.</p>
     </blockquote>
+
+    {% endif paypal_is_canceled %}
 </div>
-{% endif paypal_is_canceled %}
 {% endblock content %}
