@@ -4,172 +4,162 @@
 {% include '_modal.html' %}
 
 <div id="kc_news" class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <span class="material-icons">format_quote</span>
-      <div class="brush-stroke-2">
-        <h3>"Empowering our community through nutrition and compassion"</h3>
-      </div>
-      <div class="">
-        <p>Kindness Cafe is the first for-profit organization aimed to solve the food waste
-          problem in
-          Windsor, Ontario. Kindness Cafe collects and enhances surplus food from Windsor restaurants and provides it
-          back
-          to the community. Our menu does not have set prices, meaning our customers decide the value of their meal and
-          pay using a PAY-AS-YOU-FEEL concept. We compost and donate our own surplus to local livestock to continue the
-          food cycle. Ultimately, Kindness Cafe is a movementaimed to achieve zero food waste in Windsor, Ontario, and
-          one
-          day across the whole world</p>
-      </div>
-      <a href="{% url 'donation' %}" class="btn btn-leafy mt-3 mb-5">Donate</a>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="brush-stroke-2">
+                <h3>Empowering our community through nutrition and compassion</h3>
+            </div>
+            <div class="">
+                <p>Kindness Cafe is the first for-profit organization aimed to solve the food waste
+                    problem in
+                    Windsor, Ontario. Kindness Cafe collects and enhances surplus food from Windsor restaurants and
+                    provides it
+                    back
+                    to the community. Our menu does not have set prices, meaning our customers decide the value of their
+                    meal and
+                    pay using a PAY-AS-YOU-FEEL concept. We compost and donate our own surplus to local livestock to
+                    continue the
+                    food cycle. Ultimately, Kindness Cafe is a movementaimed to achieve zero food waste in Windsor,
+                    Ontario, and
+                    one
+                    day across the whole world</p>
+            </div>
+            <a href="{% url 'donation' %}" class="btn btn-leafy mt-3 mb-5">Donate</a>
+        </div>
+        <div class="col-md-6 d-none d-md-block m-auto">
+            <div class="index-header-media">
+                <img src="{% static 'images/ourmission.jpg' %}" alt="">
+            </div>
+        </div>
     </div>
-    <div class="col-md-6 d-none d-md-block">
-      <div class="index-header-media">
-        <img src="{% static 'images/ourmission.jpg' %}" alt="">
-      </div>
-    </div>
-  </div>
+</div>
 
-  <div id="kc_stat" class="my-4 container">
+<div id="kc_stat" class="my-4 container-fluid">
     <div class="divider d-none d-lg-block"></div>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-      <div class="col mb-4">
-        <div class="card">
-          <img src="{% static 'images/svgs/event.svg' %}" alt="Event Held Logo">
-          <div class="card-body">
-            <h5 class="card-title">Events held</h5>
-            <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='4' data-delay='2'
-                data-increment='1'>0</span></h5>
-          </div>
+    <div class="container">
+        <div class="row stat_container_bg">
+            {% if stat_items %}
+            {% for item in stat_items reversed %}
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="{{ item.icon.url }}" alt="{{ item.title }} icon">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.title }}</h5>
+                        <h5 class="card-title value"><span class='numscroller' data-min='{{ item.data_min }}'
+                                                           data-max='{{ item.data_max }}'
+                                                           data-delay='{{ item.data_delay }}'
+                                                           data-increment='{{ item.data_increment }}'>0</span>
+                            {% if item.units_field %}{{ item.units_field }}{% endif %}
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-12">
+                <p class="text-center">Sorry! No statistics is available at the moment!</p>
+            </div>
+            {% endif %}
         </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card ">
-          <img src="{% static 'images/svgs/food.svg' %}" alt="Food Rescued Logo">
-          <div class="card-body">
-            <h5 class="card-title">Food Rescued</h5>
-            <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='80' data-delay='2'
-                data-increment='2'>0</span>lb</h5>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card ">
-          <img src="{% static 'images/svgs/people.svg' %}" alt="People Served Logo">
-          <div class="card-body">
-            <h5 class="card-title">People Served</h5>
-            <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='52' data-delay='2'
-                data-increment='4'>0</span></h5>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card ">
-          <img src="{% static 'images/svgs/donation.svg' %}" alt="Donation Received Logo">
-          <div class="card-body">
-            <h5 class="card-title">Donation Received</h5>
-            <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='183' data-delay='2'
-                data-increment='8'>0</span>C$</h5>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="py-5" style="position: relative;">
+</div>
+<div class="py-5" style="position: relative;">
     <div class="divider d-none d-lg-block"></div>
-  </div>
+</div>
 
-  <!-- Mission -->
-  <div id="kc_mission" class="my-4 container text-center">
+<!-- Mission -->
+<div id="kc_mission" class="my-4 container text-center">
     <div class="row justify-content-end">
-      <div class="col-lg-5 col-sm-12">
-        <div class="brush-stroke-1">
-          <h3>Recent Updates</h3>
+        <div class="col-lg-5 col-sm-12">
+            <div class="brush-stroke-1">
+                <h3>Recent Updates</h3>
+            </div>
         </div>
-      </div>
     </div>
     <div class="carousel slide " id="main-carousel" data-ride="carousel">
 
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row">
-            <div class="col-lg-7">
-              <img class="d-block img-fluid" src="{{ news1.image_1.url }}" alt="">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="d-block img-fluid" src="{{ news1.image_1.url }}" alt="">
+                    </div>
+                    <div class="col-lg-5 m-auto pt-5">
+                        <div class="text-center">
+                            <h3>{{ news1.title }}</h3>
+                            <p class="kc_truncate">{{ news1.desc }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-5 m-auto pt-5">
-              <div class="text-center">
-                <h3>{{ news1.title }}</h3>
-                <p class="kc_truncate">{{ news1.desc }}</p>
-              </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="d-block img-fluid" src="{{ news2.image_1.url }}" alt="">
+                    </div>
+                    <div class="col-lg-5 m-auto pt-5">
+                        <div class="text-center">
+                            <h3>{{ news2.title }}</h3>
+                            <p class="kc_truncate">{{ news2.desc }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="d-block img-fluid" src="{{ news3.image_1.url }}" alt="">
+                    </div>
+                    <div class="col-lg-5 m-auto pt-5">
+                        <div class="text-center">
+                            <h3>{{ news3.title }}</h3>
+                            <p class="kc_truncate">{{ news3.desc }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.carousel-inner -->
+        <div class="row justify-content-lg-start">
+            <div class="col-7">
+                <a href="#main-carousel" class="carousel-control-prev" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="sr-only" aria-hidden="true">Prev</span>
+                </a>
+                <a href="#main-carousel" class="carousel-control-next" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="sr-only" aria-hidden="true">Next</span>
+                </a>
+            </div>
         </div>
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-lg-7">
-              <img class="d-block img-fluid" src="{{ news2.image_1.url }}" alt="">
-            </div>
-            <div class="col-lg-5 m-auto pt-5">
-              <div class="text-center">
-                <h3>{{ news2.title }}</h3>
-                <p class="kc_truncate">{{ news2.desc }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="row">
-            <div class="col-lg-7">
-              <img class="d-block img-fluid" src="{{ news3.image_1.url }}" alt="">
-            </div>
-            <div class="col-lg-5 m-auto pt-5">
-              <div class="text-center">
-                <h3>{{ news3.title }}</h3>
-                <p class="kc_truncate">{{ news3.desc }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- /.carousel-inner -->
-      <div class="row justify-content-lg-start">
-        <div class="col-7">
-          <a href="#main-carousel" class="carousel-control-prev" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-            <span class="sr-only" aria-hidden="true">Prev</span>
-          </a>
-          <a href="#main-carousel" class="carousel-control-next" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-            <span class="sr-only" aria-hidden="true">Next</span>
-          </a>
-        </div>
-      </div>
     </div><!-- /.carousel -->
-  </div>
+</div>
 
-  <div class="py-5" style="position: relative;">
+<div class="py-5" style="position: relative;">
     <div class="divider d-none d-lg-block"></div>
-  </div>
+</div>
 
-  <!--Partners' Logo-->
-  <div class="row justify-content-center mb-2 mt-5 text-center">
-    <div class="col-sm-12 col-lg-4">
-      <div class="brush-stroke-3">
-        <h3>Believed By</h3>
-      </div>
+<!--Partners' Logo-->
+<div class="container">
+    <div class="row justify-content-center mb-2 mt-5 text-center">
+        <div class="col-sm-12 col-lg-4">
+            <div class="brush-stroke-3">
+                <h3>Believed By</h3>
+            </div>
+        </div>
     </div>
-  </div>
-  <div id="kc_logos" class="container text-center my-5">
+</div>
+<div id="kc_logos" class="container text-center my-5">
     <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/EpiCentre.png"
-          alt="partner1_name"></a></div>
+                         alt="partner1_name"></a></div>
     <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/RBC.png"
-          alt="partner2_name"></a></div>
+                         alt="partner2_name"></a></div>
     <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/STClair.png"
-          alt="partner3_name"></a></div>
+                         alt="partner3_name"></a></div>
     <div><a href=""><img src="{% static 'images/DSC-UoW.jpg' %}" alt="partner4_name"></a></div>
     <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/static/images/ta.png"
-          alt="partner5_name"></a></div>
+                         alt="partner5_name"></a></div>
     <div><a href=""><img src="{% static 'images/Libro.png' %}" alt="partner6_name"></a></div>
     <div><a href=""><img src="{% static 'images/compassion.png' %}" alt="partner7_name"></a></div>
-  </div>
+</div>
 
-  {% endblock content %}
+{% endblock content %}

@@ -28,6 +28,10 @@ header {
   .nav-link,
   .nav-item {
     color: rgb(22, 22, 22);
+
+    :hover {
+      color: $kc_pink-color;
+    }
   }
 
   .navbar-toggler-icon {
@@ -37,7 +41,7 @@ header {
   nav {
     background-color: #fff !important;
     //border-bottom: 3px solid $kc_pink-color !important;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 0rem 0rem 2rem 2rem;
   }
 
   img.navbar-brand {
@@ -91,6 +95,7 @@ header {
   padding: 1rem;
   background-color: #fafafa;
   border-radius: 50px;
+
   .carousel-item {
     // h3 {
     //   position: absolute;
@@ -275,17 +280,28 @@ $darkBackground: #5b5f97;
   .card {
     text-align: center;
 
+    img {
+      height: 150px;
+      width: 150px;
+      margin: auto;
+    }
+
     h5.value,
-    h5.value>span {
+    h5.value > span {
       font-family: 'Black Ops One', cursive;
-      font-size: 3rem;
+      font-size: 2.5rem;
 
     }
   }
 
   span {
-    font-size: 4rem;
     padding: 1.25rem;
+  }
+
+  .stat_container_bg {
+    background-color: #fff;
+    position: relative;
+    z-index: 4;
   }
 }
 
@@ -317,7 +333,7 @@ $darkBackground: #5b5f97;
 
 .btn-pink:not(:disabled):not(.disabled).active,
 .btn-pink:not(:disabled):not(.disabled):active,
-.show>.btn-pink.dropdown-toggle {
+.show > .btn-pink.dropdown-toggle {
   color: #fff;
   background-color: rgb(253, 103, 148);
   border-color: rgb(255, 93, 142)
@@ -325,7 +341,7 @@ $darkBackground: #5b5f97;
 
 .btn-pink:not(:disabled):not(.disabled).active:focus,
 .btn-pink:not(:disabled):not(.disabled):active:focus,
-.show>.btn-pink.dropdown-toggle:focus {
+.show > .btn-pink.dropdown-toggle:focus {
   box-shadow: 0 0 0 .2rem rgba(250, 139, 172, .5)
 }
 
@@ -356,7 +372,7 @@ $darkBackground: #5b5f97;
 
 .btn-leafy:not(:disabled):not(.disabled).active,
 .btn-leafy:not(:disabled):not(.disabled):active,
-.show>.btn-leafy.dropdown-toggle {
+.show > .btn-leafy.dropdown-toggle {
   color: #fff;
   background-color: rgb(114, 207, 80);
   border-color: rgb(75, 172, 40)
@@ -364,7 +380,7 @@ $darkBackground: #5b5f97;
 
 .btn-leafy:not(:disabled):not(.disabled).active:focus,
 .btn-leafy:not(:disabled):not(.disabled):active:focus,
-.show>.btn-leafy.dropdown-toggle:focus {
+.show > .btn-leafy.dropdown-toggle:focus {
   box-shadow: 0 0 0 .2rem rgba(146, 204, 124, .5)
 }
 
@@ -455,8 +471,20 @@ li.active {
 #kc_recruitment {
   span.material-icons {
     font-size: 6rem;
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color: $kc_green-color;
+  }
+}
+
+#addFoodItemButton {
+  background-color: #fff;
+  border: 1px solid $kc_green-color;
+  border-radius: 10px;
+
+  span {
+    font-size: 1.5rem !important;
+    margin: auto !important;
     color: $kc_green-color;
   }
 }
@@ -562,7 +590,6 @@ label.required:after {
   video {
     border-radius: 50px 0px 0px 50px;
     max-width: 100%;
-    height: 100%;
     object-fit: cover;
   }
 }
@@ -570,7 +597,24 @@ label.required:after {
 .divider {
   position: absolute;
   top: 50%;
-  left: -25%;
-  width: 150%;
+  left: 0;
+  width: 100%;
   border-bottom: 2px solid $kc_pink-color;
+}
+
+/* SCROLL TO TOP BUTTON*/
+#gototopbtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: 1px solid $kc_pink-color;
+  outline: none;
+  color: $kc_pink-color;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.75);
 }

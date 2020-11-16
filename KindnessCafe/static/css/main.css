@@ -19,11 +19,14 @@ body {
 header .nav-link,
 header .nav-item {
   color: #161616; }
+  header .nav-link :hover,
+  header .nav-item :hover {
+    color: #fa8bac; }
 header .navbar-toggler-icon {
   color: #92cc7c; }
 header nav {
   background-color: #fff !important;
-  border-radius: 0px 0px 15px 15px; }
+  border-radius: 0rem 0rem 2rem 2rem; }
 header img.navbar-brand {
   height: 90px;
   padding: 0; }
@@ -177,13 +180,20 @@ header img.navbar-brand {
     color: #ae506c !important; }
   #kc_stat .card {
     text-align: center; }
+    #kc_stat .card img {
+      height: 150px;
+      width: 150px;
+      margin: auto; }
     #kc_stat .card h5.value,
     #kc_stat .card h5.value > span {
       font-family: 'Black Ops One', cursive;
-      font-size: 3rem; }
+      font-size: 2.5rem; }
   #kc_stat span {
-    font-size: 4rem;
     padding: 1.25rem; }
+  #kc_stat .stat_container_bg {
+    background-color: #fff;
+    position: relative;
+    z-index: 4; }
 
 /* Defining new button style (pink) base on bootstrap btn-primary class*/
 .btn-pink {
@@ -309,9 +319,18 @@ li.active {
 #kc_donation span.material-icons,
 #kc_recruitment span.material-icons {
   font-size: 6rem;
-  margin-top: 3rem !important;
-  margin-bottom: 3rem !important;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   color: #92cc7c; }
+
+#addFoodItemButton {
+  background-color: #fff;
+  border: 1px solid #92cc7c;
+  border-radius: 10px; }
+  #addFoodItemButton span {
+    font-size: 1.5rem !important;
+    margin: auto !important;
+    color: #92cc7c; }
 
 label.required:after {
   content: "*";
@@ -393,14 +412,29 @@ label.required:after {
 .index-header-media video {
   border-radius: 50px 0px 0px 50px;
   max-width: 100%;
-  height: 100%;
   object-fit: cover; }
 
 .divider {
   position: absolute;
   top: 50%;
-  left: -25%;
-  width: 150%;
+  left: 0;
+  width: 100%;
   border-bottom: 2px solid #fa8bac; }
+
+/* SCROLL TO TOP BUTTON*/
+#gototopbtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: 1px solid #fa8bac;
+  outline: none;
+  color: #fa8bac;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.75); }
 
 /*# sourceMappingURL=main.css.map */
