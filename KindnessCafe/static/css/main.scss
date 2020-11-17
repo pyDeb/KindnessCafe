@@ -17,19 +17,19 @@ body {
 #kc_navigation {
   @keyframes loading-animation {
     0% {
-      //border-width: 6px;
+      border-width: 6px;
       border-color: $kc_green-color;
     }
     25% {
-      //border-width: 8px;
+      border-width: 8px;
       border-color: $kc_pink-color;
     }
     50% {
-      //border-width: 10px;
+      border-width: 10px;
       border-color: $kc_green-color;
     }
     100% {
-      //border-width: 12px;
+      border-width: 12px;
       border-color: $kc_pink-color;
     }
   }
@@ -40,8 +40,9 @@ body {
     animation-duration: 500ms;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
   }
+
 }
 
 #kc_background {
@@ -682,3 +683,7 @@ label.required:after {
 }
 
 /* End of News Card Section Modified */
+
+/* TEST */
+
+/* End of TEST*/

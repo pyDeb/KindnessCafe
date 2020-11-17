@@ -6,12 +6,7 @@
       <change beforePath="$PROJECT_DIR$/KindnessCafe/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/static/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KindnessCafe/static/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/static/css/main.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KindnessCafe/static/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/static/css/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/static/js/bootstrap-tagsinput/bootstrap-tagsinput.js" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/static/js/bootstrap-tagsinput/bootstrap-tagsinput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KindnessCafe/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/templates/_header.html" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/templates/_header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/templates/donation.html" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/templates/donation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/templates/news.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +53,7 @@
       <workItem from="1604890090807" duration="45000" />
       <workItem from="1604890614476" duration="757000" />
       <workItem from="1605461611811" duration="27331000" />
-      <workItem from="1605581669016" duration="11920000" />
+      <workItem from="1605581669016" duration="18327000" />
     </task>
     <servers />
   </component>

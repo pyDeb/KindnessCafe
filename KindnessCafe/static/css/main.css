@@ -10,12 +10,16 @@ body {
 
 @keyframes loading-animation {
   0% {
+    border-width: 6px;
     border-color: #92cc7c; }
   25% {
+    border-width: 8px;
     border-color: #fa8bac; }
   50% {
+    border-width: 10px;
     border-color: #92cc7c; }
   100% {
+    border-width: 12px;
     border-color: #fa8bac; } }
 #kc_navigation .loading {
   border-bottom: 4px solid #fa8bac;
@@ -482,5 +486,7 @@ label.required:after {
   opacity: 1 !important; }
 
 /* End of News Card Section Modified */
+/* TEST */
+/* End of TEST*/
 
 /*# sourceMappingURL=main.css.map */

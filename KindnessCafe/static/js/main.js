@@ -69,10 +69,16 @@ var navItems = btnContainer.getElementsByClassName("nav-item");
 var aTags = btnContainer.getElementsByTagName("a");
 // Loop through the buttons and add the active class to the current/clicked button
 for (var i = 0; i < aTags.length; i++) {
-    aTags[i].addEventListener("click", function () {
-        let current = btnContainer.getElementsByClassName("active")[0];
-        current.className += current.className.replace("active" , "");
-        this.parentNode.className += " active loading";
+    aTags[i].addEventListener("click", function (e) {
+        e.preventDefault();
+        self = this;
+        var current = btnContainer.getElementsByClassName("active")[0];
+        current.className = current.className.replace("active", "");
+        self.parentNode.className += " active loading";
+        var url = $(this).attr("href");
+        setTimeout(function () {
+            window.location = url;
+        }, 500);
     });
 }
 
