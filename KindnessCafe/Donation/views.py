@@ -9,6 +9,8 @@ from datetime import datetime
 from django.core.mail import EmailMessage
 from paypal.standard.forms import PayPalPaymentsForm
 from django.views.decorators.csrf import csrf_exempt
+from django.urls import reverse
+from .models import Donation
 
 # Create your views here.
 
@@ -50,10 +52,19 @@ def donation_view(request):
             return redirect("/", messages.success(request, 'Your message was sent. We will contact you soon!'))
         
         elif 'PayPal_donation' in request.POST:
+                host = request.get_host()
+                name = request.POST['inputName']
+                if name:
+                    name = "Anonymous"
+
+                don = Donation(name=name, amount=float(request.POST['amount']))
+                don.save()
+                
                 paypal_dict = {
                     'business': settings.PAYPAL_RECEIVER_EMAIL,
                     'amount': request.POST['inputAmount'],
                     'item_name': 'Donation for Kindness Cafe',
+                    'invoice': str(don.d_id),
                     'currency_code': 'CAD',
                     'notify_url': 'http://{}{}'.format(host, reverse('paypal-ipn')),
                     'return_url': 'http://{}{}'.format(host, reverse('payment_done')),
