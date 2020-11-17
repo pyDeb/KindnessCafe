@@ -14,6 +14,36 @@ body {
   padding-top: 6.5rem;
 }
 
+#kc_navigation {
+  @keyframes loading-animation {
+    0% {
+      //border-width: 6px;
+      border-color: $kc_green-color;
+    }
+    25% {
+      //border-width: 8px;
+      border-color: $kc_pink-color;
+    }
+    50% {
+      //border-width: 10px;
+      border-color: $kc_green-color;
+    }
+    100% {
+      //border-width: 12px;
+      border-color: $kc_pink-color;
+    }
+  }
+
+  .loading {
+    border-bottom: 4px solid $kc_pink-color;
+    animation-name: loading-animation;
+    animation-duration: 500ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+  }
+}
+
 #kc_background {
   position: fixed;
   height: 100%;
@@ -121,7 +151,6 @@ header {
     //   color: #212121 !important;
     // }
     .carousel-caption {
-      color: black;
       //right: 58%;
       text-align: center;
       max-width: 500px;
@@ -256,16 +285,15 @@ $darkBackground: #5b5f97;
   }
 }
 
-#main-carousel {
-  p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    /* number of lines to show */
-    -webkit-box-orient: vertical;
-  }
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
+
 
 #kc_stat {
   position: relative;
@@ -397,10 +425,11 @@ $darkBackground: #5b5f97;
 
 
 [class*="brush-stroke"] {
+  display: inline-block;
   font-family: 'Lato', sans-serif;
   background-repeat: no-repeat !important;
   background-size: 70% !important;
-  font-size: 2rem !important;
+  font-size: 2rem 0rem !important;
   background-position: center !important;
   padding: 2rem !important;
   color: #212121;
@@ -468,7 +497,8 @@ li.active {
 }
 
 #kc_donation,
-#kc_recruitment {
+#kc_recruitment,
+#kc_paypalresult {
   span.material-icons {
     font-size: 6rem;
     margin-top: 3rem;
@@ -481,12 +511,18 @@ li.active {
   background-color: #fff;
   border: 1px solid $kc_green-color;
   border-radius: 10px;
+  display: table;
 
   span {
     font-size: 1.5rem !important;
-    margin: auto !important;
+    //margin: auto !important;
     color: $kc_green-color;
+    display: table-cell;
+    vertical-align: middle;
+    height: 2rem;
+
   }
+
 }
 
 label.required:after {
@@ -618,3 +654,31 @@ label.required:after {
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.75);
 }
+
+/* News Card Section Modified */
+.card-img-top {
+  height: 200px !important;
+  width: 400px !important;
+  object-fit: cover;
+}
+
+.card-badge-top-right {
+  position: relative;
+  top: 8%;
+  right: 4%;
+  float: right;
+  opacity: 1 !important;
+}
+
+.updateTag {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+}
+
+/* End of News Card Section Modified */

@@ -3,11 +3,9 @@ menuIcon.addEventListener("click", function () {
     if (menuIcon.innerHTML == "menu") {
         menuIcon.innerHTML = "close";
         menuIcon.style.color = "#fa8bac";
-        console.log("manu icon -> close icon");
     } else if (menuIcon.innerHTML == "close") {
         menuIcon.innerHTML = "menu";
         menuIcon.style.color = "rgb(146, 204, 124)";
-        console.log("close icon -> manu icon");
     }
 });
 
@@ -60,51 +58,54 @@ function processAjaxData(response, urlPath) {
     }, "", urlPath);
 }
 
+// Find out the App Name from URL
+var urlArray = window.location.href.split("/");
+var appPathName = urlArray[urlArray.length - 2];
 // Get the container element
 var btnContainer = document.getElementById("kc_navigation");
 
-// Get all buttons with class="btn" inside the container
-var btns = btnContainer.getElementsByTagName("a");
+var navItems = btnContainer.getElementsByClassName("nav-item");
 
+var aTags = btnContainer.getElementsByTagName("a");
 // Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.parentNode.className += " active";
+for (var i = 0; i < aTags.length; i++) {
+    aTags[i].addEventListener("click", function () {
+        let current = btnContainer.getElementsByClassName("active")[0];
+        current.className += current.className.replace("active" , "");
+        this.parentNode.className += " active loading";
     });
 }
 
 var urlArray = window.location.href.split("/");
 var appPathName = urlArray[urlArray.length - 2];
-//console.log(urlArray[urlArray.length - 2]);
+
 if (appPathName == "news") {
-    btns[2].parentNode.className += " active";
+    aTags[1].parentNode.className += " active ";
 } else if (appPathName == "donation") {
-    btns[5].parentNode.className += " active";
+    aTags[2].parentNode.className += " active";
 } else if (appPathName == "contact-us") {
-    btns[6].parentNode.className += " active";
+    aTags[3].parentNode.className += " active";
 } else if (appPathName == "recruitment") {
-    btns[7].parentNode.className += " active";
+    aTags[4].parentNode.className += " active";
 } else {
-    btns[0].parentNode.className += " active";
+    aTags[0].parentNode.className += " active";
 }
 
 
-if (window.location.href.split("#")[1] == "news" || appPathName == "news") {
-    document.getElementById("news-tab").click();
-}
-if (window.location.href.split("#")[1] == "events") {
-    document.getElementById("events-tab").click();
-}
-window.addEventListener('popstate', function (event) {
-    if (window.location.href.split("#")[1] == "news") {
-        document.getElementById("news-tab").click();
-    }
-    if (window.location.href.split("#")[1] == "events") {
-        document.getElementById("events-tab").click();
-    }
-});
+// if (window.location.href.split("#")[1] == "news" || appPathName == "news") {
+//     document.getElementById("news-tab").click();
+// }
+// if (window.location.href.split("#")[1] == "events") {
+//     document.getElementById("events-tab").click();
+// }
+// window.addEventListener('popstate', function (event) {
+//     if (window.location.href.split("#")[1] == "news") {
+//         document.getElementById("news-tab").click();
+//     }
+//     if (window.location.href.split("#")[1] == "events") {
+//         document.getElementById("events-tab").click();
+//     }
+// });
 
 $('.copy_text').click(function (e) {
     e.preventDefault();
@@ -167,22 +168,22 @@ document.getElementById('copyright-button').addEventListener("click", function (
 //Go to the Top Button
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
-  scrollFunction()
+    scrollFunction()
 };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    document.getElementById("gototopbtn").style.display = "block";
-  } else {
-    document.getElementById("gototopbtn").style.display = "none";
-  }
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("gototopbtn").style.display = "block";
+    } else {
+        document.getElementById("gototopbtn").style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  $("html, body").animate({ scrollTop: 0 }, 600);
-  //document.body.scrollTop = 0;
-  //document.documentElement.scrollTop = 0;
+    $("html, body").animate({scrollTop: 0}, 600);
+    //document.body.scrollTop = 0;
+    //document.documentElement.scrollTop = 0;
 }
 
 document.getElementById('gototopbtn').addEventListener("click", function () {

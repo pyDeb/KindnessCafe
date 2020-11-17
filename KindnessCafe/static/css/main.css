@@ -8,6 +8,23 @@ body {
   background-color: #f3f3f3;
   padding-top: 6.5rem; }
 
+@keyframes loading-animation {
+  0% {
+    border-color: #92cc7c; }
+  25% {
+    border-color: #fa8bac; }
+  50% {
+    border-color: #92cc7c; }
+  100% {
+    border-color: #fa8bac; } }
+#kc_navigation .loading {
+  border-bottom: 4px solid #fa8bac;
+  animation-name: loading-animation;
+  animation-duration: 500ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
+
 #kc_background {
   position: fixed;
   height: 100%;
@@ -67,7 +84,6 @@ header img.navbar-brand {
   background-color: #fafafa;
   border-radius: 50px; }
   .carousel-inner .carousel-item .carousel-caption {
-    color: black;
     text-align: center;
     max-width: 500px;
     left: auto;
@@ -163,7 +179,7 @@ header img.navbar-brand {
         border-right: 4px solid white;
         padding-right: 10px; }
 
-#main-carousel p {
+.truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -270,10 +286,11 @@ header img.navbar-brand {
     margin: auto 2rem; }
 
 [class*="brush-stroke"] {
+  display: inline-block;
   font-family: 'Lato', sans-serif;
   background-repeat: no-repeat !important;
   background-size: 70% !important;
-  font-size: 2rem !important;
+  font-size: 2rem 0rem !important;
   background-position: center !important;
   padding: 2rem !important;
   color: #212121; }
@@ -317,7 +334,8 @@ li.active {
   height: 100%; }
 
 #kc_donation span.material-icons,
-#kc_recruitment span.material-icons {
+#kc_recruitment span.material-icons,
+#kc_paypalresult span.material-icons {
   font-size: 6rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -326,11 +344,14 @@ li.active {
 #addFoodItemButton {
   background-color: #fff;
   border: 1px solid #92cc7c;
-  border-radius: 10px; }
+  border-radius: 10px;
+  display: table; }
   #addFoodItemButton span {
     font-size: 1.5rem !important;
-    margin: auto !important;
-    color: #92cc7c; }
+    color: #92cc7c;
+    display: table-cell;
+    vertical-align: middle;
+    height: 2rem; }
 
 label.required:after {
   content: "*";
@@ -436,5 +457,30 @@ label.required:after {
   padding: 10px;
   border-radius: 15px;
   background-color: rgba(255, 255, 255, 0.75); }
+
+/* News Card Section Modified */
+.card-img-top {
+  height: 200px !important;
+  width: 400px !important;
+  object-fit: cover; }
+
+.card-badge-top-right {
+  position: relative;
+  top: 8%;
+  right: 4%;
+  float: right;
+  opacity: 1 !important; }
+
+.updateTag {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important; }
+
+/* End of News Card Section Modified */
 
 /*# sourceMappingURL=main.css.map */
