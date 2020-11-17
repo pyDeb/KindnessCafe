@@ -7,6 +7,7 @@ from django.contrib.auth import authenticate, login, logout
 from KindnessCafe.settings import EMAIL_HOST_USER
 from django.template import RequestContext
 from News.models import News
+from Stats.models import StatItem
 
 #imported for email activation
 from django.contrib.sites.shortcuts import get_current_site
@@ -15,7 +16,6 @@ from django.utils.encoding import force_bytes, force_text
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
-
 
 
 
@@ -38,7 +38,7 @@ def index(request):
     if request.session.has_key('id'):
         if User.objects.filter(id=request.session['id'])[0].is_active:
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
-    return render(request, 'index.html', {'first_name' : first_name, 'num': num_of_news, 'news1': news1, 'news2': news2, 'news3': news3})
+    return render(request, 'index.html', {'first_name' : first_name, 'num': num_of_news, 'news1': news1, 'news2': news2, 'news3': news3, 'stat_items' : StatItem.objects.all()})
 
 
 

@@ -14,6 +14,37 @@ body {
   padding-top: 6.5rem;
 }
 
+#kc_navigation {
+  @keyframes loading-animation {
+    0% {
+      border-width: 6px;
+      border-color: $kc_green-color;
+    }
+    25% {
+      border-width: 8px;
+      border-color: $kc_pink-color;
+    }
+    50% {
+      border-width: 10px;
+      border-color: $kc_green-color;
+    }
+    100% {
+      border-width: 12px;
+      border-color: $kc_pink-color;
+    }
+  }
+
+  .loading {
+    border-bottom: 4px solid $kc_pink-color;
+    animation-name: loading-animation;
+    animation-duration: 500ms;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+}
+
 #kc_background {
   position: fixed;
   height: 100%;
@@ -28,6 +59,10 @@ header {
   .nav-link,
   .nav-item {
     color: rgb(22, 22, 22);
+
+    :hover {
+      color: $kc_pink-color;
+    }
   }
 
   .navbar-toggler-icon {
@@ -37,7 +72,7 @@ header {
   nav {
     background-color: #fff !important;
     //border-bottom: 3px solid $kc_pink-color !important;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 0rem 0rem 2rem 2rem;
   }
 
   img.navbar-brand {
@@ -91,6 +126,7 @@ header {
   padding: 1rem;
   background-color: #fafafa;
   border-radius: 50px;
+
   .carousel-item {
     // h3 {
     //   position: absolute;
@@ -116,7 +152,6 @@ header {
     //   color: #212121 !important;
     // }
     .carousel-caption {
-      color: black;
       //right: 58%;
       text-align: center;
       max-width: 500px;
@@ -251,16 +286,15 @@ $darkBackground: #5b5f97;
   }
 }
 
-#main-carousel {
-  p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    /* number of lines to show */
-    -webkit-box-orient: vertical;
-  }
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
+
 
 #kc_stat {
   position: relative;
@@ -275,17 +309,28 @@ $darkBackground: #5b5f97;
   .card {
     text-align: center;
 
+    img {
+      height: 150px;
+      width: 150px;
+      margin: auto;
+    }
+
     h5.value,
-    h5.value>span {
+    h5.value > span {
       font-family: 'Black Ops One', cursive;
-      font-size: 3rem;
+      font-size: 2.5rem;
 
     }
   }
 
   span {
-    font-size: 4rem;
     padding: 1.25rem;
+  }
+
+  .stat_container_bg {
+    background-color: #fff;
+    position: relative;
+    z-index: 4;
   }
 }
 
@@ -317,7 +362,7 @@ $darkBackground: #5b5f97;
 
 .btn-pink:not(:disabled):not(.disabled).active,
 .btn-pink:not(:disabled):not(.disabled):active,
-.show>.btn-pink.dropdown-toggle {
+.show > .btn-pink.dropdown-toggle {
   color: #fff;
   background-color: rgb(253, 103, 148);
   border-color: rgb(255, 93, 142)
@@ -325,7 +370,7 @@ $darkBackground: #5b5f97;
 
 .btn-pink:not(:disabled):not(.disabled).active:focus,
 .btn-pink:not(:disabled):not(.disabled):active:focus,
-.show>.btn-pink.dropdown-toggle:focus {
+.show > .btn-pink.dropdown-toggle:focus {
   box-shadow: 0 0 0 .2rem rgba(250, 139, 172, .5)
 }
 
@@ -356,7 +401,7 @@ $darkBackground: #5b5f97;
 
 .btn-leafy:not(:disabled):not(.disabled).active,
 .btn-leafy:not(:disabled):not(.disabled):active,
-.show>.btn-leafy.dropdown-toggle {
+.show > .btn-leafy.dropdown-toggle {
   color: #fff;
   background-color: rgb(114, 207, 80);
   border-color: rgb(75, 172, 40)
@@ -364,7 +409,7 @@ $darkBackground: #5b5f97;
 
 .btn-leafy:not(:disabled):not(.disabled).active:focus,
 .btn-leafy:not(:disabled):not(.disabled):active:focus,
-.show>.btn-leafy.dropdown-toggle:focus {
+.show > .btn-leafy.dropdown-toggle:focus {
   box-shadow: 0 0 0 .2rem rgba(146, 204, 124, .5)
 }
 
@@ -381,10 +426,11 @@ $darkBackground: #5b5f97;
 
 
 [class*="brush-stroke"] {
+  display: inline-block;
   font-family: 'Lato', sans-serif;
   background-repeat: no-repeat !important;
   background-size: 70% !important;
-  font-size: 2rem !important;
+  font-size: 2rem 0rem !important;
   background-position: center !important;
   padding: 2rem !important;
   color: #212121;
@@ -452,13 +498,32 @@ li.active {
 }
 
 #kc_donation,
-#kc_recruitment {
+#kc_recruitment,
+#kc_paypalresult {
   span.material-icons {
     font-size: 6rem;
-    margin-top: 3rem !important;
-    margin-bottom: 3rem !important;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     color: $kc_green-color;
   }
+}
+
+#addFoodItemButton {
+  background-color: #fff;
+  border: 1px solid $kc_green-color;
+  border-radius: 10px;
+  display: table;
+
+  span {
+    font-size: 1.5rem !important;
+    //margin: auto !important;
+    color: $kc_green-color;
+    display: table-cell;
+    vertical-align: middle;
+    height: 2rem;
+
+  }
+
 }
 
 label.required:after {
@@ -562,7 +627,6 @@ label.required:after {
   video {
     border-radius: 50px 0px 0px 50px;
     max-width: 100%;
-    height: 100%;
     object-fit: cover;
   }
 }
@@ -570,7 +634,56 @@ label.required:after {
 .divider {
   position: absolute;
   top: 50%;
-  left: -25%;
-  width: 150%;
+  left: 0;
+  width: 100%;
   border-bottom: 2px solid $kc_pink-color;
 }
+
+/* SCROLL TO TOP BUTTON*/
+#gototopbtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  font-size: 18px;
+  border: 1px solid $kc_pink-color;
+  outline: none;
+  color: $kc_pink-color;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* News Card Section Modified */
+.card-img-top {
+  height: 200px !important;
+  width: 400px !important;
+  object-fit: cover;
+}
+
+.card-badge-top-right {
+  position: relative;
+  top: 8%;
+  right: 4%;
+  float: right;
+  opacity: 1 !important;
+}
+
+.updateTag {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 1 !important;
+}
+
+/* End of News Card Section Modified */
+
+/* TEST */
+
+/* End of TEST*/
