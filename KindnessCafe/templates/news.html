@@ -27,11 +27,11 @@
                 <div class="card-body card-body-cascade text-center pb-0">
 
                     <!-- Title -->
-                    <h4 class="card-title"><strong>{{ item.title}}</strong></h4>
+                    <h4 class="card-title truncate-3"><strong>{{ item.title}}</strong></h4>
                     <!-- Subtitle -->
                     <!--                    <h5 class="blue-text pb-2"><span class="badge badge-pill badge-success">Event</span></h5>-->
                     <!-- Text -->
-                    <p class="card-text truncate">{{ item.desc}} </p>
+                    <p class="card-text truncate-3">{{ item.desc}} </p>
                     <p class="card-text">
                         <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink">Read More</a>
                     </p>
