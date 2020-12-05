@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'Donation',
     'Stats',
     'Homepage',
+    'ckeditor',
 
 
     'allauth',  

@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4e8494f-3f69-4fb0-a38b-a8e1643e03d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/KindnessCafe/Homepage/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/Accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/Accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/Donation/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/Donation/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/Donation/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/Donation/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/Homepage/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/Homepage/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/Stats/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/Stats/migrations/0002_auto_20201013_2202.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/Stats/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KindnessCafe/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/News/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/News/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
