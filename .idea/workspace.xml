@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4e8494f-3f69-4fb0-a38b-a8e1643e03d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/KindnessCafe/Homepage/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/Accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/Accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/Donation/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/Donation/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/Donation/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/Donation/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/Stats/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/Stats/migrations/0002_auto_20201013_2202.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/Stats/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -56,6 +67,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1605557204403">
