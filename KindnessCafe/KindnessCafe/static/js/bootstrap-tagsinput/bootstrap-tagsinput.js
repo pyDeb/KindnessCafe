@@ -1,3 +1,6 @@
+/*Copyright belongs to  https://github.com/bootstrap-tagsinput/bootstrap-tagsinput */
+
+
 (function ($) {
   "use strict";
 

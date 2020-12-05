@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-6 d-none d-md-block m-auto">
             <div class="index-header-media">
-                <img src="{% static 'images/ourmission.jpg' %}" alt="">
+                <video type="video/mp4" src="{% static 'video/header-story.mp4' %}" alt="Instagram story as header" autoplay loop>
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@
                     <div class="col-lg-5 m-auto pt-5">
                         <div class="text-center">
                             <h3>{{ news1.title }}</h3>
-                            <p class="truncate">{{ news1.desc }}</p>
+                            <p class="truncate-3">{{ news1.desc }}</p>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                     <div class="col-lg-5 m-auto pt-5">
                         <div class="text-center">
                             <h3>{{ news2.title }}</h3>
-                            <p class="kc_truncate">{{ news2.desc }}</p>
+                            <p class="kc_truncate-3">{{ news2.desc }}</p>
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     <div class="col-lg-5 m-auto pt-5">
                         <div class="text-center">
                             <h3>{{ news3.title }}</h3>
-                            <p class="kc_truncate">{{ news3.desc }}</p>
+                            <p class="kc_truncate-3">{{ news3.desc }}</p>
                         </div>
                     </div>
                 </div>
