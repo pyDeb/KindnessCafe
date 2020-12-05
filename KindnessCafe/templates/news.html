@@ -17,7 +17,15 @@
                     <img class="card-img-top" src="{{ item.image_1.url }}" alt="News image:{{ item.image_1.url }}">
                     <a href="{% url 'single_news_page' item.id %}">
                         <div class="updateTag">
-                            <span class="badge badge-pill badge-success card-badge-top-right">Event</span>
+                            {% if item.tag == "NEWS" %}
+                            <span class="badge badge-pill badge-success card-badge-top-right">{{ item.tag }}</span>
+                            {% elif item.tag == 'EVENT' %}
+                            <span class="badge badge-pill badge-primary card-badge-top-right">{{ item.tag }}</span>
+                            {% elif item.tag == 'LIVE' %}
+                            <span class="badge badge-pill badge-danger card-badge-top-right">{{ item.tag }}</span>
+                            {% else %}
+                            <span class="badge badge-pill badge-secondary card-badge-top-right">{{ item.tag }}</span>
+                            {% endif %}
                         </div>
                         <div class="mask rgba-white-slight"></div>
                     </a>
@@ -31,7 +39,7 @@
                     <!-- Subtitle -->
                     <!--                    <h5 class="blue-text pb-2"><span class="badge badge-pill badge-success">Event</span></h5>-->
                     <!-- Text -->
-                    <p class="card-text truncate-3">{{ item.desc}} </p>
+                    <p class="card-text truncate-4">{{ item.desc}} </p>
                     <p class="card-text">
                         <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink">Read More</a>
                     </p>
