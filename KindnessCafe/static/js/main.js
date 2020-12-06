@@ -116,7 +116,7 @@ if (appPathName == "news") {
 $('.copy_text').click(function (e) {
     e.preventDefault();
     var copyText = $(this).attr('href');
-    copyText = 'https://kindnesscafe-2020.uk.r.appspot.com' + copyText;
+    copyText = 'https://kindnesscafe-2020.uk.r.appspot.com' + copyText.toString();
 
     document.addEventListener('copy', function (e) {
         e.clipboardData.setData('text/plain', copyText);
@@ -125,7 +125,6 @@ $('.copy_text').click(function (e) {
 
     document.execCommand('copy');
     console.log('copied text : ', copyText);
-    alert('copied text: ' + copyText);
 });
 
 
