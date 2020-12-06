@@ -18,9 +18,9 @@
                     <a href="{% url 'single_news_page' item.id %}">
                         <div class="updateTag">
                             {% if item.tag == "NEWS" %}
-                            <span class="badge badge-pill badge-success card-badge-top-right">{{ item.tag }}</span>
+                            <span class="badge badge-pill badge-leafy card-badge-top-right">{{ item.tag }}</span>
                             {% elif item.tag == 'EVENT' %}
-                            <span class="badge badge-pill badge-primary card-badge-top-right">{{ item.tag }}</span>
+                            <span class="badge badge-pill badge-pink card-badge-top-right">{{ item.tag }}</span>
                             {% elif item.tag == 'LIVE' %}
                             <span class="badge badge-pill badge-danger card-badge-top-right">{{ item.tag }}</span>
                             {% else %}
@@ -41,14 +41,46 @@
                     <!-- Text -->
                     <p class="card-text truncate-4">{{ item.desc}} </p>
                     <p class="card-text">
-                        <a href="{% url 'single_news_page' item.id %}" class="btn btn-pink">Read More</a>
+                        <a href="{% url 'single_news_page' item.id %}" class="btn btn-leafy">Read More<span
+                                style="vertical-align: middle !important;"
+                                class="material-icons">keyboard_arrow_right</span></a>
                     </p>
 
                     <!-- Share Button-->
-                    <a class="copy_text" data-toggle="tooltip" title="Copy to Clipboard"
-                       href="{% url 'single_news_page' item.id %}">
-                        <span class="material-icons">content_copy</span>
-                    </a>
+                    <div class="row" id="sharingbuttons">
+                        <div class="col-3">
+                            <!-- Copy to ClipBoard -->
+                            <a class="btn btn-social-icon copy_text" data-toggle="tooltip"
+                               title="Copy to Clipboard"
+                               href="{% url 'single_news_page' item.id %}">
+                                <span class="material-icons">content_copy</span>
+                            </a>
+                        </div>
+                        <div class="col-3">
+                            <!-- facebook sharing button -->
+                            <a class="btn btn-social-icon btn-facebook"
+                               href="http://www.facebook.com/share.php?u={{ request.scheme }}://{{ request.get_host }}{% url 'single_news_page' item.id %}">
+                                <span class="fa fa-facebook"></span>
+                            </a>
+                        </div>
+                        <div class="col-3">
+                            <!-- whatsapp sharing button -->
+                            <a class="btn btn-social-icon btn-whatsapp"
+                               href="https://api.whatsapp.com/send?text={{ request.scheme }}://{{ request.get_host }}{% url 'single_news_page' item.id %}"
+                               target="_blank">
+                                <span class="fa fa-whatsapp"></span>
+                            </a>
+                        </div>
+                        <div class="col-3">
+                            <!-- twitter sharing button -->
+                            <a class="btn btn-social-icon btn-twitter"
+                               href="https://twitter.com/intent/tweet?text={{ request.scheme }}://{{ request.get_host }}{% url 'single_news_page' item.id %}"
+                               target="_blank">
+                                <span class="fa fa-twitter"></span>
+                            </a>
+                        </div>
+                    </div>
+
                     <!-- Card footer -->
                     <div class="card-footer text-muted text-center mt-4">
                         {{ item.published_date }}
