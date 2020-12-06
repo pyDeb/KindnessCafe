@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e4e8494f-3f69-4fb0-a38b-a8e1643e03d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/Homepage/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/Homepage/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/KindnessCafe/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/News/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/News/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KindnessCafe/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/KindnessCafe/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -56,6 +62,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="2543" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1605557204403">

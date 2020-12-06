@@ -46,13 +46,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'paypal.standard.ipn',
     'bootstrap_modal_forms',
     'Accounts',
     'widget_tweaks',
     'News',
     'Donation',
     'Stats',
+<<<<<<< HEAD
     'Landing',
+=======
+    'Homepage',
+    'ckeditor',
+
+>>>>>>> 3d4f2556c8fd368c7943a66ffcd02dbd6e7268d5
 
     'allauth',  
     'allauth.account',  
