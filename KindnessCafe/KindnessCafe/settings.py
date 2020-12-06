@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'News',
     'Donation',
     'Stats',
+    'Landing',
 
     'allauth',  
     'allauth.account',  

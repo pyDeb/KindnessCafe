@@ -14,6 +14,12 @@ body {
   padding-top: 6.5rem;
 }
 
+#kc_landing{
+  p{
+    text-align: justify;
+  }
+}
+
 #kc_navigation {
   @keyframes loading-animation {
     0% {
@@ -686,20 +692,20 @@ label.required:after {
 }
 
 .index-header-media {
-  width: 100%;
-  height: 300px;
-  position: relative;
+  //width: 100%;
+  //height: 300px;
+  //position: relative;
 
   img,
   video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //width: 100%;
+    //height: 300px;
     border-radius: 50px 0px 0px 50px;
     max-width: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
   }
 }
 
