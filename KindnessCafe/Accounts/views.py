@@ -8,8 +8,9 @@ from KindnessCafe.settings import EMAIL_HOST_USER
 from django.template import RequestContext
 from News.models import News
 from Stats.models import StatItem
+from Landing.models import LandingContent
 
-#imported for email activation
+# imported for email activation
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
@@ -18,13 +19,12 @@ from .tokens import account_activation_token
 from django.core.mail import EmailMessage
 
 
-
 def index(request):
     num_of_news = len(News.objects.all())
     news1 = ""
     news2 = ""
     news3 = ""
-    
+
     if num_of_news > 0:
         news1 = News.objects.all()[num_of_news - 1]
 
@@ -33,14 +33,17 @@ def index(request):
 
     if num_of_news > 2:
         news3 = News.objects.all()[num_of_news - 3]
-        
+
     first_name = ""
     if request.session.has_key('id'):
         if User.objects.filter(id=request.session['id'])[0].is_active:
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
-    return render(request, 'index.html', {'first_name' : first_name, 'num': num_of_news, 'news1': news1, 'news2': news2, 'news3': news3, 'stat_items' : StatItem.objects.all()})
 
+    landing_content = LandingContent.objects.all()[0]
 
+    return render(request, 'index.html',
+                  {'first_name': first_name, 'num': num_of_news, 'news1': news1, 'news2': news2, 'news3': news3,
+                   'stat_items': StatItem.objects.all(), 'landing_content': landing_content})
 
 
 def signup(request):
@@ -50,24 +53,24 @@ def signup(request):
             for tag, error in errors.items():
                 messages.error(request, error, extra_tags=tag)
             return redirect('/signup')
-        
+
         hashed_password = make_password(request.POST.get('password').encode())
         user = User.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'],
-        password=hashed_password, email=request.POST['email'])
+                                   password=hashed_password, email=request.POST['email'])
         # request.session['id'] = user.id
         user.is_active = False
         current_site = get_current_site(request)
         mail_subject = 'Activate your KindnessCafe account.'
         message = render_to_string('activation_request.html', {
-                'user': user,
-                'domain': current_site.domain,
-                'uid':urlsafe_base64_encode(force_bytes(user.pk)),
-                'token':account_activation_token.make_token(user),
-            })
+            'user': user,
+            'domain': current_site.domain,
+            'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+            'token': account_activation_token.make_token(user),
+        })
         to_email = request.POST['email']
         email = EmailMessage(
-                    mail_subject, message, to=[to_email]
-            )
+            mail_subject, message, to=[to_email]
+        )
         email.send()
         return redirect("/", messages.success(request, 'Please confirm your email to finish signing up'))
         # return redirect('/', messages.success(request, 'You were sucessfully singed up!'))
@@ -76,9 +79,7 @@ def signup(request):
         if request.session.has_key('id'):
             return redirect('/')
         form = SignUpForm()
-        return render(request, 'signup.html', {'form' : form})
-
-
+        return render(request, 'signup.html', {'form': form})
 
 
 def activate(request, uidb64, token):
@@ -95,8 +96,6 @@ def activate(request, uidb64, token):
         return redirect("/", messages.success(request, 'Thank you for your email confirmation. Now you are logged in'))
     else:
         return redirect("/", messages.error(request, 'The link is invalid!'))
-
-
 
 
 def login_view(request):
@@ -119,8 +118,6 @@ def login_view(request):
         return render(request, 'login.html')
 
 
-
-
 def success(request):
     user = User.objects.get(id=request.session['id'])
     context = {
@@ -129,14 +126,12 @@ def success(request):
     return render(request, 'success.html', context)
 
 
-
 def our_mission(request):
     first_name = ""
     if request.session.has_key('id'):
         if User.objects.filter(id=request.session['id'])[0].is_active:
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
-    return render(request, 'ourmission.html', {'first_name' : first_name})
-
+    return render(request, 'ourmission.html', {'first_name': first_name})
 
 
 def contact_us(request):
@@ -145,25 +140,26 @@ def contact_us(request):
         if request.session.has_key('id'):
             if User.objects.filter(id=request.session['id'])[0].is_active:
                 first_name = User.objects.filter(id=request.session['id'])[0].first_name
-        return render(request, 'contact.html', {'first_name' : first_name})
+        return render(request, 'contact.html', {'first_name': first_name})
 
     else:
         user_email = ""
         if request.session.has_key('id'):
             if User.objects.filter(id=request.session['id'])[0].is_active:
                 user_email = User.objects.filter(id=request.session['id'])[0].email
-            
+
         if not user_email:
             user_email = request.POST['email']
 
         mail_subject = 'Message from ' + user_email
-        message =  mail_subject  + '\n' + request.POST['message']
+        message = mail_subject + '\n' + request.POST['message']
         to_email = EMAIL_HOST_USER + '@gmail.com'
         email = EmailMessage(
-                    mail_subject, message, to=[to_email]
-            )
+            mail_subject, message, to=[to_email]
+        )
         email.send()
         return redirect('/', messages.success(request, 'Your message was sent seccessfully!'))
+
 
 def logout_view(request):
     logout(request)
@@ -175,5 +171,4 @@ def recruitment_view(request):
     if request.session.has_key('id'):
         if User.objects.filter(id=request.session['id'])[0].is_active:
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
-    return render(request, 'recruitment.html', {'first_name' : first_name})
-
+    return render(request, 'recruitment.html', {'first_name': first_name})

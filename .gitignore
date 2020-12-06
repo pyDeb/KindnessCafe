@@ -2,12 +2,22 @@ KindnessCafe/KindnessCafe/settings.py
 app.yaml
 env/
 venv/
-/__pycache__/
+KindnessCafe/static/css/.sass-cache/
+KindnessCafe/Accounts/__pycache__/
+KindnessCafe/Accounts/migrations/
+KindnessCafe/News/__pycache__/
+KindnessCafe/News/migrations/
+KindnessCafe/Stats/__pycache__/
+KindnessCafe/Stats/migrations/
+KindnessCafe/KindnessCafe/__pycache__/
+KindnessCafe/KindnessCafe/migrations/
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-**/.sass-cache/**
+
 
 # C extensions
 *.so

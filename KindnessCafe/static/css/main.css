@@ -8,6 +8,9 @@ body {
   background-color: #f3f3f3;
   padding-top: 6.5rem; }
 
+#kc_landing p {
+  text-align: justify; }
+
 @keyframes loading-animation {
   0% {
     border-width: 10px;
@@ -470,20 +473,11 @@ label.required:after {
   background-color: #424242;
   text-decoration: none !important; }
 
-.index-header-media {
-  width: 100%;
-  height: 300px;
-  position: relative; }
-  .index-header-media img,
-  .index-header-media video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    border-radius: 50px 0px 0px 50px;
-    max-width: 100%;
-    object-fit: cover; }
+.index-header-media img,
+.index-header-media video {
+  border-radius: 50px 0px 0px 50px;
+  max-width: 100%;
+  object-fit: scale-down; }
 
 .divider {
   position: absolute;

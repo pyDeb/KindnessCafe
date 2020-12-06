@@ -3,20 +3,49 @@
 {% block content %}
 {% include '_modal.html' %}
 
-<div id="kc_news" class="container">
+<div id="kc_landing" class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="brush-stroke-2">
-                <h3>Empowering our community through nutrition and compassion</h3>
+                <h3>
+                    {% if landing_content %}
+                    {{ landing_content.title }}
+                    {% else %}
+                    No Content is Available!
+                    {% endif %}
+                </h3>
             </div>
             <div class="">
+<<<<<<< HEAD
+                <p>
+                    {% if landing_content %}
+                    {{ landing_content.description }}
+                    {% else %}
+                    No Content is Available!
+                    {% endif %}
+                </p>
+=======
                 <p>{{ text_body }}</p>
+>>>>>>> 3d4f2556c8fd368c7943a66ffcd02dbd6e7268d5
             </div>
-            <a href="{% url 'donation' %}" class="btn btn-leafy mt-3 mb-5">Donate</a>
+            <a href="{% url 'donation' %}" class="btn btn-leafy mt-3 mb-5">Donate <span
+                    style="vertical-align: middle !important;" class="material-icons">favorite</span>
+            </a>
         </div>
-        <div class="col-md-6 d-none d-md-block m-auto">
+<!--        d-none d-md-block-->
+        <div class="col-md-7 m-auto">
             <div class="index-header-media">
-                <video type="video/mp4" src="{% static 'video/header-story.mp4' %}" alt="Instagram story as header" autoplay loop>
+                <div class="d-none d-md-block">
+                    <img src="{% static 'images/header-banner.jpg' %}"
+                     alt="Mission Statement of KindnessCafeWindsor">
+                </div>
+                <div class="d-sm-block d-xs-block d-md-none">
+                    <img src="{% static 'images/Mission_Statement_KC.png' %}"
+                     alt="Mission Statement of KindnessCafeWindsor">
+                </div>
+
+
+
             </div>
         </div>
     </div>
