@@ -39,7 +39,7 @@
                     <!-- Subtitle -->
                     <!--                    <h5 class="blue-text pb-2"><span class="badge badge-pill badge-success">Event</span></h5>-->
                     <!-- Text -->
-                    <p class="card-text truncate-4">{{ item.desc}} </p>
+                    {{ item.desc|slice:120|safe}}...
                     <p class="card-text">
                         <a href="{% url 'single_news_page' item.id %}" class="btn btn-leafy">Read More<span
                                 style="vertical-align: middle !important;"

@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div id="kc_donation" class="container mt-3 mb-5">
+    <div class="row justify-content-center">
+        <div id="kc_donation-message" class="col-md-12 mb-4 container text-center">
+            <span class="material-icons">brightness_high</span>
+            <h3><span class="brush-stroke-4">Every Contribution Matters.</span></h3>
+            <blockquote class="blockquote description mt-5">
+                <p class="mb-0">Kindness Cafe is the first for-profit organization aimed to solve the food waste problem
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
+                                                   data-increment='1'>0</span>$</h5>
+                <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
+                                                   data-increment='1'>0</span>$</h5>
+                <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
+                                                   data-increment='1'>0</span>$</h5>
+                <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center"><span class="material-icons">favorite</span></div>
+            <h4 class="text-center"><span class="brush-stroke-3">PayPal Contribution</span></h4>
+            <form method="POST" id="paypalDonationForm">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName"
+                           placeholder="Contribute anonymously, if left empty!">
+                </div>
+                <div class="form-group">
+                    <label class="required" for="inputAmount">Donation Amount</label>
+                    <div class="input-group">
+                        <input id="inputAmount" type="number" min="0.01" step="0.01" class="form-control" aria-label="Amount"
+                               placeholder="Desired amount to donate" required>
+                        <div class="input-group-append">
+                            <span class="input-group-text">C$</span>
+                            <span class="input-group-text">0.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mx-auto text-center">
+                    <script src='https://www.google.com/recaptcha/api.js'></script>
+                    <div class="g-recaptcha" data-sitekey="6LfNO5IaAAAAAKGbYr0vqZp-rEROQ0Q_mgEebRgX"></div>
+                    <input type="submit" name="PayPal_donation" value="Continue to PayPal" class="my-3 btn btn-leafy"
+                        form="paypalDonationForm">
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="text-center"><span class="material-icons">food_bank</span></div>
+            <h4 class="text-center"><span class="brush-stroke-1">Food Donation</span></h4>
+            <form method="POST" id="foodDonationForm">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="inputNameForFood">Name</label>
+                    <input type="text" class="form-control" id="inputNameForFood"
+                           placeholder="Optional field, but let us address you in the rightest manner :)">
+                </div>
+                <div class="form-group">
+                    <label class="required" for="inputPhone">Phone Number</label>
+                    <input type="number" class="form-control" id="inputPhone"
+                        placeholder="987-654-3210" name="inputPhone" aria-describedby="numberHelp" required>
+                    <small id="numberHelp" class="form-text text-muted">We call you, as soon as possible, thanks for your patience.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" name="inputEmail" id="inputEmail" aria-describedby="emailHelp"
+                        placeholder="username@example.com">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                        else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <input id="inputAddress" type="text" name="inputAddress" class="form-control" aria-label="Address"
+                        aria-describedby="notRequired" placeholder="Pick up address">
+                    <small id="notRequired" class="form-text text-muted">Address is optional.</small>
+                </div>
+                <div class="form-group">
+                    <label for="inputFoodItems">Kindly list food items</label>
+                    <select multiple data-role="tagsinput" name="inputFoodItems" id="inputFoodItems">
+                        <option value="Remove this item and add food items"></option>
+                    </select>
+                </div>
+                <div class="form-group mx-auto text-center">
+                    <script src='https://www.google.com/recaptcha/api.js'></script>
+                    <div class="g-recaptcha" data-sitekey="6LeBzQAVAAAAALqVJLUJFQiJEFcnC2Z1pD1gCeRG"></div>
+                    <input type="submit" name="item-donation" value="Donating for good (^_^)" class="my-3 btn btn-leafy"
+                        form="foodDonationForm">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

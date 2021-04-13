@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 class News(models.Model):
     #feilds
     title = models.CharField(max_length=75, blank=False)
-    desc = models.TextField(blank=True)
+    desc = RichTextField()
 
     TAG_CATEGORY = [
         ('NEWS', 'NEWS'),

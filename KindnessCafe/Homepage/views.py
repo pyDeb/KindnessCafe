@@ -10,6 +10,7 @@ def index(request):
     news2 = ""
     news3 = ""
     text_body = Homepage.objects.all()[0].text_body
+    title = Homepage.objects.all()[0].title
     if num_of_news > 0:
         news1 = News.objects.all()[num_of_news - 1]
 
@@ -25,4 +26,4 @@ def index(request):
             first_name = User.objects.filter(id=request.session['id'])[0].first_name
     return render(request, 'index.html',
                   {'first_name': first_name, 'num': num_of_news, 'news1': news1, 'news2': news2, 'news3': news3,
-                   'stat_items': StatItem.objects.all(), 'text_body': text_body})
+                   'stat_items': StatItem.objects.all(), 'text_body': text_body, 'title': title})

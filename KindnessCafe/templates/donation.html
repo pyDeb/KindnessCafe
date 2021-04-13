@@ -9,17 +9,12 @@
             <span class="material-icons">brightness_high</span>
             <h3><span class="brush-stroke-4">Every Contribution Matters.</span></h3>
             <blockquote class="blockquote description mt-5">
-                <p class="mb-0">Kindness Cafe is the first for-profit organization aimed to solve the food waste problem
-                    in
-                    Windsor, Ontario. Kindness Cafe collects and enhances surplus food from Windsor restaurants and
-                    provides it back
-                    to the community. Our menu does not have set prices, meaning our customers decide the value of their
-                    meal and
-                    pay using a PAY-AS-YOU-FEEL concept. We compost and donate our own surplus to local livestock to
-                    continue the
-                    food cycle. Ultimately, Kindness Cafe is a movementaimed to achieve zero food waste in Windsor,
-                    Ontario, and one
-                    day across the whole world</p>
+                <p class="mb-0">Support Kindness Cafe's transition to a non-profit and more! <br>
+We're super excited for our transition into Phase Two of business operations! <br>
+In Phase One, we used to operate as a for-profit social enterprise. Now we're shifting to a non-profit model to achieve charitable status! This means that all future donations will be tax-deductible - helping you help us. <br></br>
+In Phase One, we used to operate our pop-ups only in locations that provided us space because we did not have any of our own. We also sometimes couldn't accept food donations from the community because we didn't have a place to store them. But now, we want to expand and partner with a community kitchen or even have our own space!! we want to have an accessible kitchen and storage space, as well as a friendly restaurant space. We will also be able to accept food donations at any time! <br></br>
+Your generous donation will generate several new, helpful changes that will help us feed our community the way we do it best.
+</p>
             </blockquote>
         </div>
         <div class="col-md-6">
@@ -27,53 +22,28 @@
                 <h4 class="text-center"><span class="brush-stroke-3">Recent Contribution</span></h4>
             </div>
             <div class="card-body">
-                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title"></h5>
                 <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
                                                    data-increment='1'>0</span>$</h5>
                 <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
             </div>
             <div class="card-body">
-                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title"></h5>
                 <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
                                                    data-increment='1'>0</span>$</h5>
                 <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
             </div>
             <div class="card-body">
-                <h5 class="card-title">Name FamilyName</h5>
+                <h5 class="card-title"></h5>
                 <h5 class="card-title value"><span class='numscroller' data-min='0' data-max='10' data-delay='2'
                                                    data-increment='1'>0</span>$</h5>
                 <p class="card-text"> Donated on Mon 18 Aug 2020 14:20</p>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="text-center"><span class="material-icons">favorite</span></div>
-            <h4 class="text-center"><span class="brush-stroke-3">PayPal Contribution</span></h4>
-            <form method="POST" id="paypalDonationForm">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="inputName">Name</label>
-                    <input type="text" class="form-control" id="inputName"
-                           placeholder="Contribute anonymously, if left empty!">
-                </div>
-                <div class="form-group">
-                    <label class="required" for="inputAmount">Donation Amount</label>
-                    <div class="input-group">
-                        <input id="inputAmount" type="number" min="0.01" step="0.01" class="form-control" aria-label="Amount"
-                               placeholder="Desired amount to donate" required>
-                        <div class="input-group-append">
-                            <span class="input-group-text">C$</span>
-                            <span class="input-group-text">0.00</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mx-auto text-center">
-                    <script src='https://www.google.com/recaptcha/api.js'></script>
-                    <div class="g-recaptcha" data-sitekey="6LeBzQAVAAAAALqVJLUJFQiJEFcnC2Z1pD1gCeRG"></div>
-                    <input type="submit" name="PayPal_donation" value="Continue to PayPal" class="my-3 btn btn-leafy"
-                        form="paypalDonationForm">
-                </div>
-            </form>
-        </div>
+	
+	<a href="https://www.paypal.com/donate?hosted_button_id=VYVKKUM52VNBL">
+   		<input type="button" value="PayPal Donation" />
+	</a>
         <div class="col-md-6">
             <div class="text-center"><span class="material-icons">food_bank</span></div>
             <h4 class="text-center"><span class="brush-stroke-1">Food Donation</span></h4>
@@ -81,7 +51,7 @@
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="inputNameForFood">Name</label>
-                    <input type="text" class="form-control" id="inputNameForFood"
+                    <input type="text" class="form-control" name="inputNameForFood" id="inputNameForFood"
                            placeholder="Optional field, but let us address you in the rightest manner :)">
                 </div>
                 <div class="form-group">
@@ -111,7 +81,7 @@
                 </div>
                 <div class="form-group mx-auto text-center">
                     <script src='https://www.google.com/recaptcha/api.js'></script>
-                    <div class="g-recaptcha" data-sitekey="6LeBzQAVAAAAALqVJLUJFQiJEFcnC2Z1pD1gCeRG"></div>
+                    <div class="g-recaptcha" data-sitekey="6LcrVqYaAAAAACfmaXjq9JZv0SAPzeQhjQDAwVmz"></div>
                     <input type="submit" name="item-donation" value="Donating for good (^_^)" class="my-3 btn btn-leafy"
                         form="foodDonationForm">
                 </div>

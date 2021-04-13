@@ -14,6 +14,12 @@ body {
   padding-top: 6.5rem;
 }
 
+#kc_landing{
+  p{
+    text-align: justify;
+  }
+}
+
 #kc_navigation {
   @keyframes loading-animation {
     0% {
@@ -445,6 +451,21 @@ $darkBackground: #5b5f97;
   box-shadow: 0 0 0 .2rem rgba(146, 204, 124, .5)
 }
 
+/* END btn-leafy and btn-pink */
+/* Defining new badge color (leafy+pink) base on bootstrap badge-primary class*/
+.badge-leafy {
+  color: #fff;
+  background-color: $kc_green-color;
+}
+
+.badge-pink {
+  color: #fff;
+  background-color: $kc_pink-color;
+}
+
+/* END badge-leafy and badge-pink */
+
+
 #kc_logos {
   overflow-x: clip;
 
@@ -462,18 +483,23 @@ $darkBackground: #5b5f97;
   font-family: 'Lato', sans-serif;
   background-repeat: no-repeat !important;
   background-size: 70% !important;
-  font-size: 2rem 0rem !important;
   background-position: center !important;
   padding: 2rem !important;
   color: #212121;
 
+  h1,h2,h3,h4,h5,h6{
+    font-weight: 600 !important;
+  }
+
   // Medium devices (tablets, 768px and up)
   @media (min-width: 768px) {
     font-size: 3rem !important;
+    //width: 100%;
   }
 
   &[class$="1"] {
     background: url(../images/svgs/brushstroke1.svg);
+    width: 100%;
   }
 
   &[class$="2"] {
@@ -660,25 +686,26 @@ label.required:after {
 //External CSS is neded here.
 
 .copy_text {
-  color: #4f4f4f !important;
+  color: #fff !important;
+  background-color: #424242;
   text-decoration: none !important;
 }
 
 .index-header-media {
-  width: 100%;
-  height: 300px;
-  position: relative;
+  //width: 100%;
+  //height: 300px;
+  //position: relative;
 
   img,
   video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //width: 100%;
+    //height: 300px;
     border-radius: 50px 0px 0px 50px;
     max-width: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
   }
 }
 
@@ -736,5 +763,17 @@ label.required:after {
 /* End of News Card Section Modified */
 
 /* TEST */
-
+#sharingbuttons {
+  color: #fff;
+  bottom: 3.5rem;
+  position: absolute;
+  display: inline-flex;
+  left: 15%;
+  right: 15%;
+  width: 80%;
+}
+.btn-whatsapp{
+  background-color: #25D366;
+  color: #fff;
+}
 /* End of TEST*/

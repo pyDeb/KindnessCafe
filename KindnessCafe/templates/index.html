@@ -8,25 +8,21 @@
         <div class="col-md-5">
             <div class="brush-stroke-2">
                 <h3>
-                    {% if landing_content %}
-                    {{ landing_content.title }}
+                    {% if title %}
+                    {{ title }}
                     {% else %}
                     No Content is Available!
                     {% endif %}
                 </h3>
             </div>
             <div class="">
-<<<<<<< HEAD
                 <p>
-                    {% if landing_content %}
-                    {{ landing_content.description }}
+                    {% if text_body %}
+                    {{ text_body|safe }}
                     {% else %}
                     No Content is Available!
                     {% endif %}
                 </p>
-=======
-                <p>{{ text_body }}</p>
->>>>>>> 3d4f2556c8fd368c7943a66ffcd02dbd6e7268d5
             </div>
             <a href="{% url 'donation' %}" class="btn btn-leafy mt-3 mb-5">Donate <span
                     style="vertical-align: middle !important;" class="material-icons">favorite</span>
@@ -104,7 +100,7 @@
                     <div class="col-lg-5 m-auto pt-5">
                         <div class="text-center">
                             <h3>{{ news1.title }}</h3>
-                            <p class="truncate-3">{{ news1.desc }}</p>
+                            <div>{{ news1.desc|slice:200|safe }}...</div>
                         </div>
                     </div>
                 </div>
@@ -117,7 +113,7 @@
                     <div class="col-lg-5 m-auto pt-5">
                         <div class="text-center">
                             <h3>{{ news2.title }}</h3>
-                            <p class="kc_truncate-3">{{ news2.desc }}</p>
+                            <div>{{ news2.desc|slice:200|safe }}...</div>
                         </div>
                     </div>
                 </div>
@@ -130,7 +126,7 @@
                     <div class="col-lg-5 m-auto pt-5">
                         <div class="text-center">
                             <h3>{{ news3.title }}</h3>
-                            <p class="kc_truncate-3">{{ news3.desc }}</p>
+                            <div>{{ news3.desc|slice:185|safe }}...</div>
                         </div>
                     </div>
                 </div>
@@ -166,15 +162,11 @@
     </div>
 </div>
 <div id="kc_logos" class="container text-center my-5">
-    <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/EpiCentre.png"
-                         alt="partner1_name"></a></div>
-    <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/RBC.png"
-                         alt="partner2_name"></a></div>
-    <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/images/STClair.png"
-                         alt="partner3_name"></a></div>
+    <div><a href=""><img src="{% static '/images/EpiCentre.png' %}" alt="partner1_name"></a></div>
+    <div><a href=""><img src="{% static '/images/RBC.png' %}" alt="partner2_name"></a></div>
+    <div><a href=""><img src="{% static 'images/STClair.png' %}" alt="partner3_name"></a></div>
     <div><a href=""><img src="{% static 'images/DSC-UoW.jpg' %}" alt="partner4_name"></a></div>
-    <div><a href=""><img src="https://storage.googleapis.com/kindnesscafe-2020-static/static/images/ta.png"
-                         alt="partner5_name"></a></div>
+    <div><a href=""><img src="{% static 'images/ta.png' %}" alt="partner5_name"></a></div>
     <div><a href=""><img src="{% static 'images/Libro.png' %}" alt="partner6_name"></a></div>
     <div><a href=""><img src="{% static 'images/compassion.png' %}" alt="partner7_name"></a></div>
 </div>

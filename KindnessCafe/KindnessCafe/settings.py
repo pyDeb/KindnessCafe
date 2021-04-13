@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -22,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3!1t$u)d!@y4%$g0!t=xg)uvhgsl#cy%y@r$c_)($5x76ryhub'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 EMAIL_USE_TLS = True
@@ -30,9 +31,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'kindnesscafewebsite'
 EMAIL_HOST_PASSWORD = 'g9TXuPKzYuesj3r'
 EMAIL_PORT = 587
-GOOGLE_RECAPTCHA_SECRET_KEY = '6LeBzQAVAAAAAGeaKR7KiqVznpWt60f0TW4eBLJN'
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LcrVqYaAAAAAC6QqH6rSZ6d8RCN-tc8CyJ4O2Iy'
 
-ALLOWED_HOSTS = ['kindnesscafe-2020.uk.r.appspot.com', 'localhost']
+ALLOWED_HOSTS = ['5.183.9.29', 'www.kindnesscafe.ca', 'kindnesscafe.ca']
 
 SITE_ID = 1
 
@@ -46,25 +47,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'paypal.standard.ipn',
     'bootstrap_modal_forms',
     'Accounts',
     'widget_tweaks',
     'News',
     'Donation',
     'Stats',
-<<<<<<< HEAD
     'Landing',
-=======
     'Homepage',
+    'paypal.standard.ipn',
     'ckeditor',
-
->>>>>>> 3d4f2556c8fd368c7943a66ffcd02dbd6e7268d5
-
     'allauth',  
     'allauth.account',  
     'allauth.socialaccount',   
     'allauth.socialaccount.providers.google', 
+    
 ]
 
 
@@ -81,7 +78,7 @@ MIDDLEWARE = [
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-WSGI_APPLICATION = 'KindnessCafe.wsgi.application'
+
 
 ROOT_URLCONF = 'KindnessCafe.urls'
 
@@ -101,7 +98,7 @@ TEMPLATES = [
     },
 ]
 
-
+WSGI_APPLICATION = 'KindnessCafe.wsgi.application'
 
 
 # Database
@@ -110,43 +107,14 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kindnesscafe',
-        'USER': 'masoud',
-        'PASSWORD': '120587**',
-        'HOST': '/cloudsql/kindnesscafe-2020:us-east4:kindnesscafe-2020-db',
-        'PORT': '5432',
+        'HOST': '127.0.0.1',
+        'PORT': '4266',
+        'NAME': '0urVery0wnKCDB',
+        'USER': 'postgres',
+        'PASSWORD': 'UASD(jd32(S9sdsd2S@#',
     }
 }
 
-if os.getenv('GAE_APPLICATION', None):
-    # Running on production App Engine, so connect to Google Cloud SQL using
-    # the unix socket at /cloudsql/<your-cloudsql-connection string>
-    DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'kindnesscafe',
-        'USER': 'masoud',
-        'PASSWORD': '120587**',
-        'HOST': '/cloudsql/kindnesscafe-2020:us-east4:kindnesscafe-2020-db',
-        'PORT': '5432',
-    }
-}
-    
-else:
-    # Running locally so connect to either a local MySQL instance or connect 
-    # to Cloud SQL via the proxy.  To start the proxy via command line: 
-    #    $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306 
-    # See https://cloud.google.com/sql/docs/mysql-connect-proxy
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'HOST': '127.0.0.1',
-            'PORT': '5433',
-            'NAME': 'kindnesscafe',
-            'USER': 'masoud',
-            'PASSWORD': '120587**',
-        }
-    }
 # [END db_setup]
 
 
@@ -187,13 +155,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_URL = "/static/"
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 MEDIA_URL = '/media/'
-STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'static/'),
+)
 #STATIC_URL = 'https://storage.googleapis.com/kindnesscafe-2020-static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static'),
+#]
